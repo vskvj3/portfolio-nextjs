@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import Navbar from "./navbar";
+import Footer from "./footer";
 
 const name = "Your Name";
 export const siteTitle = "Visakh Vijay O";
@@ -17,15 +19,11 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <title>{siteTitle}</title>
       </Head>
-      <header></header>
+      <header>
+        <Navbar />
+      </header>
       <main>{children}</main>
-      <footer>
-        {!home && (
-          <div>
-            <Link href="/">← Back to home</Link>
-          </div>
-        )}
-      </footer>
+      <Footer home/>
     </div>
   );
 }
