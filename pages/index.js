@@ -11,21 +11,10 @@ export default function Home() {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section>
-        <Image
-          priority
-          src="/images/profile.jpg"
-          className="borderCircle"
-          height={144}
-          width={144}
-          alt="Your Name"
-        />
-        <p>My name is Your Name. I am a software engineer.</p>
-
-        <p>
-          (This is a sample website - you’ll be building a site like this on{" "}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
+      <section className="bg-black w-1/2 min-w-[400px] max-w-[600px] h-auto m-auto p-[20px] rounded-md text-left text-white">
+        <div className="">
+    <p>hello</p>
+        </div>
       </section>
 
     </Layout>

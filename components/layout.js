@@ -9,7 +9,7 @@ export const siteTitle = "Visakh Vijay O";
 
 export default function Layout({ children, home }) {
   return (
-    <div>
+    <div className="">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
