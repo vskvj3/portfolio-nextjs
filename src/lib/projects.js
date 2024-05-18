@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
 
-const projectsDirectory = path.join(process.cwd(), "src/pages/projects");
+const projectsDirectory = path.join(process.cwd(), "src/projects");
 
 export function getSortedProjectsData() {
   const fileNames = fs.readdirSync(projectsDirectory);
