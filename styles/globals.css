@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  font-family: "IBM Plex Mono", Helvetica, sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: "IBM Plex Mono", Helvetica, sans-serif;
+  }
+} */
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -32,11 +44,9 @@ body {
   }
 } */
 
-
 .blink {
   animation: blink 2s linear infinite;
 }
-
 
 /* blinking animation */
 .del6s {
@@ -81,6 +91,6 @@ body {
 
 @keyframes blink {
   50% {
-      color: black;
+    color: black;
   }
 }
