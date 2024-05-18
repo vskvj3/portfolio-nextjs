@@ -20,11 +20,8 @@ export default function Projects({ allProjectsData }) {
           <ul>
             <p className=" text-center pb-5">[Projects]</p>
             {allProjectsData.map(({ id, date, tags, title }) => (
-              <Link href={`/projects/${encodeURIComponent(id)}`}>
-                <li
-                  key={id}
-                  className="bg-[#121420] hover:bg-[#212438] text-[#f8f8f2] h-auto p-5 rounded-md mb-5"
-                >
+              <Link key={id} href={`/projects/${encodeURIComponent(id)}`}>
+                <li className="bg-[#121420] hover:bg-[#212438] text-[#f8f8f2] h-auto p-5 rounded-md mb-5">
                   <span className=" text-blue-500 text-xl">{title}</span>
 
                   <br />
