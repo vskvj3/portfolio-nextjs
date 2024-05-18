@@ -21,7 +21,6 @@ export async function getStaticPaths() {
 }
 
 export default function Project({ projectData }) {
-  console.log(projectData);
   return (
     <Layout>
       <Head>
