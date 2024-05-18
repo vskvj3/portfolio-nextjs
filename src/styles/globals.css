@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scrollbar-color: var(--foreground-rgb) var(--background-start-rgb);
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
