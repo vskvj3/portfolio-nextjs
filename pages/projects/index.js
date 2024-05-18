@@ -20,23 +20,27 @@ export default function Projects({ allProjectsData }) {
           <ul>
             <p className=" text-center pb-5">[Projects]</p>
             {allProjectsData.map(({ id, date, tags, title }) => (
-              <li
-                key={id}
-                className="bg-[#121420] text-[#f8f8f2] h-auto p-5 rounded-md"
-              >
-                <Link href={`/projects/${encodeURIComponent(id)}`}>
+              <Link href={`/projects/${encodeURIComponent(id)}`}>
+                <li
+                  key={id}
+                  className="bg-[#121420] hover:bg-[#212438] text-[#f8f8f2] h-auto p-5 rounded-md mb-5"
+                >
                   <span className=" text-blue-500 text-xl">{title}</span>
-                </Link>
-                <br />
-                <div className="flex">
-                  {/* split tags by +, then show each tag inside a div */}
-                  {tags.split("+").map((tag) => (
-                    <div key={tag} className="text-sm p-1 mr-1 mt-1 bg-[#353a57] rounded-md">
-                      {tag}
-                    </div>
-                  ))}
-                </div>
-              </li>
+
+                  <br />
+                  <div className="flex">
+                    {/* split tags by +, then show each tag inside a div */}
+                    {tags.split("+").map((tag) => (
+                      <div
+                        key={tag}
+                        className="text-sm p-1 mr-1 mt-1 bg-[#353a57] rounded-md"
+                      >
+                        {tag}
+                      </div>
+                    ))}
+                  </div>
+                </li>
+              </Link>
             ))}
           </ul>
         </section>
