@@ -19,13 +19,23 @@ export default function Projects({ allProjectsData }) {
         <section className="bg-black w-1/2 min-w-[400px] max-w-[600px] h-auto mx-auto mb-5 p-[20px] rounded-md text-left text-white">
           <ul>
             <p className=" text-center pb-5">[Projects]</p>
-            {allProjectsData.map(({ id, date, title }) => (
-              <li key={id} className="bg-[#121420] text-[#f8f8f2] h-auto p-5 rounded-md">
+            {allProjectsData.map(({ id, date, tags, title }) => (
+              <li
+                key={id}
+                className="bg-[#121420] text-[#f8f8f2] h-auto p-5 rounded-md"
+              >
                 <Link href={`/projects/${encodeURIComponent(id)}`}>
                   <span className=" text-blue-500 text-xl">{title}</span>
                 </Link>
                 <br />
-                {date}
+                <div className="flex">
+                  {/* split tags by +, then show each tag inside a div */}
+                  {tags.split("+").map((tag) => (
+                    <div key={tag} className="text-sm p-1 mr-1 mt-1 bg-[#353a57] rounded-md">
+                      {tag}
+                    </div>
+                  ))}
+                </div>
               </li>
             ))}
           </ul>

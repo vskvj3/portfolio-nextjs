@@ -31,3 +31,56 @@ body {
     text-wrap: balance;
   }
 } */
+
+
+.blink {
+  animation: blink 2s linear infinite;
+}
+
+
+/* blinking animation */
+.del6s {
+  animation: blink 2s linear infinite;
+  animation-delay: 2s;
+  letter-spacing: 0px;
+}
+
+.del5s {
+  animation: blink 2s linear infinite;
+  animation-delay: 1.6s;
+  letter-spacing: 0px;
+}
+
+.del4s {
+  animation: blink 2s linear infinite;
+  animation-delay: 1.2s;
+  letter-spacing: 0px;
+}
+
+.del3s {
+  animation: blink 2s linear infinite;
+  animation-delay: 0.8s;
+  letter-spacing: 0px;
+}
+
+.del2s {
+  animation: blink 2s linear infinite;
+  animation-delay: 0.4s;
+  letter-spacing: 0px;
+}
+
+.del1s {
+  animation: blink 2s linear infinite;
+  animation-delay: 0s;
+  letter-spacing: 0px;
+}
+
+.del0s {
+  animation: blink 2s ease-out infinite;
+}
+
+@keyframes blink {
+  50% {
+      color: black;
+  }
+}
