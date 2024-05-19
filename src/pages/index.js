@@ -132,6 +132,33 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* section 3: Skills */}
+      <section className="bg-black w-1/2 mt-5 min-w-[400px] max-w-[600px] h-auto mx-auto mb-5 p-[20px] rounded-md text-left text-white">
+        <div className=" text-center text-lg mb-5 font-bold">[My Tools]</div>
+        <div>
+          <div className=" text-center">[Web development]</div>
+          <div className="grid grid-cols-3 mb-5 text-center">
+            <div>React</div>
+            <div>Next.js</div>
+            <div>HTML</div>
+            <div>CSS</div>
+            <div>Tailwind CSS</div>
+            <div>Node.js</div>
+            <div>Express.js</div>
+            <div>MongoDB</div>
+            <div>MySQL</div>
+          </div>
+          <div className=" text-center">[Others]</div>
+          <div className="grid grid-cols-3 text-center">
+            <div>Flutter</div>
+            <div>Git</div>
+            <div>Linux</div>
+            <div>Java</div>
+            <div>Python</div>
+            <div>C/C++</div>
+          </div>
+        </div>
+      </section>
       {/* section 2 */}
       <section className="bg-black w-1/2 mt-5 min-w-[400px] max-w-[600px] h-auto mx-auto mb-5 p-[20px] rounded-md text-left text-white">
         <div className=" text-center">[Projects]</div>
