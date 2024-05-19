@@ -46,12 +46,12 @@ export default function Home() {
             Hey there!
             <br />
             <br />
-            I'm Visakh, a computer science student from RIT Kottayam. I have a
+            I&apos;m Visakh, a computer science student from RIT Kottayam. I have a
             lifelong passion for computers and technology. I mostly love
             building things and occasionally breaking them. 😉
             <br />
             <br />
-            I'm a curious fellow with lots of passion. I'm particularly
+            I&apos;m a curious fellow with lots of passion. I&apos;m particularly
             interested in web development, cyber security, and reverse
             engineering.
           </div>
