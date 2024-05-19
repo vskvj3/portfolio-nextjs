@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Layout, { siteTitle } from "@/components/layout";
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -63,7 +64,8 @@ export default function Home() {
           {/* ls output */}
           <div>
             <ul>
-              <li>projects/</li>
+              <li><Link href={'/projects'}>projects/</Link></li>
+              <li><Link href={'/posts'}>posts/</Link></li>
               <li>resume.pdf</li>
               <li>contact.txt</li>
               <li>about.txt</li>

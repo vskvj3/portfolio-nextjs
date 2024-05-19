@@ -14,29 +14,34 @@ export async function getStaticProps() {
 
 export default function Posts({ allPostsData }) {
   return (
-    <div>
-      <Layout>
-        <section>
-          <h1>Welcome to my Posts</h1>
-          <Image
-            src="/images/profile.jpg"
-            height={144}
-            width={144}
-            alt="Your Name"
-          />
+    <Layout>
+      <div>
+        <section className="bg-black w-1/2 min-w-[400px] max-w-[600px] h-auto mx-auto mb-5 p-[20px] rounded-md text-left text-white">
           <ul>
-            {allPostsData.map(({ id, date, title }) => (
-              <li key={id}>
-                <Link href={`/posts/${encodeURIComponent(id)}`}>
+            <p className=" text-center pb-5">[Projects]</p>
+            {allPostsData.map(({ id, date, tags, title }) => (
+              <Link key={id} href={`/posts/${encodeURIComponent(id)}`}>
+                <li className="bg-[#121420] hover:bg-[#212438] text-[#f8f8f2] h-auto p-5 rounded-md mb-5">
                   <span className=" text-blue-500 text-xl">{title}</span>
-                </Link>
-                <br />
-                {date}
-              </li>
+
+                  <br />
+                  <div className="flex">
+                    {/* split tags by +, then show each tag inside a div */}
+                    {tags.split("+").map((tag) => (
+                      <div
+                        key={tag}
+                        className="text-sm p-1 mr-1 mt-1 bg-[#353a57] rounded-md"
+                      >
+                        {tag}
+                      </div>
+                    ))}
+                  </div>
+                </li>
+              </Link>
             ))}
           </ul>
         </section>
-      </Layout>
-    </div>
+      </div>
+    </Layout>
   );
 }
