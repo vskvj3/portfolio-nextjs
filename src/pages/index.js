@@ -32,8 +32,13 @@ export default function Home() {
         <title>{siteTitle}</title>
       </Head>
       {/* section 1 */}
-      <section className="bg-black w-1/2 min-w-[400px] max-w-[600px] h-full m-auto p-[20px] rounded-md text-left text-white">
-        <div className="font-bold p-5 backdrop-blur-md bg-white/10">
+      <section className="bg-black w-1/2 min-w-[400px] max-w-[600px] h-full m-auto px-2 pb-2 rounded-md text-left text-white">
+        <div className=" h-8">
+          <div className=" h-3.5 w-3.5 bg-red-500 rounded-full inline-block mt-2 mr-1"></div>
+          <div className=" h-3.5 w-3.5 bg-yellow-500 rounded-full inline-block mt-2 mr-1"></div>
+          <div className=" h-3.5 w-3.5 bg-green-500 rounded-full inline-block mt-2 mr-1"></div>
+        </div>
+        <div className="font-bold p-2 backdrop-blur-md bg-white/10">
           {/* first command */}
           <div className="">
             <span className=" text-green-600">vskvj3@server:</span>
