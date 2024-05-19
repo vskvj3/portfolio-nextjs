@@ -3,6 +3,16 @@ import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
+import { RiNextjsLine } from "react-icons/ri";
+
+function Chips({ tags, icon }) {
+  return (
+    <div className="flex items-center justify-center bg-slate-600 rounded-md">
+      {tags} {icon}
+    </div>
+  );
+}
+
 export default function Home() {
   const inputElement = useRef(null);
   const [previousOutput, setPreviousOutput] = useState([]);
@@ -76,9 +86,9 @@ export default function Home() {
               love building things and occasionally breaking them. 😉
               <br />
               <br />
-              I&apos;m a curious fellow with lots of passion. I&apos;m
-              particularly interested in web development, cyber security, and
-              reverse engineering.
+              I&apos;m
+              particularly interested in web development, computer networks, and
+              cyber security.
             </div>
             {/* second command */}
             <div className="">
@@ -138,25 +148,55 @@ export default function Home() {
         <hr className="border-white mb-5" />
         <div>
           <div className=" text-center mb-3">[Web development]</div>
-          <div className="grid grid-cols-3 mb-5 text-center">
-            <div>React</div>
-            <div>Next.js</div>
-            <div>HTML</div>
-            <div>CSS</div>
-            <div>Tailwind CSS</div>
-            <div>Node.js</div>
-            <div>Express.js</div>
-            <div>MongoDB</div>
-            <div>MySQL</div>
+          <div className="grid grid-cols-2 lg:grid-cols-3 mb-5 text-center gap-3">
+            <div className="flex items-center justify-center bg-slate-600 rounded-md">
+              React <RiNextjsLine />{" "}
+            </div>
+            <div className="flex items-center justify-center bg-slate-600 rounded-md">
+              Next.js <RiNextjsLine />{" "}
+            </div>
+            <div className="flex items-center justify-center bg-slate-600 rounded-md">
+              HTML <RiNextjsLine />{" "}
+            </div>
+            <div className="flex items-center justify-center bg-slate-600 rounded-md">
+              CSS <RiNextjsLine />{" "}
+            </div>
+            <div className="flex items-center justify-center bg-slate-600 rounded-md">
+              Tailwind CSS <RiNextjsLine />{" "}
+            </div>
+            <div className="flex items-center justify-center bg-slate-600 rounded-md">
+              Node.js <RiNextjsLine />{" "}
+            </div>
+            <div className="flex items-center justify-center bg-slate-600 rounded-md">
+              Express.js <RiNextjsLine />{" "}
+            </div>
+            <div className="flex items-center justify-center bg-slate-600 rounded-md">
+              MongoDB <RiNextjsLine />{" "}
+            </div>
+            <div className="flex items-center justify-center bg-slate-600 rounded-md">
+              MySQL <RiNextjsLine />{" "}
+            </div>
           </div>
           <div className=" text-center mb-3">[Others]</div>
-          <div className="grid grid-cols-3 text-center">
-            <div>Flutter</div>
-            <div>Git</div>
-            <div>Linux</div>
-            <div>Java</div>
-            <div>Python</div>
-            <div>C/C++</div>
+          <div className="grid grid-cols-2 lg:grid-cols-3 text-center gap-3">
+            <div className="flex items-center justify-center bg-slate-600 rounded-md">
+              Flutter <RiNextjsLine />{" "}
+            </div>
+            <div className="flex items-center justify-center bg-slate-600 rounded-md">
+              Git <RiNextjsLine />{" "}
+            </div>
+            <div className="flex items-center justify-center bg-slate-600 rounded-md">
+              Linux <RiNextjsLine />{" "}
+            </div>
+            <div className="flex items-center justify-center bg-slate-600 rounded-md">
+              Java <RiNextjsLine />{" "}
+            </div>
+            <div className="flex items-center justify-center bg-slate-600 rounded-md">
+              Python <RiNextjsLine />{" "}
+            </div>
+            <div className="flex items-center justify-center bg-slate-600 rounded-md">
+              C/C++ <RiNextjsLine />{" "}
+            </div>
           </div>
         </div>
       </section>
