@@ -135,8 +135,9 @@ export default function Home() {
       {/* section 3: Skills */}
       <section className="bg-black w-1/2 mt-5 min-w-[400px] max-w-[600px] h-auto mx-auto mb-5 p-[20px] rounded-md text-left text-white">
         <div className=" text-center text-lg mb-5 font-bold">[My Tools]</div>
+        <hr className="border-white mb-5" />
         <div>
-          <div className=" text-center">[Web development]</div>
+          <div className=" text-center mb-3">[Web development]</div>
           <div className="grid grid-cols-3 mb-5 text-center">
             <div>React</div>
             <div>Next.js</div>
@@ -148,7 +149,7 @@ export default function Home() {
             <div>MongoDB</div>
             <div>MySQL</div>
           </div>
-          <div className=" text-center">[Others]</div>
+          <div className=" text-center mb-3">[Others]</div>
           <div className="grid grid-cols-3 text-center">
             <div>Flutter</div>
             <div>Git</div>
