@@ -35,7 +35,7 @@ export default function Navbar() {
         <Link href={"https://in.linkedin.com/in/visakhvj3"}>
           <FaLinkedin size={20} />
         </Link>
-        <Link href={"https://github.com/vskvj3"}>
+        <Link href={""}>
           <FaTree size={20} />
         </Link>
       </div>
