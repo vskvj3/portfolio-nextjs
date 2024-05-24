@@ -26,7 +26,7 @@ export default function Post({ postData }) {
       <Head>
         <title>{postData.title}</title>
       </Head>
-      <div className="bg-black w-1/2 min-w-[400px] max-w-[600px] h-auto mx-auto mb-5 p-[20px] rounded-md text-left text-white">
+      <div className="bg-black w-1/2 min-w-[350px] max-w-[700px] h-auto mx-auto mb-5 p-[20px] rounded-md text-left text-white">
         <h1 className=" text-2xl">{postData.title}</h1>
         <br />
         <div className="text-sm">
@@ -46,7 +46,7 @@ export default function Post({ postData }) {
 
         <hr className="py-5 mt-10" />
         <div
-          className=" prose-base lg:prose-lg prose-ul:list-disc prose-blockquote:bg-slate-900 prose-blockquote:px-5"
+          className=" prose-sm lg:prose-md prose-ul:list-disc prose-blockquote:bg-slate-900 prose-blockquote:px-2 lg:prose-blockquote:px-5"
           dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
         />
       </div>

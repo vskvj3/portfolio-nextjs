@@ -16,7 +16,7 @@ export default function Projects({ allProjectsData }) {
   return (
     <Layout>
       <div>
-        <section className="bg-black w-1/2 min-w-[400px] max-w-[600px] h-auto mx-auto mb-5 p-[20px] rounded-md text-left text-white">
+        <section className="bg-black w-1/2 min-w-[350px] max-w-[700px] h-auto mx-auto mb-5 p-[20px] rounded-md text-left text-white">
           <ul>
             <p className=" text-center pb-5">[Projects]</p>
             {allProjectsData.map(({ id, date, tags, title }) => (
