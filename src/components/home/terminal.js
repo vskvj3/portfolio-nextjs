@@ -33,7 +33,7 @@ export default function Terminal(params) {
         className={
           maximize
             ? "bg-black w-3/5 h-full m-auto px-2 pb-2 rounded-md text-left text-white"
-            : "bg-black z-50 w-1/2 min-w-[400px] max-w-[700px] h-full m-auto px-2 pb-2 rounded-md text-left text-white"
+            : "bg-black z-50 w-1/2 min-w-[350px] max-w-[700px] h-full m-auto px-2 pb-2 rounded-md text-left text-white"
         }
         draggable="true"
       >
@@ -75,12 +75,12 @@ export default function Terminal(params) {
             networks, and cyber security.
           </div>
           {/* second command */}
-          <div className="">
+          <div className="md:hidden">
             <span className=" text-green-600">vskvj3@server:</span>
             <span className="text-blue-600">~</span>$ ls
           </div>
           {/* ls output */}
-          <div>
+          <div className="md:hidden">
             <ul className=" prose-li:text-blue-600 prose-li:underline">
               <li>
                 <Link href={"/projects"}>projects/</Link>
