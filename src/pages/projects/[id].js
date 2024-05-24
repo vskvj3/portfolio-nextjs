@@ -26,7 +26,7 @@ export default function Project({ projectData }) {
       <Head>
         <title>{projectData.title}</title>
       </Head>
-      <div className="bg-black w-1/2 min-w-[350px] max-w-[700px] h-auto mx-auto mb-5 p-[20px] rounded-md text-left text-white">
+      <div className="bg-black w-1/2 min-w-[370px] max-w-[700px] h-auto mx-auto mb-5 p-[20px] rounded-md text-left text-white">
         <h1 className=" text-2xl">{projectData.title}</h1>
         <br />
         <div className="text-sm">

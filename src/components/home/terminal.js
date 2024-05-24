@@ -33,7 +33,7 @@ export default function Terminal(params) {
         className={
           maximize
             ? "bg-black w-3/5 h-full m-auto px-2 pb-2 rounded-md text-left text-white"
-            : "bg-black z-50 w-1/2 min-w-[350px] max-w-[700px] h-full m-auto px-2 pb-2 rounded-md text-left text-white"
+            : "bg-black z-50 w-1/2 min-w-[370px] max-w-[700px] h-full m-auto px-2 pb-2 rounded-md text-left text-white"
         }
         draggable="true"
       >

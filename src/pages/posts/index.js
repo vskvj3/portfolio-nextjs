@@ -16,7 +16,7 @@ export default function Posts({ allPostsData }) {
   return (
     <Layout>
       <div>
-        <section className="bg-black w-1/2 min-w-[350px] max-w-[700px] h-auto mx-auto mb-5 p-[10px] lg:p-[20px] rounded-md text-left text-white">
+        <section className="bg-black w-1/2 min-w-[370px] max-w-[700px] h-auto mx-auto mb-5 p-[10px] lg:p-[20px] rounded-md text-left text-white">
           <ul>
             <p className=" text-center pb-3 lg:text-lg">[Posts]</p>
             {allPostsData.map(({ id, date, tags, title }) => (

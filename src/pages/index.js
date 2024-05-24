@@ -19,14 +19,14 @@ export default function Home() {
       <Skills />
 
       {/* section 2 */}
-      <section className="bg-black w-1/2 mt-5 min-w-[350px] max-w-[700px] h-auto mx-auto mb-5 p-[20px] rounded-md text-left text-white">
+      <section className="bg-black w-1/2 mt-5 min-w-[370px] max-w-[700px] h-auto mx-auto mb-5 p-[20px] rounded-md text-left text-white">
         <div className=" text-center">
           <Link href={"/projects"}>[Projects]</Link>
         </div>
       </section>
 
       {/* section 3 */}
-      <section className="bg-black w-1/2 mt-5 min-w-[350px] max-w-[700px] h-auto mx-auto mb-5 p-[20px] rounded-md text-left text-white">
+      <section className="bg-black w-1/2 mt-5 min-w-[370px] max-w-[700px] h-auto mx-auto mb-5 p-[20px] rounded-md text-left text-white">
         <div className=" text-center">
           <Link href={"/posts"}>[Posts]</Link>
         </div>
