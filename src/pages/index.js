@@ -3,6 +3,7 @@ import Head from "next/head";
 import Contact from "@/components/home/contact";
 import Terminal from "@/components/home/terminal";
 import Skills from "@/components/home/skills";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -19,17 +20,20 @@ export default function Home() {
 
       {/* section 2 */}
       <section className="bg-black w-1/2 mt-5 min-w-[350px] max-w-[700px] h-auto mx-auto mb-5 p-[20px] rounded-md text-left text-white">
-        <div className=" text-center">[Projects]</div>
+        <div className=" text-center">
+          <Link href={"/projects"}>[Projects]</Link>
+        </div>
       </section>
 
       {/* section 3 */}
       <section className="bg-black w-1/2 mt-5 min-w-[350px] max-w-[700px] h-auto mx-auto mb-5 p-[20px] rounded-md text-left text-white">
-        <div className=" text-center">[Blogs]</div>
+        <div className=" text-center">
+          <Link href={"/posts"}>[Posts]</Link>
+        </div>
       </section>
 
       {/* section 4: Contact */}
       <Contact />
-
     </Layout>
   );
 }
