@@ -31,7 +31,7 @@ export default function Contact(params) {
             placeholder="Enter your name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full p-2 rounded-md bg-slate-600"
+            className="w-full p-2 border-none outline-none rounded-md bg-transparent"
             required
           />
         </div>
@@ -46,7 +46,7 @@ export default function Contact(params) {
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-2 rounded-md bg-slate-600"
+            className="w-full p-2 border-none outline-none rounded-md bg-transparent"
             required
           />
         </div>
@@ -60,7 +60,7 @@ export default function Contact(params) {
             placeholder="Enter your message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="w-full p-2 rounded-md bg-slate-600"
+            className="w-full p-2 border-none outline-none rounded-md bg-transparent"
             required
           ></textarea>
         </div>
