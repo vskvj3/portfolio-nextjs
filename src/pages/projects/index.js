@@ -4,14 +4,16 @@ import Link from "next/link";
 
 export async function getStaticProps() {
   const allProjectsData = getSortedProjectsData();
+  const page = true;
   return {
     props: {
       allProjectsData,
+      page
     },
   };
 }
 
-export default function Projects({ allProjectsData }) {
+export default function Projects({ allProjectsData, page }) {
   return (
     <div>
       <section className="bg-black w-1/2 min-w-[370px] max-w-[700px] h-auto mx-auto mb-5 p-[10px] lg:p-[20px] rounded-md text-left text-white">
@@ -40,6 +42,11 @@ export default function Projects({ allProjectsData }) {
             </Link>
           ))}
         </ul>
+        {page ? null : (
+          <div className=" text-center">
+            <Link href={"/projects"}>[View More]</Link>
+          </div>
+        )}
       </section>
     </div>
   );
