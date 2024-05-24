@@ -6,7 +6,7 @@ import html from "remark-html";
 
 const postsDirectory = path.join(process.cwd(), "src/posts");
 
-export function getSortedPostsData() {
+export function getSortedPostsData(count = 1000) {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames
@@ -16,6 +16,7 @@ export function getSortedPostsData() {
       }
       return true;
     })
+    .slice(0, count)
     .map((fileName) => {
       // Remove ".md" from file name to get id
       const id = fileName.replace(/\.md$/, "");

@@ -6,7 +6,7 @@ import html from "remark-html";
 
 const projectsDirectory = path.join(process.cwd(), "src/projects");
 
-export function getSortedProjectsData() {
+export function getSortedProjectsData(count = 1000) {
   const fileNames = fs.readdirSync(projectsDirectory);
   const allProjectsData = fileNames
     .filter((fileName) => {
@@ -15,6 +15,7 @@ export function getSortedProjectsData() {
       }
       return true;
     })
+    .slice(0, count)
     .map((fileName) => {
       const id = fileName.replace(/\.md$/, "");
 

@@ -10,9 +10,8 @@ import { getSortedProjectsData } from "@/lib/projects";
 import Projects from "./projects";
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
-  const allProjectsData = getSortedProjectsData();
-  const count = 3;
+  const allPostsData = getSortedPostsData(3);
+  const allProjectsData = getSortedProjectsData(3);
   return {
     props: {
       allPostsData,
