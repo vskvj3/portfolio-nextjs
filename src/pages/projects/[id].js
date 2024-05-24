@@ -37,7 +37,7 @@ export default function Project({ projectData }) {
           {projectData.tags.split("+").map((tag) => (
             <div
               key={tag}
-              className="text-sm p-1 mr-1 mt-1 bg-[#353a57] rounded-md"
+              className="p-1 mr-1 mt-1 bg-[#353a57] rounded-md"
             >
               {tag}
             </div>
