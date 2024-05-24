@@ -4,10 +4,26 @@ import Contact from "@/components/home/contact";
 import Terminal from "@/components/home/terminal";
 import Skills from "@/components/home/skills";
 import Link from "next/link";
+import Posts from "./posts";
+import { getSortedPostsData } from "@/lib/posts";
+import { getSortedProjectsData } from "@/lib/projects";
+import Projects from "./projects";
 
-export default function Home() {
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData();
+  const allProjectsData = getSortedProjectsData();
+  const count = 3;
+  return {
+    props: {
+      allPostsData,
+      allProjectsData,
+    },
+  };
+}
+
+export default function Home({ allPostsData, allProjectsData }) {
   return (
-    <Layout home>
+    <>
       <Head>
         <title>{siteTitle}</title>
       </Head>
@@ -19,21 +35,14 @@ export default function Home() {
       <Skills />
 
       {/* section 2 */}
-      <section className="bg-black w-1/2 mt-5 min-w-[370px] max-w-[700px] h-auto mx-auto mb-5 p-[20px] rounded-md text-left text-white">
-        <div className=" text-center">
-          <Link href={"/projects"}>[Projects]</Link>
-        </div>
-      </section>
+      <Projects allProjectsData={allProjectsData} /> 
 
       {/* section 3 */}
-      <section className="bg-black w-1/2 mt-5 min-w-[370px] max-w-[700px] h-auto mx-auto mb-5 p-[20px] rounded-md text-left text-white">
-        <div className=" text-center">
-          <Link href={"/posts"}>[Posts]</Link>
-        </div>
-      </section>
+      {/* list all posts as in /posts/index.js but dont import posts*/}
+      <Posts allPostsData={allPostsData} />
 
       {/* section 4: Contact */}
       <Contact />
-    </Layout>
+    </>
   );
 }

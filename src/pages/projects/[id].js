@@ -22,7 +22,7 @@ export async function getStaticPaths() {
 
 export default function Project({ projectData }) {
   return (
-    <Layout>
+    <>
       <Head>
         <title>{projectData.title}</title>
       </Head>
@@ -35,10 +35,7 @@ export default function Project({ projectData }) {
         <br />
         <div className="flex flex-wrap lg:text-sm text-xs">
           {projectData.tags.split("+").map((tag) => (
-            <div
-              key={tag}
-              className="p-1 mr-1 mt-1 bg-[#353a57] rounded-md"
-            >
+            <div key={tag} className="p-1 mr-1 mt-1 bg-[#353a57] rounded-md">
               {tag}
             </div>
           ))}
@@ -50,6 +47,6 @@ export default function Project({ projectData }) {
           dangerouslySetInnerHTML={{ __html: projectData.contentHtml }}
         />
       </div>
-    </Layout>
+    </>
   );
 }
