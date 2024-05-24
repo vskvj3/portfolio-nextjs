@@ -46,7 +46,7 @@ export default function Post({ postData }) {
 
         <hr className="py-5 mt-10" />
         <div
-          className=" prose-sm lg:prose-md prose-ul:list-disc prose-blockquote:bg-slate-900 prose-blockquote:px-2 lg:prose-blockquote:px-5"
+          className=" prose-sm lg:prose-base prose-ul:list-disc prose-blockquote:bg-slate-900 prose-blockquote:px-2 lg:prose-blockquote:px-5"
           dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
         />
       </div>
