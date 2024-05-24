@@ -3,37 +3,35 @@ import Link from "next/link";
 import Draggable, { dragHandlers } from "react-draggable";
 
 export default function Terminal(params) {
-    const inputElement = useRef(null);
-    const [previousOutput, setPreviousOutput] = useState([]);
-    const [close, setClose] = useState(false);
-    const [minimize, setMinimize] = useState(false);
-    const [maximize, setMaximize] = useState(false);
+  const inputElement = useRef(null);
+  const [previousOutput, setPreviousOutput] = useState([]);
+  const [close, setClose] = useState(false);
+  const [minimize, setMinimize] = useState(false);
+  const [maximize, setMaximize] = useState(false);
 
-    useEffect(() => {
-        if (inputElement.current) {
-          inputElement.current.focus();
-        }
-      }, []);
+  useEffect(() => {
+    if (inputElement.current) {
+      inputElement.current.focus();
+    }
+  }, []);
 
-    const handleEnter = (e) => {
-        console.log(e.target.value);
-        const command = e.target.value;
-        const previousOutputCopy = [...previousOutput];
-        previousOutputCopy.push({
-          command: command,
-          output: "Command not found",
-        });
-        setPreviousOutput(previousOutputCopy);
-        e.target.value = "";
-      };
+  const handleEnter = (e) => {
+    console.log(e.target.value);
+    const command = e.target.value;
+    const previousOutputCopy = [...previousOutput];
+    previousOutputCopy.push({
+      command: command,
+      output: "Command not found",
+    });
+    setPreviousOutput(previousOutputCopy);
+    e.target.value = "";
+  };
 
   return (
     <section className={close ? "hidden" : ""}>
       <div
         className={
-          maximize
-            ? "bg-black w-3/5 h-full m-auto px-2 pb-2 rounded-md text-left text-white"
-            : "bg-black z-50 w-1/2 min-w-[370px] max-w-[700px] h-full m-auto px-2 pb-2 rounded-md text-left text-white"
+          `${" px-2 pb-2 bg-black rounded-md text-left text-white"} ${maximize ? "fixed z-[999] top-0 bottom-0 right-0 left-0 m-3 pb-10" : "z-50 w-1/2 min-w-[370px] max-w-[700px] m-auto"}`
         }
         draggable="true"
       >
@@ -52,9 +50,7 @@ export default function Terminal(params) {
           ></div>
         </div>
         <div
-          className={
-            minimize ? "hidden" : "font-bold p-2 backdrop-blur-md bg-white/10"
-          }
+          className={minimize ? "hidden" : "font-bold p-2 bg-white/10 h-full overflow-scroll"}
         >
           {/* first command */}
           <div className="">
