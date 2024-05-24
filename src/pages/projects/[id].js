@@ -33,7 +33,7 @@ export default function Project({ projectData }) {
           <Date dateString={projectData.date} />
         </div>
         <br />
-        <div className="flex">
+        <div className="flex flex-wrap lg:text-sm text-xs">
           {projectData.tags.split("+").map((tag) => (
             <div
               key={tag}
