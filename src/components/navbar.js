@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaTree } from "react-icons/fa";
 
 export default function Navbar() {
   return (
-    <nav className="bg-black w-1/2 min-w-[400px] max-w-[600px] px-5 mx-auto my-5 py-5 rounded-md text-center text-white">
+    <nav className="bg-black w-1/2 min-w-[400px] max-w-[700px] px-5 mx-auto my-5 py-5 rounded-md text-center text-white">
       <h1 className="text-2xl font-extrabold">
         <span className="blinkFrame blink">[</span>
         visakh

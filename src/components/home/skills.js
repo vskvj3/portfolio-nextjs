@@ -3,7 +3,7 @@ import { RiNextjsLine } from "react-icons/ri";
 
 export default function Skills(params) {
   return (
-    <section className="bg-black w-1/2 mt-5 min-w-[400px] max-w-[600px] h-auto mx-auto mb-5 p-[20px] rounded-md text-left text-white">
+    <section className="bg-black w-1/2 mt-5 min-w-[400px] max-w-[700px] h-auto mx-auto mb-5 p-[20px] rounded-md text-left text-white">
       <div className=" text-center text-lg mb-5 font-bold">[My Tools]</div>
       <hr className="border-white mb-5" />
       <div>
