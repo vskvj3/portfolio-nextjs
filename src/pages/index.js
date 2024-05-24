@@ -1,6 +1,5 @@
 import Layout, { siteTitle } from "@/components/layout";
 import Head from "next/head";
-import Draggable, { dragHandlers } from "react-draggable";
 import Contact from "@/components/home/contact";
 import Terminal from "@/components/home/terminal";
 import Skills from "@/components/home/skills";
@@ -30,7 +29,7 @@ export default function Home() {
 
       {/* section 4: Contact */}
       <Contact />
-      
+
     </Layout>
   );
 }

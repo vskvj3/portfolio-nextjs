@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Draggable, { dragHandlers } from "react-draggable";
 
 export default function Terminal(params) {
     const inputElement = useRef(null);
