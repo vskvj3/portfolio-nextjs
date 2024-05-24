@@ -75,12 +75,12 @@ export default function Terminal(params) {
             networks, and cyber security.
           </div>
           {/* second command */}
-          <div className="md:hidden">
+          <div className="hidden lg:block">
             <span className=" text-green-600">vskvj3@server:</span>
             <span className="text-blue-600">~</span>$ ls
           </div>
           {/* ls output */}
-          <div className="md:hidden">
+          <div className="hidden lg:block">
             <ul className=" prose-li:text-blue-600 prose-li:underline">
               <li>
                 <Link href={"/projects"}>projects/</Link>
