@@ -1,5 +1,21 @@
 
 import { RiNextjsLine } from "react-icons/ri";
+import { FaReact } from "react-icons/fa";
+import { FaHtml5 } from "react-icons/fa";
+import { FaCss3 } from "react-icons/fa";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { FaNodeJs } from "react-icons/fa";
+import { SiExpress } from "react-icons/si";
+import { SiMongodb } from "react-icons/si";
+import { GrMysql } from "react-icons/gr";
+import { SiFlutter } from "react-icons/si";
+import { FaGit } from "react-icons/fa";
+import { FaLinux } from "react-icons/fa";
+import { FaPython } from "react-icons/fa";
+import { FaJava } from "react-icons/fa";
+import { SiCplusplus } from "react-icons/si";
+
+
 
 export default function Skills(params) {
   return (
@@ -9,53 +25,53 @@ export default function Skills(params) {
       <div>
         <div className=" text-center mb-3">[Web development]</div>
         <div className="grid grid-cols-2 lg:grid-cols-3 mb-5 text-center gap-3">
-          <div className="flex items-center justify-center bg-slate-600 rounded-md">
-            React <RiNextjsLine />{" "}
+          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+            React <FaReact />{" "}
           </div>
-          <div className="flex items-center justify-center bg-slate-600 rounded-md">
+          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
             Next.js <RiNextjsLine />{" "}
           </div>
-          <div className="flex items-center justify-center bg-slate-600 rounded-md">
-            HTML <RiNextjsLine />{" "}
+          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+            HTML <FaHtml5 />{" "}
           </div>
-          <div className="flex items-center justify-center bg-slate-600 rounded-md">
-            CSS <RiNextjsLine />{" "}
+          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+            CSS <FaCss3 />{" "}
           </div>
-          <div className="flex items-center justify-center bg-slate-600 rounded-md">
-            Tailwind CSS <RiNextjsLine />{" "}
+          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+            Tailwind CSS <RiTailwindCssFill />{" "}
           </div>
-          <div className="flex items-center justify-center bg-slate-600 rounded-md">
-            Node.js <RiNextjsLine />{" "}
+          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+            Node.js <FaNodeJs />{" "}
           </div>
-          <div className="flex items-center justify-center bg-slate-600 rounded-md">
-            Express.js <RiNextjsLine />{" "}
+          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+            Express.js <SiExpress />{" "}
           </div>
-          <div className="flex items-center justify-center bg-slate-600 rounded-md">
-            MongoDB <RiNextjsLine />{" "}
+          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+            MongoDB <SiMongodb />{" "}
           </div>
-          <div className="flex items-center justify-center bg-slate-600 rounded-md">
-            MySQL <RiNextjsLine />{" "}
+          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+            MySQL <GrMysql />{" "}
           </div>
         </div>
         <div className=" text-center mb-3">[Others]</div>
         <div className="grid grid-cols-2 lg:grid-cols-3 text-center gap-3">
-          <div className="flex items-center justify-center bg-slate-600 rounded-md">
-            Flutter <RiNextjsLine />{" "}
+          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+            Flutter <SiFlutter />{" "}
           </div>
-          <div className="flex items-center justify-center bg-slate-600 rounded-md">
-            Git <RiNextjsLine />{" "}
+          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+            Git <FaGit />{" "}
           </div>
-          <div className="flex items-center justify-center bg-slate-600 rounded-md">
-            Linux <RiNextjsLine />{" "}
+          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+            Linux <FaLinux />{" "}
           </div>
-          <div className="flex items-center justify-center bg-slate-600 rounded-md">
-            Java <RiNextjsLine />{" "}
+          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+            Java <FaJava />{" "}
           </div>
-          <div className="flex items-center justify-center bg-slate-600 rounded-md">
-            Python <RiNextjsLine />{" "}
+          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+            Python <FaPython />
           </div>
-          <div className="flex items-center justify-center bg-slate-600 rounded-md">
-            C/C++ <RiNextjsLine />{" "}
+          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+            C/C++ <SiCplusplus />{" "}
           </div>
         </div>
       </div>
