@@ -93,3 +93,39 @@ body {
   overflow: scroll;
   resize: both;
 }
+
+.spinner_8XMC {
+  animation: spinner_0zVw 2s infinite;
+}
+.spinner_WWWR {
+  animation: spinner_Aojx 2s infinite;
+}
+.spinner_LvYV {
+  transform-origin: center;
+  animation: spinner_xygp 0.75s linear infinite;
+}
+@keyframes spinner_0zVw {
+  0% {
+    animation-timing-function: cubic-bezier(0.36, 0.62, 0.43, 0.99);
+    cx: 5px;
+  }
+  50% {
+    animation-timing-function: cubic-bezier(0.79, 0, 0.58, 0.57);
+    cx: 8px;
+  }
+}
+@keyframes spinner_Aojx {
+  0% {
+    animation-timing-function: cubic-bezier(0.36, 0.62, 0.43, 0.99);
+    cx: 19px;
+  }
+  50% {
+    animation-timing-function: cubic-bezier(0.79, 0, 0.58, 0.57);
+    cx: 16px;
+  }
+}
+@keyframes spinner_xygp {
+  100% {
+    transform: rotate(360deg);
+  }
+}
