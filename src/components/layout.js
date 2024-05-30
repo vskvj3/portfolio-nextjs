@@ -1,12 +1,12 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Footer from "./footer";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
+import Navbar from "./navbar";
 
 // navbar is causing hydration error, so we need to use dynamic import
-const NoSSRNavbar = dynamic(() => import("./navbar"), { ssr: false });
+// const NoSSRNavbar = dynamic(() => import("./navbar"), { ssr: false });
 
-const name = "Your Name";
 export const siteTitle = "Visakh Vijay O";
 
 export default function Layout({ children, home }) {
@@ -27,7 +27,7 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <title>{siteTitle}</title>
       </Head>
-      <header>{!shouldHideNavbar && <NoSSRNavbar />}</header>
+      <header>{!shouldHideNavbar && <Navbar />}</header>
       <main>{children}</main>
       {!shouldHideNavbar && <Footer />}
     </div>
