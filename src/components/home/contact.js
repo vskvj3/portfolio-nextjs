@@ -7,17 +7,22 @@ export default function Contact(params) {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [sending, setSending] = useState(false);
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState({ message: "", error: false });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSending(true);
-    await axios.post("/api/contact", { name, email, message });
-    setName("");
-    setEmail("");
-    setMessage("");
-    setSending(false);
-    setStatus("Message sent!");
+    try {
+      await axios.post("/api/contact", { name, email, message });
+      setName("");
+      setEmail("");
+      setMessage("");
+      setSending(false);
+      setStatus({ message: "Message sent!", error: false });
+    } catch (error) {
+      setSending(false);
+      setStatus({ message: "Error sending message!", error: true });
+    }
   };
 
   return (
@@ -69,7 +74,9 @@ export default function Contact(params) {
             required
           ></textarea>
         </div>
-        <p className=" text-green-500 pb-2">{status}</p>
+        <p className={status.error ? " text-red-500" : "text-green-500"}>
+          {status.message}
+        </p>
         <button
           className="bg-green-500 hover:bg-green-700 text-black text-md rounded-md p-1 flex self-center items-center justify-center w-full"
           type="submit"

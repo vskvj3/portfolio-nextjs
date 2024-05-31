@@ -1,20 +1,24 @@
-import { db } from "../../lib/firebase";
-import { collection, addDoc } from "firebase/firestore";
+import transporter from "@/lib/email";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
     const { name, email, message } = req.body;
     console.log(name, email, message);
     try {
-      const docRef = await addDoc(collection(db, "contacts"), {
-        name,
-        email,
-        message,
-        timestamp: new Date(),
+      const info = await transporter.sendMail({
+        from: `"${name}" <${email}>`,
+        to: "visakhvj3@gmail.com",
+        subject: `Portfolio response: ${name}`,
+        text: `
+          Name: ${name}
+          Email: ${email}
+          Message:
+        ${message}
+        `,
       });
-      res.status(200).json({ success: true, id: docRef.id });
+      res.status(200).json({ success: true, id: info.messageId });
     } catch (error) {
-      console.log(error)
+      console.log(error);
       res.status(500).json({ error: "Error adding contact:", error });
     }
   } else {
