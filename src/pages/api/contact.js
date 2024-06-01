@@ -13,7 +13,7 @@ export default async function handler(req, res) {
           Name: ${name}
           Email: ${email}
           Message:
-        ${message}
+          ${message}
         `,
       });
       res.status(200).json({ success: true, id: info.messageId });

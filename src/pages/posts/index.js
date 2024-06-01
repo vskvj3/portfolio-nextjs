@@ -43,8 +43,8 @@ export default function Posts({ allPostsData, page }) {
           ))}
         </ul>
         {page ? null : (
-          <div className=" text-center">
-            <Link href={"/posts"}>[View More]</Link>
+          <div className="text-sm text-center hover:text-blue-500">
+            <Link href={"/posts"}>[View More ➤]</Link>
           </div>
         )}
       </section>
