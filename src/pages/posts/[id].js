@@ -1,13 +1,11 @@
-import Layout from "@/components/layout";
 import { getAllPostIds, getPostData } from "@/lib/posts";
 import Head from "next/head";
 import Date from "@/components/date";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import Image from "next/image";
 import {
-  dark,
   dracula,
-  prism,
 } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 export async function getStaticProps({ params }) {
