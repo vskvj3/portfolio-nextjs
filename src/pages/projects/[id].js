@@ -2,6 +2,7 @@ import Layout from "@/components/layout";
 import { getAllProjectIds, getProjectData } from "@/lib/projects";
 import Head from "next/head";
 import Date from "@/components/date";
+import ReactMarkdown from "react-markdown";
 
 export async function getStaticProps({ params }) {
   const projectData = await getProjectData(params.id);
