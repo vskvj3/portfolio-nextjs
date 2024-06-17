@@ -6,6 +6,7 @@ import remarkGfm from "remark-gfm";
 import Image from "next/image";
 import { FaGithub } from "react-icons/fa";
 import { FaPaperclip } from "react-icons/fa";
+import Link from "next/link";
 
 export async function getStaticProps({ params }) {
   const projectData = await getProjectData(params.id);
@@ -41,10 +42,10 @@ export default function Project({ projectData }) {
         <br />
         {/* tagsList  */}
         <div className="flex flex-wrap lg:text-sm text-xs">
-          {projectData.tags.split("+").map((tag) => (
-            <div key={tag} className="p-1 mr-1 mt-1 bg-[#353a57] rounded-md">
-              {tag}
-            </div>
+          {projectData.tags.map((tag) => (
+            <Link key={tag} href={`/search?tags=${encodeURIComponent(tag)}`}>
+              <div className="p-1 mr-1 mt-1 bg-dracula-chips hover:bg-dracula-chips/80 rounded-md">{tag}</div>
+            </Link>
           ))}
         </div>
         <br />

@@ -4,6 +4,7 @@ import Link from "next/link";
 
 export async function getStaticProps() {
   const allProjectsData = getSortedProjectsData();
+  console.log(allProjectsData);
   const page = true;
   return {
     props: {
@@ -29,7 +30,7 @@ export default function Projects({ allProjectsData, page }) {
                 <br />
                 <div className="flex flex-wrap">
                   {/* split tags by +, then show each tag inside a div */}
-                  {tags.split("+").map((tag) => (
+                  {tags.map((tag) => (
                     <div
                       key={tag}
                       className="lg:text-sm text-xs p-1 mr-1 mt-1 bg-dracula-chips rounded-md"

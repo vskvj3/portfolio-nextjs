@@ -4,9 +4,9 @@ import Date from "@/components/date";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import Image from "next/image";
-import {
-  dracula,
-} from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import Link from "next/link";
+
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
@@ -39,16 +39,17 @@ export default function Post({ postData }) {
         </div>
         <br />
         <div className="flex flex-wrap lg:text-sm text-xs">
-          {postData.tags.split("+").map((tag) => (
-            <div key={tag} className=" p-1 mr-1 mt-1 bg-[#353a57] rounded-md">
-              {tag}
-            </div>
+          {postData.tags.map((tag) => (
+            <Link key={tag} href={`/search?tags=${encodeURIComponent(tag)}`}>
+              <div className="p-1 mr-1 mt-1 bg-dracula-chips hover:bg-dracula-chips/80 rounded-md">
+                {tag}
+              </div>
+            </Link>
           ))}
         </div>
 
         <hr className="py-5 mt-10" />
-        <div 
-        className=" prose-sm lg:prose-base prose-ul:list-disc prose-blockquote:px-2 prose-blockquote:bg-[#282a36] prose-blockquote:border-l-8 prose-blockquote:border-l-[#44475a]  lg:prose-blockquote:px-5 prose-pre:px-0  prose-pre:text-base prose-pre:my-0 prose-pre:py-0 prose-img:mb-0.5">
+        <div className=" prose-sm lg:prose-base prose-ul:list-disc prose-blockquote:px-2 prose-blockquote:bg-[#282a36] prose-blockquote:border-l-8 prose-blockquote:border-l-[#44475a]  lg:prose-blockquote:px-5 prose-pre:px-0  prose-pre:text-base prose-pre:my-0 prose-pre:py-0 prose-img:mb-0.5">
           <ReactMarkdown
             components={{
               img: (props) => (

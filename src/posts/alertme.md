@@ -2,7 +2,7 @@
 title: 'AlertMe: Emergency Alert Application'
 date: '2020-01-02'
 github: 'https://github.com/vskvj3/alertMe_v2'
-tags: 'flutter+nodejs+MongoDB'
+tags: ['Flutter', 'NodeJS', 'MongoDB', 'test']
 ---
 
 client application of Emergency Alert System developed as a part of KTU Mini Project (CSD 334).
