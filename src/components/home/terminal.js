@@ -29,7 +29,7 @@ export default function Terminal(params) {
   return (
     <section className={close ? "hidden" : ""}>
       <div
-        className={`${" px-2 pb-2 bg-black/35 backdrop-blur-md rounded-md text-left text-white"} ${
+        className={`${" px-2 pb-10 bg-black/35 backdrop-blur-md rounded-md text-left text-white"} ${
           maximize
             ? "fixed z-[999] top-0 bottom-0 right-0 left-0 m-3 pb-10"
             : "z-50 w-1/2 min-w-[370px] max-w-[700px] m-auto"
