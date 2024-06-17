@@ -3,6 +3,7 @@ import { getAllProjectIds, getProjectData } from "@/lib/projects";
 import Head from "next/head";
 import Date from "@/components/date";
 import ReactMarkdown from "react-markdown";
+import Image from "next/image";
 
 export async function getStaticProps({ params }) {
   const projectData = await getProjectData(params.id);
@@ -44,7 +45,20 @@ export default function Project({ projectData }) {
 
         <hr className="py-5 mt-10" />
         <div className=" prose-sm lg:prose-base prose-ul:list-disc prose-blockquote:bg-slate-900 prose-blockquote:px-2 lg:prose-blockquote:px-5">
-          <ReactMarkdown>{projectData.contentMarkdown}</ReactMarkdown>
+          <ReactMarkdown
+            components={{
+              img: (props) => (
+                <Image
+                  src={props.src}
+                  alt={props.alt}
+                  width={1200}
+                  height={200}
+                />
+              ),
+            }}
+          >
+            {projectData.contentMarkdown}
+          </ReactMarkdown>
         </div>
       </div>
     </>
