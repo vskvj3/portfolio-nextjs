@@ -47,7 +47,8 @@ export default function Post({ postData }) {
         </div>
 
         <hr className="py-5 mt-10" />
-        <div className=" prose-sm lg:prose-base prose-ul:list-disc prose-blockquote:px-2 prose-blockquote:bg-[#282a36] prose-blockquote:border-l-8 prose-blockquote:border-l-[#44475a]  lg:prose-blockquote:px-5 prose-pre:px-0  prose-pre:text-base">
+        <div 
+        className=" prose-sm lg:prose-base prose-ul:list-disc prose-blockquote:px-2 prose-blockquote:bg-[#282a36] prose-blockquote:border-l-8 prose-blockquote:border-l-[#44475a]  lg:prose-blockquote:px-5 prose-pre:px-0  prose-pre:text-base prose-pre:my-0 prose-pre:py-0">
           <ReactMarkdown
             components={{
               img: (props) => (

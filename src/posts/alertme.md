@@ -27,10 +27,12 @@ client application of Emergency Alert System developed as a part of KTU Mini Pro
 > This is a block quote\
 > with mulitple lines
 
+- This is a python code example:
 ```python
 print("Python")
 ```
 
+- This is a c code example:
 ```c
 printf("This is c")
 ```
