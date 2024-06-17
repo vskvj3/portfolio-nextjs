@@ -24,3 +24,13 @@ client application of Emergency Alert System developed as a part of KTU Mini Pro
 - Node js
 - MongoDB
 - Firebase
+> This is a block quote\
+> with mulitple lines
+
+```python
+print("Python")
+```
+
+```c
+printf("This is c")
+```
