@@ -45,7 +45,7 @@ export default function Project({ projectData }) {
         </div>
 
         <hr className="py-5 mt-10" />
-        <div className=" prose-sm lg:prose-base prose-ul:list-disc prose-blockquote:bg-dracula-bg prose-blockquote:px-2 lg:prose-blockquote:px-5 prose-img:mb-0.5">
+        <div className=" prose-sm lg:prose-base prose-ul:list-disc prose-blockquote:bg-dracula-bg prose-blockquote:px-2 lg:prose-blockquote:px-5 prose-img:mb-0.5 prose-em:justify-center">
           <ReactMarkdown
           className="markdown-body"
             remarkPlugins={[remarkGfm]}
@@ -54,7 +54,7 @@ export default function Project({ projectData }) {
                 <Image
                   src={props.src}
                   alt={props.alt}
-                  width={500}
+                  width={700}
                   height={200}
                 />
               ),
