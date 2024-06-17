@@ -2,6 +2,7 @@ import Layout from "@/components/layout";
 import { getAllPostIds, getPostData } from "@/lib/posts";
 import Head from "next/head";
 import Date from "@/components/date";
+import ReactMarkdown from "react-markdown";
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
@@ -42,10 +43,9 @@ export default function Post({ postData }) {
         </div>
 
         <hr className="py-5 mt-10" />
-        <div
-          className=" prose-sm lg:prose-base prose-ul:list-disc prose-blockquote:bg-slate-900 prose-blockquote:px-2 lg:prose-blockquote:px-5"
-          dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
-        />
+        <div className=" prose-sm lg:prose-base prose-ul:list-disc prose-blockquote:bg-slate-900 prose-blockquote:px-2 lg:prose-blockquote:px-5">
+          <ReactMarkdown>{postData.contentMarkdown}</ReactMarkdown>
+        </div>
       </div>
     </>
   );

@@ -1,8 +1,6 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { remark } from "remark";
-import html from "remark-html";
 
 const postsDirectory = path.join(process.cwd(), "src/posts");
 
@@ -69,16 +67,14 @@ export async function getPostData(id) {
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents);
 
-  // Use remark to convert markdown into HTML string
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString();
+  // Raw markdown passed into slug page
+  const contentMarkdown = matterResult.content;
 
-  // Combine the data with the id and contentHtml
+  // Combine the data with the id and contentMarkdown
   return {
     id,
-    contentHtml,
+    contentMarkdown,
     ...matterResult.data,
   };
 }
+ 
