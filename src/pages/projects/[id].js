@@ -28,7 +28,7 @@ export default function Project({ projectData }) {
       <Head>
         <title>{projectData.title}</title>
       </Head>
-      <div className="bg-black w-1/2 min-w-[370px] max-w-[700px] h-auto mx-auto mb-5 p-[20px] rounded-md text-left text-white">
+      <div className="bg-black/35 backdrop-blur-md w-1/2 min-w-[370px] max-w-[700px] h-auto mx-auto mb-5 p-[20px] rounded-md text-left text-white">
         <h1 className=" text-2xl">{projectData.title}</h1>
         <br />
         <div className="text-sm">
@@ -44,7 +44,7 @@ export default function Project({ projectData }) {
         </div>
 
         <hr className="py-5 mt-10" />
-        <div className=" prose-sm lg:prose-base prose-ul:list-disc prose-blockquote:bg-slate-900 prose-blockquote:px-2 lg:prose-blockquote:px-5">
+        <div className=" prose-sm lg:prose-base prose-ul:list-disc prose-blockquote:bg-dracula-bg prose-blockquote:px-2 lg:prose-blockquote:px-5">
           <ReactMarkdown
             components={{
               img: (props) => (

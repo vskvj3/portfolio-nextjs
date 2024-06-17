@@ -12,6 +12,20 @@ module.exports = {
         sans: ["var(--font-inter)"],
         mono: ["var(--font-roboto-mono)"],
       },
+      colors: {
+        dracula: {
+          'background1': '#082f49',
+          'background2': '#020617',
+          'foreground': '#131920',
+          'text': '#b3bcd6',
+          'white': '#ffffff',
+          'red': '#ff5555',
+          'yellow': '#f1fa8c',
+          'green': '#50fa7b',
+          'gray': '#8492a6',
+          'gray-light': '#d3dce6',
+        },
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
