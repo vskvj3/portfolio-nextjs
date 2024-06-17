@@ -1,8 +1,6 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { remark } from "remark";
-import html from "remark-html";
 
 const projectsDirectory = path.join(process.cwd(), "src/projects");
 
@@ -63,14 +61,12 @@ export async function getProjectData(id) {
 
   const matterResult = matter(fileContents);
 
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString();
+  // Raw markdown passed into slug page
+  const contentMarkdown = matterResult.content;
 
   return {
     id,
-    contentHtml,
+    contentMarkdown,
     ...matterResult.data,
   };
 }
