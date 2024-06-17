@@ -6,12 +6,10 @@ export default function Navbar() {
     <nav className="bg-dracula-foreground/35 backdrop-blur-md w-1/2 min-w-[370px] max-w-[700px] px-5 mx-auto my-2 lg:my-5  py-5 rounded-md text-center text-dracula-t-white">
       <Link href={"/"}>
         <h1 className="text-2xl font-extrabold">
-          <span className="blinkFrame blink">[</span>
-          visakh
-          <span className="blinkFrame blink">]</span>
+          [visakh]
         </h1>
       </Link>
-
+{/* 
       <p className="">
         <span className="del6s mr-2.5">║</span>
         <span className="del5s mr-2.5">▒</span>
@@ -25,7 +23,7 @@ export default function Navbar() {
         <span className="del4s mr-2.5">░</span>
         <span className="del5s mr-2.5">▒</span>
         <span className="del6s">║</span>
-      </p>
+      </p> */}
       <h5 className="whoami text-sm font-bold">
         Software Engineer | Developer
       </h5>
