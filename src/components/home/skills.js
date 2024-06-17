@@ -19,7 +19,7 @@ import { SiCplusplus } from "react-icons/si";
 
 export default function Skills(params) {
   return (
-    <section className=" bg-black/35 backdrop-blur-md w-1/2 mt-2 lg:mt-5 min-w-[370px] max-w-[700px] h-auto mx-auto mb-2 lg:mb-5 p-[20px] rounded-md text-left text-white">
+    <section className=" bg-dracula-foreground/35 backdrop-blur-md w-1/2 mt-2 lg:mt-5 min-w-[370px] max-w-[700px] h-auto mx-auto mb-2 lg:mb-5 p-[20px] rounded-md text-left text-dracula-t-white">
       <div className=" text-center text-lg mb-5 font-bold">[My Tools]</div>
       <hr className="border-white mb-5" />
       <div>

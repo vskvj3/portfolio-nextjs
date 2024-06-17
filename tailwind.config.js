@@ -16,8 +16,8 @@ module.exports = {
         dracula: {
           'background1': '#082f49',
           'background2': '#020617',
-          'foreground': '#131920',
-          'text': '#b3bcd6',
+          'foreground': '#000000',
+          't-white': '#ffffff',
           'white': '#ffffff',
           'red': '#ff5555',
           'yellow': '#f1fa8c',

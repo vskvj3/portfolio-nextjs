@@ -31,7 +31,7 @@ export default function Post({ postData }) {
       <Head>
         <title>{postData.title}</title>
       </Head>
-      <div className="bg-black/35 backdrop-blur-md w-1/2 min-w-[370px] max-w-[700px] h-auto mx-auto mb-2 lg:mb-5 p-[20px] rounded-md text-left text-white">
+      <div className="bg-dracula-foreground/35 backdrop-blur-md w-1/2 min-w-[370px] max-w-[700px] h-auto mx-auto mb-2 lg:mb-5 p-[20px] rounded-md text-left text-dracula-t-white">
         <h1 className=" text-2xl">{postData.title}</h1>
         <br />
         <div className="text-sm">
@@ -48,7 +48,7 @@ export default function Post({ postData }) {
 
         <hr className="py-5 mt-10" />
         <div 
-        className=" prose-sm lg:prose-base prose-ul:list-disc prose-blockquote:px-2 prose-blockquote:bg-[#282a36] prose-blockquote:border-l-8 prose-blockquote:border-l-[#44475a]  lg:prose-blockquote:px-5 prose-pre:px-0  prose-pre:text-base prose-pre:my-0 prose-pre:py-0">
+        className=" prose-sm lg:prose-base prose-ul:list-disc prose-blockquote:px-2 prose-blockquote:bg-[#282a36] prose-blockquote:border-l-8 prose-blockquote:border-l-[#44475a]  lg:prose-blockquote:px-5 prose-pre:px-0  prose-pre:text-base prose-pre:my-0 prose-pre:py-0 prose-img:mb-0.5">
           <ReactMarkdown
             components={{
               img: (props) => (

@@ -23,9 +23,6 @@ tags: 'Blcokchain+IPFS+Solidity+Etherum+NodeJS'
 - Pinata (IPFS Gateway)
 
 ## Screenshots:
-![Home Page](/images/dposn/home_page.png "Home Page")
-*Home Page*
 
-```Python
-print("hello")
-```
+![Login Page](/images/dposn/login.png "Login Page") *Login Page*
+![Home Page](/images/dposn/home_page.png "Home Page") *Home Page* 
