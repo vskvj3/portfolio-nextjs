@@ -108,7 +108,7 @@ export default function Terminal(params) {
           </div>
           {/* input prompt  */}
           <div className="flex">
-            <div className="mr-3">
+            <div className="mr-2.5">
               <span className=" text-green-600">vskvj3@server:</span>
               <span className="text-blue-600">~</span>$
             </div>
