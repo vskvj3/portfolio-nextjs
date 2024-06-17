@@ -21,7 +21,7 @@ export default function Projects({ allProjectsData, page }) {
           <p className=" text-center pb-3 lg:text-lg">[Projects]</p>
           {allProjectsData.map(({ id, date, tags, title }) => (
             <Link key={id} href={`/projects/${encodeURIComponent(id)}`}>
-              <li className="bg-[#121420] hover:bg-[#212438] text-[#f8f8f2] h-auto p-2 lg:p-5 rounded-md mb-5">
+              <li className="bg-dracula-cards/10 hover:bg-dracula-cards/20 text-[#f8f8f2] h-auto p-2 lg:p-5 rounded-md mb-5">
                 <span className=" text-blue-500 text-md lg:text-lg">
                   {title}
                 </span>
@@ -32,7 +32,7 @@ export default function Projects({ allProjectsData, page }) {
                   {tags.split("+").map((tag) => (
                     <div
                       key={tag}
-                      className="lg:text-sm text-xs p-1 mr-1 mt-1 bg-[#353a57] rounded-md"
+                      className="lg:text-sm text-xs p-1 mr-1 mt-1 bg-dracula-chips rounded-md"
                     >
                       {tag}
                     </div>
