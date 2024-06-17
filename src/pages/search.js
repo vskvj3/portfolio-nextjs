@@ -27,7 +27,6 @@ const SearchPage = ({ initialResults }) => {
 
   //   useEffect(() => {
   //     if (tags) {
-  //       console.log(tags);
   //       const tagArray = tags.split(" ");
   //       const filteredResults = searchTags(tagArray);
   //       setResults(filteredResults);
@@ -68,9 +67,9 @@ const SearchPage = ({ initialResults }) => {
         <div>
           {results.projects.length > 0 ? (
             <ul>
-              <p className=" text-center pb-3 lg:text-md">[Posts]</p>
+              <p className=" text-center pb-3 lg:text-md">[Projects]</p>
               {results.projects.map(({ id, date, tags, title }) => (
-                <Link key={id} href={`/posts/${encodeURIComponent(id)}`}>
+                <Link key={id} href={`/projects/${encodeURIComponent(id)}`}>
                   <li className="bg-dracula-cards/10 hover:bg-dracula-cards/20 text-[#f8f8f2] h-auto p-2 lg:p-5 rounded-md mb-5">
                     <span className=" text-blue-500 text-md lg:text-lg">
                       {title}

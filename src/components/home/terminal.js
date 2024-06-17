@@ -15,7 +15,6 @@ export default function Terminal(params) {
   }, []);
 
   const handleEnter = (e) => {
-    console.log(e.target.value);
     const command = e.target.value;
     const previousOutputCopy = [...previousOutput];
     previousOutputCopy.push({

@@ -4,7 +4,6 @@ import Link from "next/link";
 
 export async function getStaticProps() {
   const allProjectsData = getSortedProjectsData();
-  console.log(allProjectsData);
   const page = true;
   return {
     props: {
