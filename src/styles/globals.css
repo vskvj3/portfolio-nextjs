@@ -22,6 +22,15 @@
   }
 }
 
+
+.tooltip {
+  @apply invisible absolute;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible z-50;
+}
+
 .markdown-body {
   table {
     border-collapse: collapse;

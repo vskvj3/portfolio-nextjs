@@ -2,11 +2,10 @@ import { getAllPostIds, getPostData } from "@/lib/posts";
 import Head from "next/head";
 import Date from "@/components/date";
 import ReactMarkdown from "react-markdown";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import Image from "next/image";
-import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import Link from "next/link";
 import remarkGfm from "remark-gfm";
+import CodeBlock from "@/components/posts/codeblock";
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
@@ -65,14 +64,7 @@ export default function Post({ postData }) {
               code({ node, inline, className, children, ...props }) {
                 const match = /language-(\w+)/.exec(className || "");
                 return !inline && match ? (
-                  <SyntaxHighlighter
-                    style={dracula}
-                    language={match[1]}
-                    PreTag="div"
-                    {...props}
-                  >
-                    {String(children).replace(/\n$/, "")}
-                  </SyntaxHighlighter>
+                  <CodeBlock node={node} inline={inline} className={className} children={children} match={match} {...props} />
                 ) : (
                   <code>{children}</code>
                 );
