@@ -39,6 +39,11 @@ export default function Navbar() {
           <FaTree size={20} />
         </Link>
       </div>
+      {/* <Link href={"/about"}>
+      <div className="my-2 py-2  bg-slate-600 hover:bg-slate-500 rounded-md w-auto">
+        About Me
+      </div>
+      </Link> */}
       <hr className="pt-5 mt-5" />
     </nav>
   );
