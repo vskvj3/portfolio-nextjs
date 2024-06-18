@@ -18,7 +18,7 @@ module.exports = {
           'background2': '#020617',
           'foreground': '#000000',
           'chips': '#353a57',
-          'cards': '#ffffff',
+          'cards': '#353a57',
           't-white': '#ffffff',
           'white': '#ffffff',
           'red': '#ff5555',

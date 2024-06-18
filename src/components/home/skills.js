@@ -25,52 +25,52 @@ export default function Skills(params) {
       <div>
         <div className=" text-center mb-3">[Web development]</div>
         <div className="grid grid-cols-2 lg:grid-cols-3 mb-5 text-center gap-3">
-          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
             React <FaReact />{" "}
           </div>
-          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
             Next.js <RiNextjsLine />{" "}
           </div>
-          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
             HTML <FaHtml5 />{" "}
           </div>
-          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
             CSS <FaCss3 />{" "}
           </div>
-          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
             Tailwind CSS <RiTailwindCssFill />{" "}
           </div>
-          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
             Node.js <FaNodeJs />{" "}
           </div>
-          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
             Express.js <SiExpress />{" "}
           </div>
-          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
             MongoDB <SiMongodb />{" "}
           </div>
-          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
             MySQL <GrMysql />{" "}
           </div>
         </div>
         <div className=" text-center mb-3">[Others]</div>
         <div className="grid grid-cols-2 lg:grid-cols-3 text-center gap-3">
-          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
             Flutter <SiFlutter />{" "}
           </div>
-          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
             Git <FaGit />{" "}
           </div>
-          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
             Linux <FaLinux />{" "}
           </div>
-          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
             Java <FaJava />{" "}
           </div>
-          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
             Python <FaPython />
           </div>
-          <div className="flex items-center justify-center gap-2 bg-slate-600 rounded-md">
+          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
             C/C++ <SiCplusplus />{" "}
           </div>
         </div>

@@ -54,7 +54,7 @@ export default function Terminal(params) {
           className={
             minimize
               ? "hidden"
-              : "font-bold p-2 bg-white/10 backdrop-blur-md h-full overflow-scroll"
+              : "font-bold p-2 bg-dracula-cards/30 backdrop-blur-md h-full overflow-scroll"
           }
         >
           {/* first command */}

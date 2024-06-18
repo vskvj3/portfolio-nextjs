@@ -21,7 +21,7 @@ export default function Projects({ allProjectsData, page }) {
           <p className=" text-center pb-3 lg:text-lg">[Projects]</p>
           {allProjectsData.map(({ id, date, tags, title }) => (
             <Link key={id} href={`/projects/${encodeURIComponent(id)}`}>
-              <li className="bg-dracula-cards/10 hover:bg-dracula-cards/20 text-[#f8f8f2] h-auto p-2 lg:p-5 rounded-md mb-5">
+              <li className="bg-dracula-cards/20 hover:bg-dracula-cards/30 text-[#f8f8f2] h-auto p-2 lg:p-5 rounded-md mb-5">
                 <span className=" text-blue-500 text-md lg:text-lg">
                   {title}
                 </span>

@@ -41,7 +41,7 @@ export default function Contact(params) {
             placeholder="Enter your name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full p-2 mt-1 border-none outline-none rounded-md bg-[#121420]"
+            className="w-full p-2 mt-1 border-none outline-none rounded-md bg-dracula-cards/30"
             required
           />
         </div>
@@ -56,7 +56,7 @@ export default function Contact(params) {
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-2 mt-1 border-none outline-none rounded-md bg-[#121420]"
+            className="w-full p-2 mt-1 border-none outline-none rounded-md bg-dracula-cards/30"
             required
           />
         </div>
@@ -70,7 +70,7 @@ export default function Contact(params) {
             placeholder="Enter your message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="w-full p-2 mt-1 border-none outline-none rounded-md bg-[#121420] h-24 resize-none"
+            className="w-full p-2 mt-1 border-none outline-none rounded-md bg-dracula-cards/30 h-24 resize-none"
             required
           ></textarea>
         </div>
@@ -78,7 +78,7 @@ export default function Contact(params) {
           {status.message}
         </p>
         <button
-          className="bg-green-500 hover:bg-green-700 text-black text-md rounded-md p-1 flex self-center items-center justify-center w-full"
+          className=" bg-dracula-green/70 hover:bg-dracula-green/50 text-black text-md rounded-md p-1 mt-2 flex self-center items-center justify-center w-full"
           type="submit"
           disabled={sending}
         >
