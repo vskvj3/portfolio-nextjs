@@ -30,11 +30,12 @@ export default function Posts({ allPostsData, page }) {
                 <div className="flex flex-wrap">
                   {/* split tags by +, then show each tag inside a div */}
                   {tags.map((tag) => (
-                    <Link key={tag} href={`/search?tag=${encodeURIComponent(id)}`}>
-                      <div className="lg:text-sm text-xs p-1 mr-1 mt-1 bg-[#353a57] rounded-md">
-                        {tag}
-                      </div>
-                    </Link>
+                    <div
+                      key={tag}
+                      className="lg:text-sm text-xs p-1 mr-1 mt-1 bg-dracula-chips rounded-md"
+                    >
+                      {tag}
+                    </div>
                   ))}
                 </div>
               </li>
