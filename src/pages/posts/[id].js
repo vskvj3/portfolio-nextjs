@@ -8,7 +8,6 @@ import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import Link from "next/link";
 import remarkGfm from "remark-gfm";
 
-
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
   return {
@@ -50,10 +49,10 @@ export default function Post({ postData }) {
         </div>
 
         <hr className="py-5 mt-10" />
-        <div className=" prose-sm lg:prose-base prose-ul:list-disc prose-blockquote:px-2 prose-blockquote:bg-[#282a36] prose-blockquote:border-l-8 prose-blockquote:border-l-[#44475a]  lg:prose-blockquote:px-5 prose-pre:px-0  prose-pre:text-base prose-pre:my-0 prose-pre:py-0 prose-img:mb-0.5">
-          <ReactMarkdown 
-          remarkPlugins={[remarkGfm]}
-          className="markdown-body"
+        <div className=" prose-sm lg:prose-base prose-ul:list-disc prose-blockquote:px-2 prose-blockquote:bg-dracula-chips/30 prose-blockquote:border-l-8 prose-blockquote:border-l-dracula-chips/80  lg:prose-blockquote:px-5 prose-pre:px-0  prose-pre:text-base prose-pre:my-0 prose-pre:py-0 prose-img:mb-0.5">
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            className="markdown-body"
             components={{
               img: (props) => (
                 <Image
