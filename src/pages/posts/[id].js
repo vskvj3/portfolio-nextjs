@@ -64,7 +64,7 @@ export default function Post({ postData }) {
               code({ node, inline, className, children, ...props }) {
                 const match = /language-(\w+)/.exec(className || "");
                 return !inline && match ? (
-                  <CodeBlock node={node} inline={inline} className={className} children={children} match={match} {...props} />
+                  <CodeBlock node={node} inline={inline} className={className} match={match} {...props} >{children} </CodeBlock>
                 ) : (
                   <code>{children}</code>
                 );
