@@ -16,6 +16,9 @@ export default function CodeBlock({ node, inline, className, children, match, ..
         <span class="tooltip right-5 text-sm rounded shadow-lg p-1 backdrop-blur-sm bg-dracula-chips/30">
           {copyStatus}
         </span>
+        <span class="right-5 text-xs absolute p-1 text-dracula-green">
+          {match[1]}
+        </span>
         <SyntaxHighlighter
           style={dracula}
           language={match[1]}
