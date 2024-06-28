@@ -22,6 +22,8 @@ This is a test blog post
 - This is a python code example:
 ```python
 print("Python")
+
+print("Line 2")
 ```
 
 - This is a c code example:

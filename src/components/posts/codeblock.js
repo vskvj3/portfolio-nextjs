@@ -1,12 +1,11 @@
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
-import { RiRadioButtonLine } from "react-icons/ri";
 import CopyToClipboard from "react-copy-to-clipboard";
 import { useState } from "react";
 
-export default function CodeBlock({ node, inline, className, children, match, ...props }) {
+export default function CodeBlock({ node, inline, className,  match, children, ...props }) {
   const [copyStatus, setCopyStatus] = useState("Click to Copy")
-
+  children = String(children[0]).replace(/\n/, " ")
   return (
     <CopyToClipboard
       text={children}
@@ -25,8 +24,7 @@ export default function CodeBlock({ node, inline, className, children, match, ..
           PreTag="div"
           {...props}
         >
-          {String(children).replace(/\n$/, "")}
-          <RiRadioButtonLine />
+          {children}
         </SyntaxHighlighter>
       </div>
     </CopyToClipboard>
