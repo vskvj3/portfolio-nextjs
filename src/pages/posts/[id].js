@@ -48,7 +48,7 @@ export default function Post({ postData }) {
         </div>
 
         <hr className="py-5 mt-10" />
-        <div className=" prose-sm lg:prose-base prose-ul:list-disc prose-blockquote:px-2 prose-blockquote:bg-dracula-chips/30 prose-blockquote:border-l-8 prose-blockquote:border-l-dracula-chips/80  lg:prose-blockquote:px-5 prose-pre:px-0  prose-pre:text-base prose-pre:my-0 prose-pre:py-0 prose-img:mb-0.5">
+        <div className=" prose-sm lg:prose-base prose-ul:list-disc prose-ol:list-decimal prose-ol:pl-10 prose-blockquote:px-2 prose-blockquote:bg-dracula-chips/30 prose-blockquote:border-l-8 prose-blockquote:border-l-dracula-chips/80  lg:prose-blockquote:px-5 prose-pre:px-0  prose-pre:text-base prose-pre:my-0 prose-pre:py-0 prose-img:mb-0.5">
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             className="markdown-body"

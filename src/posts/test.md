@@ -13,10 +13,14 @@ This is a test blog post
 
 ## Heading 1
 - Bullet point 1
+  - sub 1
+  - sub 2
 - bullet point 2
 
 ## Heading 2
 1. One
+   1. sub 1
+   2. sub 2
 2. Two
 
 - This is a python code example:
