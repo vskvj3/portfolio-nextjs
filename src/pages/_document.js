@@ -6,8 +6,7 @@ export default function Document() {
     <Html lang="en">
       <Head />
 
-      <body className="flex bg-gradient-to-br from-dracula-background1 to-dracula-background2 text-dracula-t-white min-h-[100vh]">
-        <SideBar />
+      <body className="bg-gradient-to-br from-dracula-background1 to-dracula-background2 text-dracula-t-white min-h-[100vh]">
           <Main />
         <NextScript />
       </body>

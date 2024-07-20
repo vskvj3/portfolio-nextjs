@@ -22,7 +22,7 @@ export async function getStaticProps() {
 
 export default function Home({ allPostsData, allProjectsData }) {
   return (
-    <div className="w-full">
+    <div className="w-full h-full">
       <Head>
         <title>{siteTitle}</title>
       </Head>

@@ -1,6 +1,7 @@
 import Layout from "@/components/layout";
 import "@/styles/globals.css";
 import { JetBrains_Mono } from "next/font/google";
+import SideBar from "@/components/sidebar";
 
 const inter = JetBrains_Mono({
   subsets: ["latin"],
