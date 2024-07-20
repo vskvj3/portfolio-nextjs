@@ -31,7 +31,7 @@ export default function Project({ projectData }) {
       <Head>
         <title>{projectData.title}</title>
       </Head>
-      <div className="bg-dracula-foreground/35 backdrop-blur-md w-1/2 min-w-[370px] max-w-[700px] h-auto mx-auto mb-5 p-[20px] rounded-md text-left text-dracula-t-white">
+      <div className="bg-dracula-foreground/35 backdrop-blur-md min-w-[370px] h-auto mx-10 max-w-[1000px] mb-5 p-[20px] rounded-md text-left text-dracula-t-white">
         {/* Title */}
         <h1 className=" text-2xl">{projectData.title}</h1>
         <br />

@@ -31,7 +31,7 @@ export default function Terminal(params) {
         className={`${" px-2 pb-2 bg-dracula-foreground/35 backdrop-blur-md rounded-md text-left text-dracula-t-white"} ${
           maximize
             ? "fixed z-[999] top-0 bottom-0 right-0 left-0 m-3 pb-10"
-            : "z-50 w-1/2 min-w-[370px] max-w-[700px] m-auto"
+            : "z-50 mx-10 min-w-[370px] m-auto"
         }`}
       >
         <div className="block h-8 cursor-move">

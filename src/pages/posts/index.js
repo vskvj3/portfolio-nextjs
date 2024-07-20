@@ -17,7 +17,7 @@ export async function getStaticProps() {
 export default function Posts({ allPostsData, page }) {
   return (
     <div>
-      <section className="bg-dracula-foreground/35 backdrop-blur-md w-1/2 min-w-[370px] max-w-[700px] h-auto mx-auto mb-2 lg:mb-5 p-[10px] lg:p-[20px] rounded-md text-left text-dracula-t-white">
+      <section className="bg-dracula-foreground/35 backdrop-blur-md min-w-[370px] h-auto mx-10 mb-2 lg:mb-5 p-[10px] lg:p-[20px] rounded-md text-left text-dracula-t-white">
         <ul>
           <p className=" text-center pb-3 lg:text-lg">[Posts]</p>
           {allPostsData.map(({ id, date, tags, title }) => (

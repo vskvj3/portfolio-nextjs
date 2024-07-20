@@ -26,7 +26,7 @@ export default function Contact(params) {
   };
 
   return (
-    <section className="bg-dracula-foreground/35 backdrop-blur-md text-dracula-t-white w-1/2 mt-2 lg:mt-5 min-w-[370px] max-w-[700px] h-auto mx-auto mb-2 lg:mb-5 p-[20px] rounded-md text-left ">
+    <section className="bg-dracula-foreground/35 backdrop-blur-md text-dracula-t-white mt-2 lg:mt-5 min-w-[370px] h-auto mx-10 mb-2 lg:mb-5 p-[20px] rounded-md text-left ">
       <div className=" text-center text-dracula-t-white">[Contact]</div>
       {/** create a form to collect data */}
       <form className="mt-5" onSubmit={handleSubmit}>

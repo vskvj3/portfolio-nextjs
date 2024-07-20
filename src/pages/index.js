@@ -7,6 +7,7 @@ import Posts from "./posts";
 import { getSortedPostsData } from "@/lib/posts";
 import { getSortedProjectsData } from "@/lib/projects";
 import Projects from "./projects";
+import SideBar from "@/components/sidebar";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData(3);
@@ -21,26 +22,21 @@ export async function getStaticProps() {
 
 export default function Home({ allPostsData, allProjectsData }) {
   return (
-    <>
+    <div className="w-full">
       <Head>
         <title>{siteTitle}</title>
       </Head>
-
       {/* section 1: Terminal */}
       <Terminal />
-
       {/* section 3: Skills */}
       <Skills />
-
       {/* section 2 */}
-      <Projects allProjectsData={allProjectsData} /> 
-
+      <Projects allProjectsData={allProjectsData} />
       {/* section 3 */}
       {/* list all posts as in /posts/index.js but dont import posts*/}
       <Posts allPostsData={allPostsData} />
-
       {/* section 4: Contact */}
       <Contact />
-    </>
+    </div>
   );
 }
