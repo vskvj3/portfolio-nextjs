@@ -28,11 +28,10 @@ export default function Terminal(params) {
   return (
     <section className={close ? "hidden" : ""}>
       <div
-        className={`${" px-2 pb-2 bg-dracula-foreground/35 backdrop-blur-md rounded-md text-left text-dracula-t-white"} ${
-          maximize
+        className={`${" px-2 pb-2 bg-dracula-foreground/35 backdrop-blur-md rounded-md text-left text-dracula-t-white"} ${maximize
             ? "fixed z-[999] top-0 bottom-0 right-0 left-0 m-3 pb-10"
             : "z-50 w-1/2 min-w-[370px] max-w-[700px] m-auto"
-        }`}
+          }`}
       >
         <div className="block h-8 cursor-move">
           <strong className=" cursor-auto">
@@ -67,13 +66,11 @@ export default function Terminal(params) {
             Hey there!
             <br />
             <br />
-            I&apos;m Visakh, a computer science student from RIT Kottayam. I
-            have a lifelong passion for computers and technology. I mostly love
-            building things and occasionally breaking them. 😉
+            I&apos;m Visakh, a computer science graduate from RIT Kottayam. I have a lifelong passion for computers and technology. I mostly love building things and occasionally breaking them. 😉
             <br />
             <br />
-            I&apos;m particularly interested in web development, computer
-            networks, and cyber security.
+            I'm currently working as a software engineer at UST.
+            
           </div>
           {/* second command */}
           <div className="hidden lg:block">
