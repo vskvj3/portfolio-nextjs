@@ -69,7 +69,7 @@ export default function Terminal(params) {
             I&apos;m Visakh, a computer science graduate from RIT Kottayam. I have a lifelong passion for computers and technology. I mostly love building things and occasionally breaking them. 😉
             <br />
             <br />
-            I'm currently working as a software engineer at UST.
+            I&apos;m currently working as a software engineer at UST.
             
           </div>
           {/* second command */}
