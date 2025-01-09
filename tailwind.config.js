@@ -26,6 +26,10 @@ module.exports = {
           'green': '#50fa7b',
           'gray': '#8492a6',
           'gray-light': '#d3dce6',
+          'pink': "#ff79c6",
+          'cyan': "#8be9fd",
+          'orange': "#ffb86c",
+          'purple': "#bd93f9",
         },
       },
       backgroundImage: {

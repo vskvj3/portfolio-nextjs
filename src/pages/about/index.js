@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaTree } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTree, FaCircle } from "react-icons/fa";
 
 export default function About() {
   return (
@@ -37,21 +37,46 @@ export default function About() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="h-screen flex justify-center items-center bg-dracula-background">
-        <div className="backdrop-blur-lg bg-white/30 text-center w-full sm:w-2/3 max-w-xl p-8 rounded-lg">
-          <h2 className="text-3xl font-semibold mb-4">Experience</h2>
-          <ul>
-            <li className="mb-3">
-              <h3 className="font-semibold">Software Engineer</h3>
-              <p>Company XYZ - 2023 - Present</p>
-              <p>Worked on building scalable web applications.</p>
-            </li>
-            <li>
-              <h3 className="font-semibold">Frontend Developer</h3>
-              <p>Company ABC - 2021 - 2023</p>
-              <p>Developed UI for various web platforms using React and Tailwind.</p>
-            </li>
-          </ul>
+      <section
+        id="experience"
+        className="h-screen flex flex-col justify-center items-center bg-dracula-background text-dracula-white px-4"
+      >          
+      <h2 className="text-3xl font-semibold mb-8">Experience</h2>
+
+        <div className="md:w-2/3">
+
+
+          <div className="relative mt-5 text-left">
+
+            <div className="flex items-center relative">
+              <div className="hidden md:block w-20">
+                <div className="font-bold italic">2024</div>
+                <div className="md:flex space-x-1 text-xs">
+                  <div>Aug</div>
+                  <div>-</div>
+                  <div>pres</div>
+                </div>
+              </div>
+
+              <div className="border-r-2 border-dracula-white absolute h-full left-1 md:left-20 top-2 z-10">
+
+                <FaCircle className="-top-1 -ml-2 absolute" />
+                <FaCircle className="bottom-0 -ml-2 absolute" />
+              </div>
+
+              <div className="ml-10">
+                <div className="font-bold">UST</div>
+                <div className="italic md:mb-4">Developer I - Software Engineering</div>
+                <div className="mb-4 mt-2 md:hidden">
+                  <div className="font-bold">2020</div>
+                  <div className="text-xs">Agosto - Hoy</div>
+                </div>
+                <div className="mb-10">Fusce auctor gravida dui, ut tristique nisi aliquam quis. Maecenas id ligula ac dui mollis tempor. Sed vitae ex eros. Proin nisl felis, consectetur sed elit sed, vestibulum ultrices nibh.</div>
+              </div>
+            </div>
+
+
+          </div>
         </div>
       </section>
 
