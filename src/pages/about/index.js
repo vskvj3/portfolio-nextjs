@@ -4,12 +4,17 @@ export default function About() {
   return (
     <div className="min-h-screen bg-dracula-background text-dracula-foreground">
       <p className="text-red-500">!Under Constructio!n</p>
-      <header className="py-6 px-4 text-center text-3xl font-semibold sticky top-0 bg-dracula-background z-10">
-        <h1>My Portfolio</h1>
-      </header>
 
       {/* About Section */}
-      <section id="about" className="h-screen flex justify-center items-center bg-dracula-background">
+      <section id="about" className="h-screen flex justify-center items-center bg-dracula-background gap-2">
+        <div className="backdrop-blur-lg bg-white/30 text-center w-full sm:w-2/3 max-w-xl p-8 rounded-lg">
+          <h2 className="text-3xl font-semibold mb-4">About Me</h2>
+          <p>
+            I am a passionate developer with experience in building modern,
+            responsive web applications. I focus on creating seamless user
+            experiences and writing clean, maintainable code.
+          </p>
+        </div>
         <div className="backdrop-blur-lg bg-white/30 text-center w-full sm:w-2/3 max-w-xl p-8 rounded-lg">
           <h2 className="text-3xl font-semibold mb-4">About Me</h2>
           <p>
