@@ -12,9 +12,9 @@ export default function About() {
       >
         <div className="backdrop-blur-lg bg-black/30 text-white w-full h-full flex flex-col justify-center items-center p-4 rounded-lg">
           <h1 className="text-5xl sm:text-6xl font-bold mb-4">Hello There!</h1>
-          <h2 className="text-3xl sm:text-4xl font-semibold mb-4">I'm Visakh Vijay</h2>
-          <p className="text-xl sm:text-2xl mb-6">I'm a software engineer from India</p>
-          <p className="text-lg sm:text-xl mb-6">Let's get in touch!</p>
+          <h2 className="text-3xl sm:text-4xl font-semibold mb-4">I&apos;m Visakh Vijay</h2>
+          <p className="text-xl sm:text-2xl mb-6">I&apos;m a software engineer from India</p>
+          <p className="text-lg sm:text-xl mb-6">Let&apos;s get in touch!</p>
 
           {/* Social Icons */}
           <div className="flex gap-6 text-3xl">
