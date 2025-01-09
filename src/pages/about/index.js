@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin, FaTree, FaCircle } from "react-icons/fa";
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-dracula-background text-dracula-foreground">
+    <div >
       <p className="text-red-500">!Under Constructio!n</p>
 
       {/* About Section */}
