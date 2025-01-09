@@ -6,22 +6,33 @@ export default function About() {
       <p className="text-red-500">!Under Constructio!n</p>
 
       {/* About Section */}
-      <section id="about" className="h-screen flex justify-center items-center bg-dracula-background gap-2">
-        <div className="backdrop-blur-lg bg-white/30 text-center w-full sm:w-2/3 max-w-xl p-8 rounded-lg">
-          <h2 className="text-3xl font-semibold mb-4">About Me</h2>
-          <p>
-            I am a passionate developer with experience in building modern,
-            responsive web applications. I focus on creating seamless user
-            experiences and writing clean, maintainable code.
-          </p>
-        </div>
-        <div className="backdrop-blur-lg bg-white/30 text-center w-full sm:w-2/3 max-w-xl p-8 rounded-lg">
-          <h2 className="text-3xl font-semibold mb-4">About Me</h2>
-          <p>
-            I am a passionate developer with experience in building modern,
-            responsive web applications. I focus on creating seamless user
-            experiences and writing clean, maintainable code.
-          </p>
+      <section
+        id="about"
+        className="h-screen flex flex-col justify-center items-center bg-dracula-background text-center gap-6 px-4"
+      >
+        <div className="backdrop-blur-lg bg-black/30 text-white w-full h-full flex flex-col justify-center items-center p-4 rounded-lg">
+          <h1 className="text-5xl sm:text-6xl font-bold mb-4">Hello There!</h1>
+          <h2 className="text-3xl sm:text-4xl font-semibold mb-4">I'm Visakh Vijay</h2>
+          <p className="text-xl sm:text-2xl mb-6">I'm a software engineer from India</p>
+          <p className="text-lg sm:text-xl mb-6">Let's get in touch!</p>
+
+          {/* Social Icons */}
+          <div className="flex gap-6 text-3xl">
+            <a
+              href="https://github.com/visakhvijayo"
+              className="text-dracula-cyan hover:text-dracula-pink"
+              aria-label="Github"
+            >
+              <FaGithub />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/visakhvijayo/"
+              className="text-dracula-cyan hover:text-dracula-pink"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin />
+            </a>
+          </div>
         </div>
       </section>
 
