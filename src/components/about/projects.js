@@ -1,4 +1,3 @@
-
 import { FaGithub } from "react-icons/fa";
 
 export default function AboutProjects({ allProjectsData }) {
@@ -10,47 +9,54 @@ export default function AboutProjects({ allProjectsData }) {
 
             <div className="overflow-x-auto">
                 {/* Project Cards Container with horizontal scrolling */}
-                <div className="flex space-x-6 snap-x sm:snap-none">
+                <div className="flex justify-center space-x-6 snap-x sm:snap-none">
                     {allProjectsData?.map(({ id, date, tags, title }) => (
-                        <div key={id} className="min-w-[300px] sm:w-[320px] w-full bg-dracula-background p-6 border border-dracula-pink rounded-lg backdrop-blur-lg hover:shadow-xl transition duration-300">
-                            <h3 className="text-xl font-semibold text-dracula-t-white mb-3">{title}</h3>
-                            <p className="text-dracula-t-white mb-4">A brief description of what the project is about and what problem it solves.</p>
+                        <div
+                            key={id}
+                            className="min-w-[300px] sm:w-[320px] w-full bg-dracula-background p-6 border border-dracula-pink rounded-lg backdrop-blur-lg hover:shadow-xl transition duration-300 flex flex-col justify-between h-[400px]"  // Added flex-col and h-[400px]
+                        >
+                            <div>
+                                <h3 className="text-xl font-semibold text-dracula-t-white mb-3">{title}</h3>
+                                <p className="text-dracula-t-white mb-4">A brief description of what the project is about and what problem it solves.</p>
 
-                            {/* Technologies */}
-                            <div className="flex flex-wrap gap-2 mb-4">
-                                <span className="text-sm bg-dracula-cyan text-dracula-background px-3 py-1 rounded-full">Node.js</span>
-                                <span className="text-sm bg-dracula-cyan text-dracula-background px-3 py-1 rounded-full">MongoDB</span>
-                                {tags.map((tag) => (
-                                    <span
-                                        key={tag}
-                                        className="text-sm bg-dracula-cyan text-dracula-background px-3 py-1 rounded-full"
-
-                                    >
-                                        {tag}
-                                    </span>
-                                ))}
+                                {/* Technologies */}
+                                <div className="flex flex-wrap gap-2 mb-4">
+                                    <span className="text-sm bg-dracula-cyan text-dracula-background px-3 py-1 rounded-full">Node.js</span>
+                                    <span className="text-sm bg-dracula-cyan text-dracula-background px-3 py-1 rounded-full">MongoDB</span>
+                                    {tags.map((tag) => (
+                                        <span
+                                            key={tag}
+                                            className="text-sm bg-dracula-cyan text-dracula-background px-3 py-1 rounded-full"
+                                        >
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
                             </div>
 
+                            {/* Buttons Container (always at the bottom of the card) */}
+                            <div className="mt-auto flex justify-between mx-auto w-full">
+                                {/* GitHub Link */}
+                                <a
+                                    href="https://github.com/yourusername/project1"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-dracula-pink inline-block hover:underline"
+                                >
+                                    <FaGithub className="inline mr-2" />
+                                    View Code
+                                </a>
 
-                            {/* GitHub Link */}
-                            <a
-                                href="https://github.com/yourusername/project1"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-dracula-pink inline-block mb-4 hover:underline"
-                            >
-                                <FaGithub className="inline mr-2" />
-                                View Code
-                            </a>
-
-                            {/* View More Button */}
-                            <a
-                                href="#"
-                                className="bg-dracula-pink text-dracula-background py-2 px-4 rounded-md hover:bg-dracula-cyan transition duration-300"
-                            >
-                                View More
-                            </a>
-                        </div>))}
+                                {/* View More Button */}
+                                <a
+                                    href="#"
+                                    className="bg-dracula-pink text-dracula-background py-2 px-4 rounded-md hover:bg-dracula-cyan transition duration-300"
+                                >
+                                    View More
+                                </a>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>
