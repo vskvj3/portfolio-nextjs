@@ -126,7 +126,7 @@ export default function About() {
       </section>
 
       {/* Scroll Navigation */}
-      <footer className="text-center py-5 mb-10 sticky bottom-0 bg-dracula-chips rounded-lg backdrop-blur-sm m-4 z-100">
+      {/* <footer className="text-center py-5 mb-10 sticky bottom-0 bg-dracula-chips rounded-lg backdrop-blur-sm m-4 z-100">
         <div className="space-x-4 px-3">
           <a href="#about" className="text-dracula-pink hover:text-dracula-green">About</a>
           <a href="#experience" className="text-dracula-pink hover:text-dracula-green">Experience</a>
@@ -134,7 +134,7 @@ export default function About() {
           <a href="#education" className="text-dracula-pink hover:text-dracula-green">Education</a>
           <a href="#contact" className="text-dracula-pink hover:text-dracula-green">Contact</a>
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 }
