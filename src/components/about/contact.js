@@ -45,7 +45,7 @@ export default function AboutContact() {
       </div>
 
       {/* Right Side: Contact Form */}
-      <div className="w-full sm:w-1/2 p-8 bg-dracula-foreground/35 backdrop-blur-md rounded-lg">
+      <div className="w-full sm:w-1/3 p-8 bg-dracula-foreground/35 backdrop-blur-md rounded-lg">
         <form onSubmit={handleSubmit} className="flex flex-col space-y-6">
           <div>
             <label htmlFor="name" className="block text-sm text-dracula-t-white">Name</label>
