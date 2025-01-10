@@ -26,7 +26,7 @@ export default function AboutContact() {
   };
 
   return (
-    <section className="h-screen flex flex-col sm:flex-row justify-center items-center bg-dracula-background">
+    <section className="h-screen flex flex-col sm:flex-row justify-center items-center bg-dracula-background p-4 sm:p-8">
       {/* Left Side: Call to Action */}
       <div className="w-full sm:w-1/2 p-8 text-center text-dracula-t-white">
         <h2 className="text-4xl font-semibold mb-4">Let&apos;s get in touch!</h2>
@@ -45,7 +45,7 @@ export default function AboutContact() {
       </div>
 
       {/* Right Side: Contact Form */}
-      <div className="w-full sm:w-1/3 p-8 bg-dracula-foreground/35 backdrop-blur-md rounded-lg">
+      <div className="w-full sm:w-1/3 p-8 bg-dracula-foreground/35 backdrop-blur-md rounded-lg sm:ml-8 mt-6 mb-6 sm:mt-0">
         <form onSubmit={handleSubmit} className="flex flex-col space-y-6">
           <div>
             <label htmlFor="name" className="block text-sm text-dracula-t-white">Name</label>
