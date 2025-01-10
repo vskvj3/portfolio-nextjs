@@ -1,7 +1,17 @@
 import { FaGithub, FaLinkedin, FaTree, FaCircle } from "react-icons/fa";
+import { getSortedProjectsData } from "@/lib/projects";
 import Projects from "@/components/about/projects";
 
-export default function About() {
+export async function getStaticProps() {
+  const allProjectsData = getSortedProjectsData(3);
+  return {
+    props: {
+      allProjectsData
+    },
+  };
+}
+
+export default function About({ allProjectsData }) {
   return (
     <div className=''>
       <p className="text-red-500">!Under Constructio!n</p>
@@ -79,7 +89,7 @@ export default function About() {
       </section>
 
       {/* Projects Section */}
-      <Projects/>
+      <Projects allProjectsData={allProjectsData}/>
 
       {/* Education Section */}
       <section id="education" className="h-screen flex justify-center items-center bg-dracula-background">
