@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function AboutContact() {
   const [name, setName] = useState("");
@@ -30,16 +31,15 @@ export default function AboutContact() {
       <div className="w-full sm:w-1/2 p-8 text-center text-dracula-t-white">
         <h2 className="text-4xl font-semibold mb-4">Let&apos;s get in touch!</h2>
         <p className="text-lg mb-6">
-          Feel free to reach out to me for any questions or collaboration
-          opportunities. I&apos;d love to hear from you!
+          Feel free to reach out to me. I&apos;d love to hear from you!
         </p>
         <div className="flex justify-center">
           {/* Social Icons can be added here */}
           <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="mr-4 hover:text-dracula-pink">
-            LinkedIn
+            <FaLinkedin />
           </a>
           <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="mr-4 hover:text-dracula-pink">
-            GitHub
+            <FaGithub />
           </a>
         </div>
       </div>
