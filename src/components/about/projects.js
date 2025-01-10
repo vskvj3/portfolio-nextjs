@@ -12,7 +12,7 @@ export default function Projects({ allProjectsData }) {
                 {/* Project Cards Container with horizontal scrolling */}
                 <div className="flex space-x-6 snap-x sm:snap-none">
                     {allProjectsData?.map(({ id, date, tags, title }) => (
-                        <div className="min-w-[300px] sm:w-[320px] w-full bg-dracula-background p-6 border border-dracula-pink rounded-lg backdrop-blur-lg hover:shadow-xl transition duration-300">
+                        <div key={id} className="min-w-[300px] sm:w-[320px] w-full bg-dracula-background p-6 border border-dracula-pink rounded-lg backdrop-blur-lg hover:shadow-xl transition duration-300">
                             <h3 className="text-xl font-semibold text-dracula-t-white mb-3">{title}</h3>
                             <p className="text-dracula-t-white mb-4">A brief description of what the project is about and what problem it solves.</p>
 
