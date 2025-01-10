@@ -2,6 +2,7 @@ import { FaGithub, FaLinkedin, FaTree, FaCircle } from "react-icons/fa";
 import { getSortedProjectsData } from "@/lib/projects";
 import Projects from "@/components/about/projects";
 import AboutEducation from "@/components/about/education";
+import AboutContact from "@/components/about/contact";
 
 export async function getStaticProps() {
   const allProjectsData = getSortedProjectsData(3);
@@ -96,22 +97,7 @@ export default function About({ allProjectsData }) {
       <AboutEducation/>
 
       {/* Contact Section */}
-      <section id="contact" className="h-screen flex justify-center items-center bg-dracula-background">
-        <div className="backdrop-blur-lg bg-white/30 text-center w-full sm:w-2/3 max-w-xl p-8 rounded-lg">
-          <h2 className="text-3xl font-semibold mb-4">Contact</h2>
-          <div className="flex justify-center gap-6">
-            <a href="https://github.com" className="text-3xl text-dracula-cyan hover:text-dracula-pink">
-              <FaGithub />
-            </a>
-            <a href="https://linkedin.com" className="text-3xl text-dracula-cyan hover:text-dracula-pink">
-              <FaLinkedin />
-            </a>
-            <a href="https://twitter.com" className="text-3xl text-dracula-cyan hover:text-dracula-pink">
-              <FaTree />
-            </a>
-          </div>
-        </div>
-      </section>
+      <AboutContact/>
 
       {/* Scroll Navigation */}
       {/* <footer className="text-center py-5 mb-10 sticky bottom-0 bg-dracula-chips rounded-lg backdrop-blur-sm m-4 z-100">
