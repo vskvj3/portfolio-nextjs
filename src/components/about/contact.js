@@ -28,10 +28,10 @@ export default function AboutContact() {
     <section className="h-screen flex flex-col sm:flex-row justify-center items-center bg-dracula-background">
       {/* Left Side: Call to Action */}
       <div className="w-full sm:w-1/2 p-8 text-center text-dracula-t-white">
-        <h2 className="text-4xl font-semibold mb-4">Let's get in touch!</h2>
+        <h2 className="text-4xl font-semibold mb-4">Let&apos;s get in touch!</h2>
         <p className="text-lg mb-6">
           Feel free to reach out to me for any questions or collaboration
-          opportunities. I'd love to hear from you!
+          opportunities. I&apos;d love to hear from you!
         </p>
         <div className="flex justify-center">
           {/* Social Icons can be added here */}
