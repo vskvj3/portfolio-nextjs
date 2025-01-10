@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaTree, FaCircle } from "react-icons/fa";
+import { FaCircle, FaRegDotCircle } from "react-icons/fa";
 
 export default function AboutExperience({ allProjectsData }) {
     return (
@@ -26,7 +26,7 @@ export default function AboutExperience({ allProjectsData }) {
               <div className="border-r-2 border-dracula-white absolute h-full left-1 md:left-20 top-2 z-10">
 
                 <FaCircle className="-top-1 -ml-2 absolute" />
-                <FaCircle className="bottom-0 -ml-2 absolute" />
+                <FaRegDotCircle className="bottom-0 -ml-2 -mb-4 absolute" />
               </div>
 
               <div className="ml-10">
