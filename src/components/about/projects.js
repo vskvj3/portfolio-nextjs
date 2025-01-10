@@ -9,11 +9,11 @@ export default function AboutProjects({ allProjectsData }) {
 
             <div className="overflow-x-auto">
                 {/* Project Cards Container with horizontal scrolling */}
-                <div className="flex justify-center space-x-6 snap-x sm:snap-none">
+                <div className="flex justify-start sm:justify-center space-x-6 snap-x sm:snap-none">
                     {allProjectsData?.map(({ id, date, tags, title }) => (
                         <div
                             key={id}
-                            className="min-w-[300px] sm:w-[320px] w-full bg-dracula-background p-6 border border-dracula-pink rounded-lg backdrop-blur-lg hover:shadow-xl transition duration-300 flex flex-col justify-between h-[400px]"  // Added flex-col and h-[400px]
+                            className="min-w-[320px] sm:w-[320px] w-full bg-dracula-background p-6 border border-dracula-pink rounded-lg backdrop-blur-lg hover:shadow-xl transition duration-300 flex flex-col justify-between h-[400px]"  // Added flex-col and h-[400px]
                         >
                             <div>
                                 <h3 className="text-xl font-semibold text-dracula-t-white mb-3">{title}</h3>
