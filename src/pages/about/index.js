@@ -1,4 +1,5 @@
 import { FaGithub, FaLinkedin, FaTree, FaCircle } from "react-icons/fa";
+import Projects from "@/components/about/projects";
 
 export default function About() {
   return (
@@ -37,8 +38,8 @@ export default function About() {
       <section
         id="experience"
         className="h-screen flex flex-col justify-center items-center bg-dracula-background text-dracula-white px-4"
-      >          
-      <h2 className="text-3xl font-semibold mb-8">Experience</h2>
+      >
+        <h2 className="text-3xl font-semibold mb-8">Experience</h2>
 
         <div className="md:w-2/3">
 
@@ -78,21 +79,7 @@ export default function About() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="h-screen flex justify-center items-center bg-dracula-background">
-        <div className="backdrop-blur-lg bg-white/30 text-center w-full sm:w-2/3 max-w-xl p-8 rounded-lg">
-          <h2 className="text-3xl font-semibold mb-4">Projects</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="p-4 border rounded-lg">
-              <h3 className="font-semibold">Project 1</h3>
-              <p>Description of the project goes here.</p>
-            </div>
-            <div className="p-4 border rounded-lg">
-              <h3 className="font-semibold">Project 2</h3>
-              <p>Description of the project goes here.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Projects/>
 
       {/* Education Section */}
       <section id="education" className="h-screen flex justify-center items-center bg-dracula-background">
