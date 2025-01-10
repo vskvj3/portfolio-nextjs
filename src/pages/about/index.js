@@ -2,15 +2,12 @@ import { FaGithub, FaLinkedin, FaTree, FaCircle } from "react-icons/fa";
 
 export default function About() {
   return (
-    <div >
+    <div className=''>
       <p className="text-red-500">!Under Constructio!n</p>
 
       {/* About Section */}
-      <section
-        id="about"
-        className="h-screen flex flex-col justify-center items-center bg-dracula-background text-center gap-6 px-4"
-      >
-        <div className="backdrop-blur-lg bg-black/30 text-white w-full h-full flex flex-col justify-center items-center p-4 rounded-lg">
+      <section className="flex flex-rowmx-auto justify-center backdrop-blur-md mt-2 lg:mt-5 h-auto mb-2 lg:mb-5 p-[20px] text-dracula-t-white">
+        <div className="backdrop-blur-lg  text-white w-full h-full flex flex-col justify-center items-center p-4 rounded-lg">
           <h1 className="text-5xl sm:text-6xl font-bold mb-4">Hello There!</h1>
           <h2 className="text-3xl sm:text-4xl font-semibold mb-4">I&apos;m Visakh Vijay</h2>
           <p className="text-xl sm:text-2xl mb-6">I&apos;m a software engineer from India</p>
@@ -129,7 +126,7 @@ export default function About() {
       </section>
 
       {/* Scroll Navigation */}
-      <footer className="text-center py-6 sticky bottom-0 bg-dracula-background z-10">
+      {/* <footer className="text-center py-6 sticky bottom-0 bg-dracula-background z-10">
         <div className="space-x-4">
           <a href="#about" className="text-dracula-pink hover:text-dracula-green">About</a>
           <a href="#experience" className="text-dracula-pink hover:text-dracula-green">Experience</a>
@@ -137,7 +134,7 @@ export default function About() {
           <a href="#education" className="text-dracula-pink hover:text-dracula-green">Education</a>
           <a href="#contact" className="text-dracula-pink hover:text-dracula-green">Contact</a>
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 }
