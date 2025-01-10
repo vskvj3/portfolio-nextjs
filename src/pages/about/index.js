@@ -1,6 +1,6 @@
 import { FaGithub, FaLinkedin, FaTree, FaCircle } from "react-icons/fa";
 import { getSortedProjectsData } from "@/lib/projects";
-import Projects from "@/components/about/projects";
+import AboutProjects from "@/components/about/projects";
 import AboutEducation from "@/components/about/education";
 import AboutContact from "@/components/about/contact";
 
@@ -91,7 +91,7 @@ export default function About({ allProjectsData }) {
       </section>
 
       {/* Projects Section */}
-      <Projects allProjectsData={allProjectsData}/>
+      <AboutProjects allProjectsData={allProjectsData}/>
 
       {/* Education Section */}
       <AboutEducation/>

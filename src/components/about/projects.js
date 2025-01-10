@@ -1,7 +1,7 @@
 
 import { FaGithub } from "react-icons/fa";
 
-export default function Projects({ allProjectsData }) {
+export default function AboutProjects({ allProjectsData }) {
     return (
         <section id="projects" className="h-screen bg-dracula-background px-4 py-10">
             <div className="text-center mb-12">
