@@ -6,7 +6,7 @@ export default function About() {
       <p className="text-red-500">!Under Constructio!n</p>
 
       {/* About Section */}
-      <section className="flex flex-rowmx-auto justify-center backdrop-blur-md mt-2 lg:mt-5 h-auto mb-2 lg:mb-5 p-[20px] text-dracula-t-white">
+      <section className="flex flex-col mx-auto justify-center backdrop-blur-md mt-2 lg:mt-5 h-screen mb-2 lg:mb-5 p-[20px] text-dracula-t-white">
         <div className="backdrop-blur-lg  text-white w-full h-full flex flex-col justify-center items-center p-4 rounded-lg">
           <h1 className="text-5xl sm:text-6xl font-bold mb-4">Hello There!</h1>
           <h2 className="text-3xl sm:text-4xl font-semibold mb-4">I&apos;m Visakh Vijay</h2>
