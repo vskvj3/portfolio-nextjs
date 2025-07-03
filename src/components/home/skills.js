@@ -15,6 +15,13 @@ import { FaPython } from "react-icons/fa";
 import { FaJava } from "react-icons/fa";
 import { SiCplusplus } from "react-icons/si";
 
+import { DiSpark } from "react-icons/di";
+import { SiDatabricks } from "react-icons/si";
+import { SiApachekafka } from "react-icons/si";
+import { TbBrandGoogleBigQuery } from "react-icons/tb";
+import { VscAzure } from "react-icons/vsc";
+import { FaMicrosoft } from "react-icons/fa";
+
 
 
 export default function Skills(params) {
@@ -23,6 +30,29 @@ export default function Skills(params) {
       <div className=" text-center text-lg mb-5 font-bold">[My Tools]</div>
       <hr className="border-white mb-5" />
       <div>
+        <div className=" text-center mb-3">[Data]</div>
+        <div className="grid grid-cols-2 lg:grid-cols-3 mb-5 text-center gap-3">
+          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
+            Pyspark <DiSpark />{" "}
+          </div>
+          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
+            Databricks <SiDatabricks />{" "}
+          </div>
+          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
+            Kafka <SiApachekafka />{" "}
+          </div>
+          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
+            BigQuery <TbBrandGoogleBigQuery />{" "}
+          </div>
+          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
+            Azure SQL <VscAzure />{" "}
+          </div>
+          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
+            Microsoft Fabric <FaMicrosoft />{" "}
+          </div>
+          
+        </div>
+
         <div className=" text-center mb-3">[Web development]</div>
         <div className="grid grid-cols-2 lg:grid-cols-3 mb-5 text-center gap-3">
           <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
@@ -53,6 +83,7 @@ export default function Skills(params) {
             MySQL <GrMysql />{" "}
           </div>
         </div>
+
         <div className=" text-center mb-3">[Others]</div>
         <div className="grid grid-cols-2 lg:grid-cols-3 text-center gap-3">
           <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
