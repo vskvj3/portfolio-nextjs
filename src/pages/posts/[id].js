@@ -5,7 +5,6 @@ import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 import Link from "next/link";
 import remarkGfm from "remark-gfm";
-import CodeBlock from "@/components/posts/codeblock";
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
@@ -64,7 +63,7 @@ export default function Post({ postData }) {
               code({ node, inline, className, children, ...props }) {
                 const match = /language-(\w+)/.exec(className || "");
                 return !inline && match ? (
-                  <CodeBlock node={node} inline={inline} className={className} match={match} {...props} >{children} </CodeBlock>
+                  < >{children} </>
                 ) : (
                   <code>{children}</code>
                 );
