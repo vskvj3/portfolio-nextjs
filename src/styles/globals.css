@@ -26,6 +26,15 @@ body {
   font-feature-settings: 'liga' 1, 'calt' 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #0f172a; /* Dark slate background */
+  color: #e2e8f0; /* Light text color */
+  min-height: 100vh;
+}
+
+/* Ensure consistent background for all elements */
+#__next {
+  background-color: #0f172a;
+  min-height: 100vh;
 }
 
 @keyframes gradient-animation {

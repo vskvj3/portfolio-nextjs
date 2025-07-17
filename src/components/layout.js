@@ -17,7 +17,7 @@ export default function Layout({ children, home }) {
   const shouldHideNavbar = fullScreenPages.includes(router.pathname);
 
   return (
-    <div className="">
+    <div className="bg-slate-900 text-white min-h-screen">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -28,7 +28,7 @@ export default function Layout({ children, home }) {
         <title>{siteTitle}</title>
       </Head>
       <header>{!shouldHideNavbar && <Navbar />}</header>
-      <main>{children}</main>
+      <main className="bg-slate-900">{children}</main>
       {!shouldHideNavbar && <Footer />}
     </div>
   );
