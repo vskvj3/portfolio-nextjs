@@ -21,7 +21,7 @@ I'm currently working as a software engineer at UST.
   const handleCommand = (command) => {
     const trimmedCommand = command.trim().toLowerCase();
     let response = '';
-    
+
     switch (trimmedCommand) {
       case 'help':
         response = `
@@ -64,7 +64,7 @@ Redirecting to about page...
       default:
         response = `bash: ${trimmedCommand}: command not found`;
     }
-    
+
     setCommandHistory(prev => [...prev, { command, response }]);
     setCurrentCommand('');
   };
@@ -109,11 +109,11 @@ Redirecting to about page...
         terminalInputRef.current.focus();
       }
     };
-    
+
     if (showPrompt) {
       handleResize();
     }
-    
+
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [showPrompt]);
@@ -140,7 +140,7 @@ Redirecting to about page...
 
   return (
     <section id="terminal" className="min-h-screen flex items-center justify-center pt-20 md:pt-0 px-4 md:px-8">
-      <div 
+      <div
         ref={terminalRef}
         onClick={handleTerminalClick}
         className="w-full max-w-4xl mx-auto bg-black/60 backdrop-blur-xl rounded-lg shadow-2xl shadow-cyan-500/10 border border-cyan-400/20 overflow-hidden cursor-text"
@@ -151,9 +151,9 @@ Redirecting to about page...
             <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
             <div className="w-3 h-3 rounded-full bg-green-500"></div>
           </div>
-          <p className="flex-grow text-center text-sm text-gray-400 font-mono">/home/alexdoe — zsh</p>
+          <p className="flex-grow text-center text-sm text-gray-400 font-mono">/home/visakh — zsh</p>
         </div>
-        <div 
+        <div
           ref={terminalContentRef}
           className="p-6 font-mono text-sm text-gray-200 h-[500px] overflow-y-auto"
         >
@@ -162,7 +162,7 @@ Redirecting to about page...
             <p className="ml-2 text-green-400">whoami</p>
           </div>
           <pre className="whitespace-pre-wrap mt-2 text-gray-300">{typedText}</pre>
-          
+
           {/* Command history */}
           {commandHistory.map((item, index) => (
             <div key={index} className="mt-4">
@@ -173,7 +173,7 @@ Redirecting to about page...
               <pre className="whitespace-pre-wrap mt-2 text-gray-300">{item.response}</pre>
             </div>
           ))}
-          
+
           {/* Current input prompt */}
           {showPrompt && (
             <div className="flex items-center mt-4">
@@ -186,7 +186,7 @@ Redirecting to about page...
                 onKeyDown={handleKeyPress}
                 className="ml-2 bg-transparent outline-none border-none text-green-400 placeholder-green-400/50 w-full font-mono"
                 placeholder="Type 'help' for available commands..."
-                style={{ 
+                style={{
                   caretColor: '#4ade80',
                   fontSize: 'inherit',
                   fontFamily: 'inherit'

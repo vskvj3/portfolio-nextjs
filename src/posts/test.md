@@ -3,6 +3,7 @@ title: 'Test post functionality'
 date: '2020-01-02'
 github: 'https://github.com/vskvj3/alertMe_v2'
 tags: ['Flutter', 'NodeJS', 'MongoDB', 'test']
+description: 'This is a test blog post'
 ---
 
 This is a test blog post

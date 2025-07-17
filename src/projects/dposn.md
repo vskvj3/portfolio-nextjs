@@ -4,6 +4,7 @@ date: '2020-01-02'
 github: 'https://github.com/vskvj3/DPOSN'
 url: 'https://dposn.vercel.app'
 tags: ['Blockchain', 'IPFS', 'Solidity', 'Etherum' ,'NodeJS', 'test']
+description: 'A Decentralized Online Social Network built with Ethereum and IPFS'
 ---
 
  A Decentralized Online Social Network built with Ethereum and IPFS

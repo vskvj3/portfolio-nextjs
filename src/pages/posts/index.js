@@ -2,6 +2,7 @@ import Image from "next/image";
 import { getSortedPostsData } from "@/lib/posts";
 import Link from "next/link";
 import Layout from "@/components/layout";
+import { ExternalLink } from "lucide-react";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -17,53 +18,71 @@ export async function getStaticProps() {
 export default function Posts({ allPostsData, page }) {
   return (
     <section id="blogs" className="py-20">
-            <div className="container mx-auto px-6">
-                <h2 className="text-3xl font-bold text-center text-cyan-300 mb-12 font-mono tracking-wider">[ BLOGS ]</h2>
-                <div className="space-y-8">
-                    {allPostsData.map(({ id, date, tags, title }) => (
-                        <div key={title} className="bg-black/50 backdrop-blur-lg p-6 rounded-lg border border-cyan-400/20 hover:border-cyan-400/70 transition-all duration-300 flex flex-col md:flex-row items-center">
-                            <div className="flex-grow">
-                                <h3 className="text-xl font-bold text-cyan-300 mb-2">{title}</h3>
-                                <p className="text-gray-400">"description"</p>
-                            </div>
-                            <p className="text-gray-500 font-mono text-sm mt-4 md:mt-0 md:ml-6 flex-shrink-0">{date}</p>
-                        </div>
-                    ))}
+      <div className="container mx-auto px-6">
+        <h2 className="text-3xl font-bold text-center text-cyan-300 mb-12 font-mono tracking-wider">[ BLOGS ]</h2>
+        <div className="space-y-8">
+          {allPostsData.map(({ id, date, tags, title, description, link, github }) => (
+            <div key={id} className="bg-black/50 backdrop-blur-lg p-6 rounded-lg border border-cyan-400/20 hover:border-cyan-400/70 transition-all duration-300">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                <div className="flex-grow">
+                  {link ? (
+                    <a 
+                      href={link} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="group"
+                    >
+                      <h3 className="text-xl font-bold text-cyan-300 mb-2 group-hover:text-cyan-200 transition-colors flex items-center">
+                        {title}
+                        <ExternalLink size={16} className="ml-2 opacity-70" />
+                      </h3>
+                    </a>
+                  ) : (
+                    <h3 className="text-xl font-bold text-cyan-300 mb-2">{title}</h3>
+                  )}
+                  <p className="text-gray-400 mb-4">{description}</p>
+                  
+                  {/* Tags */}
+                  {tags && tags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {tags.map((tag) => (
+                        <Link key={tag} href={`/search?tags=${encodeURIComponent(tag)}`}>
+                          <span className="text-xs bg-cyan-900/50 text-cyan-300 px-2 py-1 rounded hover:bg-cyan-900/70 transition-colors cursor-pointer">
+                            {tag}
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
+                
+                <div className="flex items-center space-x-4 mt-4 md:mt-0 md:ml-6">
+                  <p className="text-gray-500 font-mono text-sm flex-shrink-0">{date}</p>
+                  {github && (
+                    <a
+                      href={github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-cyan-300 transition-colors"
+                      title="View on GitHub"
+                    >
+                      <ExternalLink size={16} />
+                    </a>
+                  )}
+                </div>
+              </div>
             </div>
-        </section>
-    // <div>
-    //   <section className="bg-dracula-foreground/35 backdrop-blur-md w-1/2 min-w-[370px] max-w-[700px] h-auto mx-auto mb-2 lg:mb-5 p-[10px] lg:p-[20px] rounded-md text-left text-dracula-t-white">
-    //     <ul>
-    //       <p className=" text-center pb-3 lg:text-lg">[Posts]</p>
-    //       {allPostsData.map(({ id, date, tags, title }) => (
-    //         <Link key={id} href={`/posts/${encodeURIComponent(id)}`}>
-    //           <li className="bg-dracula-cards/20 hover:bg-dracula-cards/30 text-[#f8f8f2] h-auto p-2 lg:p-5 rounded-md mb-5">
-    //             <span className=" text-blue-500 text-md lg:text-lg">
-    //               {title}
-    //             </span>
-    //             <br />
-    //             <div className="flex flex-wrap">
-    //               {/* split tags by +, then show each tag inside a div */}
-    //               {tags.map((tag) => (
-    //                 <div
-    //                   key={tag}
-    //                   className="lg:text-sm text-xs p-1 mr-1 mt-1 bg-dracula-chips rounded-md"
-    //                 >
-    //                   {tag}
-    //                 </div>
-    //               ))}
-    //             </div>
-    //           </li>
-    //         </Link>
-    //       ))}
-    //     </ul>
-    //     {page ? null : (
-    //       <div className="text-sm text-center hover:text-blue-500">
-    //         <Link href={"/posts"}>[View More ➤]</Link>
-    //       </div>
-    //     )}
-    //   </section>
-    // </div>
+          ))}
+        </div>
+        
+        {!page && (
+          <div className="text-center mt-8">
+            <Link href="/posts" className="text-cyan-300 hover:text-cyan-200 transition-colors">
+              [View More ➤]
+            </Link>
+          </div>
+        )}
+      </div>
+    </section>
   );
 }
