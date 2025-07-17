@@ -8,6 +8,10 @@
   scrollbar-color: var(--foreground-rgb) var(--background-start-rgb);
 }
 
+html, body {
+  font-family: 'JetBrains Mono', monospace;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -22,115 +26,14 @@
   }
 }
 
-
-.tooltip {
-  @apply invisible absolute;
+@keyframes gradient-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-.has-tooltip:hover .tooltip {
-  @apply visible z-50;
-}
-
-.markdown-body {
-  table {
-    border-collapse: collapse;
-  }
-
-  th,
-  td {
-    padding: 6px 13px;
-    border: 1px solid #b3bcd6;
-  }
-}
-
-.blink {
-  animation: blink 2s linear infinite;
-}
-
-/* blinking animation */
-.del6s {
-  animation: blink 2s linear infinite;
-  animation-delay: 2s;
-  letter-spacing: 0px;
-}
-
-.del5s {
-  animation: blink 2s linear infinite;
-  animation-delay: 1.6s;
-  letter-spacing: 0px;
-}
-
-.del4s {
-  animation: blink 2s linear infinite;
-  animation-delay: 1.2s;
-  letter-spacing: 0px;
-}
-
-.del3s {
-  animation: blink 2s linear infinite;
-  animation-delay: 0.8s;
-  letter-spacing: 0px;
-}
-
-.del2s {
-  animation: blink 2s linear infinite;
-  animation-delay: 0.4s;
-  letter-spacing: 0px;
-}
-
-.del1s {
-  animation: blink 2s linear infinite;
-  animation-delay: 0s;
-  letter-spacing: 0px;
-}
-
-.del0s {
-  animation: blink 2s ease-out infinite;
-}
-
-@keyframes blink {
-  50% {
-    color: black;
-  }
-}
-
-.resizable {
-  overflow: scroll;
-  resize: both;
-}
-
-.spinner_8XMC {
-  animation: spinner_0zVw 2s infinite;
-}
-.spinner_WWWR {
-  animation: spinner_Aojx 2s infinite;
-}
-.spinner_LvYV {
-  transform-origin: center;
-  animation: spinner_xygp 0.75s linear infinite;
-}
-@keyframes spinner_0zVw {
-  0% {
-    animation-timing-function: cubic-bezier(0.36, 0.62, 0.43, 0.99);
-    cx: 5px;
-  }
-  50% {
-    animation-timing-function: cubic-bezier(0.79, 0, 0.58, 0.57);
-    cx: 8px;
-  }
-}
-@keyframes spinner_Aojx {
-  0% {
-    animation-timing-function: cubic-bezier(0.36, 0.62, 0.43, 0.99);
-    cx: 19px;
-  }
-  50% {
-    animation-timing-function: cubic-bezier(0.79, 0, 0.58, 0.57);
-    cx: 16px;
-  }
-}
-@keyframes spinner_xygp {
-  100% {
-    transform: rotate(360deg);
-  }
+.animated-gradient {
+  background: linear-gradient(-45deg, #000000, #0a192f, #001f3f, #0c1445);
+  background-size: 400% 400%;
+  animation: gradient-animation 25s ease infinite;
 }

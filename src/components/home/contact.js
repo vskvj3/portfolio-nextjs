@@ -4,121 +4,85 @@ import { useState } from "react";
 
 export default function Contact(params) {
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [sending, setSending] = useState(false);
-  const [status, setStatus] = useState({ message: "", error: false });
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+    const [sending, setSending] = useState(false);
+    const [status, setStatus] = useState({ message: "", error: false });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setSending(true);
-    try {
-      await axios.post("/api/contact", { name, email, message });
-      setName("");
-      setEmail("");
-      setMessage("");
-      setSending(false);
-      setStatus({ message: "Message sent!", error: false });
-    } catch (error) {
-      setSending(false);
-      setStatus({ message: "Error sending message!", error: true });
-    }
-  };
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      setSending(true);
+      setStatus({ message: "", error: false });
+      try {
+        await axios.post("/api/contact", { name, email, message });
+        setName("");
+        setEmail("");
+        setMessage("");
+        setSending(false);
+        setStatus({ message: "Message sent successfully!", error: false });
+      } catch (error) {
+        console.error("Contact form error:", error);
+        setSending(false);
+        setStatus({ message: "Error sending message. Please try again.", error: true });
+      }
+    };
 
-  return (
-    <section className="bg-dracula-foreground/35 backdrop-blur-md text-dracula-t-white w-1/2 mt-2 lg:mt-5 min-w-[370px] max-w-[700px] h-auto mx-auto mb-2 lg:mb-5 p-[20px] rounded-md text-left ">
-      <div className=" text-center text-dracula-t-white">[Contact]</div>
-      {/** create a form to collect data */}
-      <form className="mt-5" onSubmit={handleSubmit}>
-        <div className="mb-5">
-          <label htmlFor="name" className="block">
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Enter your name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="w-full p-2 mt-1 border-none outline-none rounded-md bg-dracula-cards/30"
-            required
-          />
+    return (
+      <section id="contact" className="py-20">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center text-cyan-300 mb-12 font-mono tracking-wider">[ CONTACT ]</h2>
+          <div className="max-w-2xl mx-auto">
+            <form onSubmit={handleSubmit} className="bg-black/50 backdrop-blur-lg p-8 rounded-lg border border-cyan-400/20 space-y-6">
+              <div>
+                <label htmlFor="name" className="block text-gray-400 mb-2">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full p-3 bg-gray-900/50 border border-cyan-400/30 rounded-md text-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-gray-400 mb-2">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full p-3 bg-gray-900/50 border border-cyan-400/30 rounded-md text-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-gray-400 mb-2">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  className="w-full p-3 bg-gray-900/50 border border-cyan-400/30 rounded-md text-gray-200 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
+                  required
+                ></textarea>
+              </div>
+              <div className="flex items-center justify-between">
+                <p className={`text-sm ${status.error ? "text-red-400" : "text-green-400"}`}>
+                  {status.message}
+                </p>
+                <button
+                  type="submit"
+                  disabled={sending}
+                  className="px-6 py-2 bg-cyan-500/20 border border-cyan-500 text-cyan-300 rounded-md hover:bg-cyan-500/40 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center"
+                >
+                  {sending ? 'Sending...' : 'Send Message'}
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-        <div className="mb-5">
-          <label htmlFor="email" className="block">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-2 mt-1 border-none outline-none rounded-md bg-dracula-cards/30"
-            required
-          />
-        </div>
-        <div className="">
-          <label htmlFor="message" className="block">
-            Message
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            placeholder="Enter your message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            className="w-full p-2 mt-1 border-none outline-none rounded-md bg-dracula-cards/30 h-24 resize-none"
-            required
-          ></textarea>
-        </div>
-        <p className={status.error ? " text-red-500" : "text-green-500"}>
-          {status.message}
-        </p>
-        <button
-          className=" bg-dracula-green/70 hover:bg-dracula-green/50 text-black text-md rounded-md p-1 mt-2 flex self-center items-center justify-center w-full"
-          type="submit"
-          disabled={sending}
-        >
-          {sending ? (
-            <>
-              <p>Sending...</p>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                className="loading-spinner"
-              >
-                <defs>
-                  <filter id="spinner-gF01">
-                    <feGaussianBlur
-                      in="SourceGraphic"
-                      stdDeviation="1"
-                      result="y"
-                    />
-                    <feColorMatrix
-                      in="y"
-                      mode="matrix"
-                      values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 18 -7"
-                      result="z"
-                    />
-                    <feBlend in="SourceGraphic" in2="z" />
-                  </filter>
-                </defs>
-                <g className="spinner_LvYV" filter="url(#spinner-gF01)">
-                  <circle className="spinner_8XMC" cx="5" cy="12" r="4" />
-                  <circle className="spinner_WWWR" cx="19" cy="12" r="4" />
-                </g>
-              </svg>
-            </>
-          ) : (
-            <p>Send</p>
-          )}
-        </button>
-      </form>
-    </section>
-  );
+      </section>
+    );
 }

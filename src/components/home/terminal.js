@@ -1,126 +1,78 @@
-import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
+import React, { useState, useEffect, useRef } from 'react';
+import { ChevronsRight, Mail, Linkedin, Github } from 'lucide-react';
 
 export default function Terminal(params) {
-  const inputElement = useRef(null);
-  const [previousOutput, setPreviousOutput] = useState([]);
-  const [close, setClose] = useState(false);
-  const [minimize, setMinimize] = useState(false);
-  const [maximize, setMaximize] = useState(false);
+  const [typedText, setTypedText] = useState('');
+  const [showPrompt, setShowPrompt] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const terminalInputRef = useRef(null);
 
+  const whoamiText = `
+> Alex Doe
+> 
+> Software Engineer & Creative Technologist
+> 
+> ------------------------------------------
+> 
+> I build immersive digital experiences and robust backend systems.
+> My passion lies at the intersection of art, technology, and human-computer interaction.
+> Inspired by cyberpunk aesthetics and the early internet.
+> 
+> Fusing minimalist design with complex functionality to create software
+> that is both beautiful and useful.
+> 
+> Ready to build the future.
+  `;
+
+  // Typing effect for the terminal
   useEffect(() => {
-    if (inputElement.current) {
-      inputElement.current.focus();
+    let i = 0;
+    if (whoamiText) {
+      const typingInterval = setInterval(() => {
+        if (i < whoamiText.length) {
+          setTypedText((prev) => prev + whoamiText.charAt(i));
+          i++;
+        } else {
+          clearInterval(typingInterval);
+          setShowPrompt(true);
+          if (terminalInputRef.current) {
+            terminalInputRef.current.focus();
+          }
+        }
+      }, 20);
+      return () => clearInterval(typingInterval);
     }
-  }, []);
-
-  const handleEnter = (e) => {
-    const command = e.target.value;
-    const previousOutputCopy = [...previousOutput];
-    previousOutputCopy.push({
-      command: command,
-      output: "Command not found",
-    });
-    setPreviousOutput(previousOutputCopy);
-    e.target.value = "";
-  };
+  }, [whoamiText]);
 
   return (
-    <section className={close ? "hidden" : ""}>
-      <div
-        className={`${" px-2 pb-2 bg-dracula-foreground/35 backdrop-blur-md rounded-md text-left text-dracula-t-white"} ${maximize
-            ? "fixed z-[999] top-0 bottom-0 right-0 left-0 m-3 pb-10"
-            : "z-50 w-1/2 min-w-[370px] max-w-[700px] m-auto"
-          }`}
-      >
-        <div className="block h-8 cursor-move">
-          <strong className=" cursor-auto">
-            <div
-              className=" h-3.5 w-3.5 bg-dracula-red hover:bg-dracula-red/40 rounded-full inline-block mt-2 mr-1"
-              onClick={() => setClose(true)}
-            ></div>
-            <div
-              className=" h-3.5 w-3.5 bg-dracula-yellow hover:bg-dracula-yellow/40 rounded-full inline-block mt-2 mr-1"
-              onClick={() => setMinimize(!minimize)}
-            ></div>
-            <div
-              className=" h-3.5 w-3.5 bg-dracula-green hover:bg-dracula-green/40 rounded-full inline-block mt-2 mr-1"
-              onClick={() => setMaximize(!maximize)}
-            ></div>
-          </strong>
+    <section id="terminal" className="min-h-screen flex items-center justify-center pt-20 md:pt-0">
+      <div className="w-full max-w-4xl mx-auto bg-black/60 backdrop-blur-xl rounded-lg shadow-2xl shadow-cyan-500/10 border border-cyan-400/20 overflow-hidden">
+        <div className="bg-gray-800/50 flex items-center p-3 border-b border-cyan-400/20">
+          <div className="flex space-x-2">
+            <div className="w-3 h-3 rounded-full bg-red-500"></div>
+            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+            <div className="w-3 h-3 rounded-full bg-green-500"></div>
+          </div>
+          <p className="flex-grow text-center text-sm text-gray-400 font-mono">/home/alexdoe — zsh</p>
         </div>
-        <div
-          className={
-            minimize
-              ? "hidden"
-              : "font-bold p-2 bg-dracula-cards/30 backdrop-blur-md h-full overflow-scroll"
-          }
-        >
-          {/* first command */}
-          <div className="">
-            <span className=" text-green-600">vskvj3@server:</span>
-            <span className="text-blue-600">~</span>$ whoami
+        <div className="p-6 font-mono text-sm text-gray-200 h-[500px] overflow-y-auto">
+          <div className="flex items-center">
+            <ChevronsRight className="w-4 h-4 text-cyan-400" />
+            <p className="ml-2 text-green-400">whoami</p>
           </div>
-          {/* whoami output */}
-          <div>
-            Hey there!
-            <br />
-            <br />
-            I&apos;m Visakh, a computer science graduate from RIT Kottayam. I have a lifelong passion for computers and technology. I mostly love building things and occasionally breaking them. 😉
-            <br />
-            <br />
-            I&apos;m currently working as a software engineer at UST.
-            
-          </div>
-          {/* second command */}
-          <div className="hidden lg:block">
-            <span className=" text-green-600">vskvj3@server:</span>
-            <span className="text-blue-600">~</span>$ ls
-          </div>
-          {/* ls output */}
-          <div className="hidden lg:block">
-            <ul className=" prose-li:text-blue-600 prose-li:underline">
-              <li>
-                <Link href={"/projects"}>projects/</Link>
-              </li>
-              <li>
-                <Link href={"/posts"}>posts/</Link>
-              </li>
-              <li>resume.pdf</li>
-              <li>contact.txt</li>
-              <li>about.txt</li>
-            </ul>
-          </div>
-          {/* previous output */}
-          <div>
-            {previousOutput.map((output, index) => (
-              <div key={index}>
-                <span className=" text-green-600">vskvj3@server:</span>
-                <span className="text-blue-600">~</span>$ {output.command}
-                <br />
-                {output.output}
-              </div>
-            ))}
-          </div>
-          {/* input prompt  */}
-          <div className="flex">
-            <div className="mr-2.5">
-              <span className=" text-green-600">vskvj3@server:</span>
-              <span className="text-blue-600">~</span>$
+          <pre className="whitespace-pre-wrap mt-2 text-gray-300">{typedText}</pre>
+          {showPrompt && (
+            <div className="flex items-center mt-4">
+              <ChevronsRight className="w-4 h-4 text-cyan-400" />
+              <input
+                ref={terminalInputRef}
+                type="text"
+                className="ml-2 bg-transparent border-none text-green-400 focus:ring-0 w-full"
+                placeholder=""
+                onKeyDown={(e) => e.preventDefault()}
+              />
             </div>
-            <input
-              autoFocus
-              type="text"
-              maxLength={15}
-              className="border-none w-full outline-none bg-transparent text-dracula-t-white"
-              ref={inputElement}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  handleEnter(e);
-                }
-              }}
-            />
-          </div>
+          )}
         </div>
       </div>
     </section>

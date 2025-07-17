@@ -26,84 +26,15 @@ import { FaMicrosoft } from "react-icons/fa";
 
 export default function Skills(params) {
   return (
-    <section className=" bg-dracula-foreground/35 backdrop-blur-md w-1/2 mt-2 lg:mt-5 min-w-[370px] max-w-[700px] h-auto mx-auto mb-2 lg:mb-5 p-[20px] rounded-md text-left text-dracula-t-white">
-      <div className=" text-center text-lg mb-5 font-bold">[My Tools]</div>
-      <hr className="border-white mb-5" />
-      <div>
-        <div className=" text-center mb-3">[Data]</div>
-        <div className="grid grid-cols-2 lg:grid-cols-3 mb-5 text-center gap-3">
-          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
-            Pyspark <DiSpark />{" "}
-          </div>
-          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
-            Databricks <SiDatabricks />{" "}
-          </div>
-          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
-            Kafka <SiApachekafka />{" "}
-          </div>
-          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
-            BigQuery <TbBrandGoogleBigQuery />{" "}
-          </div>
-          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
-            Azure SQL <VscAzure />{" "}
-          </div>
-          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
-            Microsoft Fabric <FaMicrosoft />{" "}
-          </div>
-          
-        </div>
-
-        <div className=" text-center mb-3">[Web development]</div>
-        <div className="grid grid-cols-2 lg:grid-cols-3 mb-5 text-center gap-3">
-          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
-            React <FaReact />{" "}
-          </div>
-          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
-            Next.js <RiNextjsLine />{" "}
-          </div>
-          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
-            HTML <FaHtml5 />{" "}
-          </div>
-          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
-            CSS <FaCss3 />{" "}
-          </div>
-          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
-            Tailwind CSS <RiTailwindCssFill />{" "}
-          </div>
-          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
-            Node.js <FaNodeJs />{" "}
-          </div>
-          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
-            Express.js <SiExpress />{" "}
-          </div>
-          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
-            MongoDB <SiMongodb />{" "}
-          </div>
-          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
-            MySQL <GrMysql />{" "}
-          </div>
-        </div>
-
-        <div className=" text-center mb-3">[Others]</div>
-        <div className="grid grid-cols-2 lg:grid-cols-3 text-center gap-3">
-          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
-            Flutter <SiFlutter />{" "}
-          </div>
-          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
-            Git <FaGit />{" "}
-          </div>
-          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
-            Linux <FaLinux />{" "}
-          </div>
-          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
-            Java <FaJava />{" "}
-          </div>
-          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
-            Python <FaPython />
-          </div>
-          <div className="flex items-center justify-center gap-2 bg-dracula-chips/30 hover:bg-dracula-chips/60 rounded-md">
-            C/C++ <SiCplusplus />{" "}
-          </div>
+        <section id="skills" className="py-20">
+      <div className="container mx-auto px-6">
+        <h2 className="text-3xl font-bold text-center text-cyan-300 mb-12 font-mono tracking-wider">[ SKILLS ]</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          {['JavaScript (ES6+)', 'TypeScript', 'React', 'Next.js', 'Node.js', 'Python', 'Tailwind CSS', 'Figma', 'PostgreSQL', 'Docker', 'AWS', 'Git & GitHub'].map(skill => (
+            <div key={skill} className="bg-gray-800/40 backdrop-blur-md p-6 rounded-lg border border-cyan-400/20 text-center hover:border-cyan-400/70 hover:bg-gray-800/60 transition-all duration-300">
+              <p className="text-gray-200 font-semibold">{skill}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
