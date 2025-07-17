@@ -31,7 +31,7 @@ export default function Project({ projectData }) {
         <title>{projectData.title}</title>
       </Head>
       
-      <div className="min-h-screen bg-slate-900 text-white">
+      <div className="min-h-screen">
         {/* Background Pattern */}
         <div className="absolute top-0 left-0 w-full h-full bg-cover bg-center animated-gradient"></div>
         <div className="absolute top-0 left-0 w-full h-full" style={{backgroundImage: "url('https://www.transparenttextures.com/patterns/cubes.png')", opacity: '0.03'}}></div>

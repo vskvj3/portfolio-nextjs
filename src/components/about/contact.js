@@ -26,7 +26,7 @@ export default function AboutContact() {
   };
 
   return (
-    <section className="h-screen flex flex-col sm:flex-row justify-center items-center bg-dracula-background p-4 sm:p-8">
+    <section className="h-screen flex flex-col sm:flex-row justify-center items-center p-4 sm:p-8">
       {/* Left Side: Call to Action */}
       <div className="w-full sm:w-1/2 p-8 text-center text-dracula-t-white">
         <h2 className="text-4xl font-semibold mb-4">Let&apos;s get in touch!</h2>

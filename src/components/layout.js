@@ -28,7 +28,7 @@ export default function Layout({ children, home }) {
         <title>{siteTitle}</title>
       </Head>
       <header>{!shouldHideNavbar && <Navbar />}</header>
-      <main className="bg-slate-900">{children}</main>
+      <main>{children}</main>
       {!shouldHideNavbar && <Footer />}
     </div>
   );

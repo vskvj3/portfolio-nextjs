@@ -40,13 +40,13 @@ export default function Home({ allPostsData, allProjectsData }) {
       <div 
         className="pointer-events-none fixed inset-0 z-30 transition duration-300"
         style={{
-          background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(29, 78, 216, 0.15), transparent 80%)`,
+          background: `radial-gradient(300px at ${mousePosition.x}px ${mousePosition.y}px, rgba(29, 78, 216, 0.15), transparent 80%)`,
         }}
       ></div>
 
       {/* Background Pattern */}
-      <div className="absolute top-0 left-0 w-full h-full bg-cover bg-center animated-gradient"></div>
-      <div className="absolute top-0 left-0 w-full h-full" style={{backgroundImage: "url('https://www.transparenttextures.com/patterns/cubes.png')", opacity: '0.03'}}></div>
+      <div className="fixed top-0 left-0 w-full min-h-screen h-full bg-cover bg-center animated-gradient"></div>
+      <div className="fixed top-0 left-0 w-full min-h-screen h-full" style={{backgroundImage: "url('https://www.transparenttextures.com/patterns/cubes.png')", opacity: '0.03', zIndex: 1}}></div>
 
       <div className="relative z-10">
         {/* <Header /> */}
