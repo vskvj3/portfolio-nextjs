@@ -40,7 +40,7 @@ export default function Contact(params) {
               <div className="bg-black/50 backdrop-blur-lg p-6 rounded-lg border border-cyan-400/20 mb-6">
                 <div className="text-center">
                   <h3 className="text-xl font-bold text-cyan-300 mb-4 font-mono">Feel free to contact</h3>
-                  <p className="text-gray-400 mb-6">Let's connect and build something amazing together!</p>
+                  <p className="text-gray-400 mb-6">Let&apos;s connect and build something amazing together!</p>
                   <div className="flex justify-center space-x-6">
                     <a 
                       href="https://github.com/visakhvjn" 
@@ -123,7 +123,7 @@ export default function Contact(params) {
                 <div className="h-full flex flex-col justify-center">
                   {/* <MessageSquare className="text-cyan-300 mb-4" size={48} /> */}
                   <h3 className="text-2xl font-bold text-cyan-300 mb-4 font-mono">Feel free to reach out!</h3>
-                  <p className="text-gray-400 mb-8 text-lg">Let's connect and build something amazing together!</p>
+                  <p className="text-gray-400 mb-8 text-lg">Let&apos;s connect and build something amazing together!</p>
                   
                   <div className="space-y-4">
                     <a 
