@@ -139,7 +139,7 @@ Redirecting to about page...
   }, [whoamiText]);
 
   return (
-    <section id="terminal" className="min-h-screen flex items-center justify-center pt-20 md:pt-0 px-4 md:px-8">
+    <section id="terminal" className="min-h-screen flex items-center justify-center pt-24 md:pt-32 lg:pt-20 px-4 md:px-8">
       <div
         ref={terminalRef}
         onClick={handleTerminalClick}

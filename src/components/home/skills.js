@@ -69,22 +69,22 @@ export default function Skills(params) {
       <div className="container mx-auto px-6">
         <h2 className="text-3xl font-bold text-center text-cyan-300 mb-12 font-mono tracking-wider">[ SKILLS ]</h2>
         
-        <div className="space-y-12">
+        <div className="space-y-8 md:space-y-12">
           {skillsData.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="bg-black/30 backdrop-blur-lg p-6 rounded-lg border border-cyan-400/20">
-              <h3 className="text-xl font-bold text-cyan-300 mb-6 text-center font-mono tracking-wider">
+            <div key={categoryIndex} className="bg-black/30 backdrop-blur-lg p-4 md:p-6 rounded-lg border border-cyan-400/20">
+              <h3 className="text-lg md:text-xl font-bold text-cyan-300 mb-4 md:mb-6 text-center font-mono tracking-wider">
                 [ {category.category.toUpperCase()} ]
               </h3>
-              <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4">
                 {category.skills.map((skill, skillIndex) => (
                   <div 
                     key={skillIndex} 
-                    className="bg-gray-800/40 backdrop-blur-md p-3 rounded-lg border border-cyan-400/20 text-center hover:border-cyan-400/70 hover:bg-gray-800/60 transition-all duration-300 group"
+                    className="bg-gray-800/40 backdrop-blur-md p-2 md:p-3 rounded-lg border border-cyan-400/20 text-center hover:border-cyan-400/70 hover:bg-gray-800/60 transition-all duration-300 group cursor-pointer overflow-hidden"
                   >
-                    <div className="text-lg mb-1 group-hover:scale-110 transition-transform duration-300">
+                    <div className="flex items-center justify-center h-6 md:h-8 mb-2 text-base md:text-lg lg:text-xl group-hover:scale-110 transition-transform duration-300">
                       {skill.icon}
                     </div>
-                    <p className="text-gray-200 font-semibold text-sm">{skill.name}</p>
+                    <p className="text-gray-200 font-semibold text-xs sm:text-sm md:text-base group-hover:scale-105 transition-transform duration-300">{skill.name}</p>
                   </div>
                 ))}
               </div>
