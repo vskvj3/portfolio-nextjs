@@ -49,24 +49,21 @@ export default function Home({ allPostsData, allProjectsData }) {
       <div className="fixed top-0 left-0 w-full min-h-screen h-full" style={{backgroundImage: "url('https://www.transparenttextures.com/patterns/cubes.png')", opacity: '0.03', zIndex: 1}}></div>
 
       <div className="relative z-10">
-        {/* <Header /> */}
-        <main>
-          {/* section 1: Terminal */}
-          <Terminal />
+        {/* section 1: Terminal */}
+        <Terminal />
 
-          {/* section 3: Skills */}
-          <Skills />
+        {/* section 3: Skills */}
+        <Skills />
 
-          {/* section 2 */}
-          <Projects allProjectsData={allProjectsData} /> 
+        {/* section 2 */}
+        <Projects allProjectsData={allProjectsData} /> 
 
-          {/* section 3 */}
-          {/* list all posts as in /posts/index.js but dont import posts*/}
-          <Posts allPostsData={allPostsData} />
+        {/* section 3 */}
+        {/* list all posts as in /posts/index.js but dont import posts*/}
+        <Posts allPostsData={allPostsData} />
 
-          {/* section 4: Contact */}
-          <Contact />
-        </main>
+        {/* section 4: Contact */}
+        <Contact />
       </div>
     </>
   );
