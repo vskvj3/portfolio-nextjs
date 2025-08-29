@@ -29,9 +29,9 @@ export default function Contact(params) {
     };
 
     return (
-      <section id="contact" className="py-20">
+      <section id="contact" className="py-12 md:py-20">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center text-cyan-300 mb-12 font-mono tracking-wider">[ CONTACT ]</h2>
+          <h2 className="text-3xl font-bold text-center text-cyan-300 mb-8 md:mb-12 font-mono tracking-wider">[ CONTACT ]</h2>
           
           <div className="max-w-none mx-auto">
             {/* Mobile Layout */}
