@@ -112,21 +112,33 @@ Think of this portfolio as my corner of the Wired, come say hi.
 
   // Typing effect for the terminal
   useEffect(() => {
-    let i = 0;
+    let currentIndex = 0;
+    let typingInterval;
+    setTypedText(''); // Reset typed text
+    
     if (whoamiText) {
-      const typingInterval = setInterval(() => {
-        if (i < whoamiText.length) {
-          setTypedText((prev) => prev + whoamiText.charAt(i));
-          i++;
-        } else {
-          clearInterval(typingInterval);
-          setShowPrompt(true);
-          if (terminalInputRef.current && window.innerWidth >= 768) {
-            terminalInputRef.current.focus();
+      // Small delay to ensure component is fully mounted
+      const startDelay = setTimeout(() => {
+        typingInterval = setInterval(() => {
+          if (currentIndex < whoamiText.length) {
+            setTypedText(whoamiText.substring(0, currentIndex + 1));
+            currentIndex++;
+          } else {
+            clearInterval(typingInterval);
+            setShowPrompt(true);
+            if (terminalInputRef.current && window.innerWidth >= 768) {
+              terminalInputRef.current.focus();
+            }
           }
+        }, 30);
+      }, 500);
+      
+      return () => {
+        clearTimeout(startDelay);
+        if (typingInterval) {
+          clearInterval(typingInterval);
         }
-      }, 20);
-      return () => clearInterval(typingInterval);
+      };
     }
   }, [whoamiText]);
 
