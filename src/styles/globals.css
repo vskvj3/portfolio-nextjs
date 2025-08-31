@@ -48,3 +48,16 @@ body {
   background-size: 400% 400%;
   animation: gradient-animation 15s ease infinite;
 }
+
+/* Terminal text handling */
+.terminal-text {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  line-break: auto;
+}
+
+.terminal-content {
+  word-spacing: normal;
+  letter-spacing: normal;
+}

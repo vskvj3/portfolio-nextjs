@@ -24,15 +24,13 @@ Think of this portfolio as my corner of the Wired, come say hi.
 
     switch (trimmedCommand) {
       case 'help':
-        response = `
-Available commands:
+        response = `Available commands:
   help      - Show this help message
   whoami    - Display user information
   clear     - Clear the terminal
   contact   - Show contact information
   projects  - View my projects
-  about     - Learn more about me
-        `;
+  about     - Learn more about me`;
         break;
       case 'whoami':
         response = whoamiText;
@@ -42,23 +40,17 @@ Available commands:
         setCurrentCommand('');
         return;
       case 'contact':
-        response = `
-Contact Information:
+        response = `Contact Information:
   Email: alex.doe@example.com
   LinkedIn: linkedin.com/in/alexdoe
-  GitHub: github.com/alexdoe
-        `;
+  GitHub: github.com/alexdoe`;
         break;
       case 'projects':
-        response = `
-Redirecting to projects page...
-        `;
+        response = `Redirecting to projects page...`;
         // TODO: Add navigation to projects page
         break;
       case 'about':
-        response = `
-Redirecting to about page...
-        `;
+        response = `Redirecting to about page...`;
         // TODO: Add navigation to about page
         break;
       default:
@@ -139,52 +131,52 @@ Redirecting to about page...
   }, [whoamiText]);
 
   return (
-    <section id="terminal" className="min-h-screen flex items-center justify-center pt-24 md:pt-32 lg:pt-20 px-4 md:px-8">
+    <section id="terminal" className="min-h-screen flex items-center justify-center py-4 sm:py-8 md:py-12 lg:py-20 pt-16 sm:pt-20 md:pt-24 lg:pt-20 px-3 sm:px-4 md:px-8">
       <div
         ref={terminalRef}
         onClick={handleTerminalClick}
-        className="w-full max-w-7xl mx-auto bg-black/60 backdrop-blur-xl rounded-lg shadow-2xl shadow-cyan-500/10 border border-cyan-400/20 overflow-hidden cursor-text"
+        className="w-full max-w-6xl mx-auto bg-black/60 backdrop-blur-xl rounded-lg shadow-2xl shadow-cyan-500/10 border border-cyan-400/20 overflow-hidden cursor-text"
       >
-        <div className="bg-gray-800/50 flex items-center p-4 border-b border-cyan-400/20">
+        <div className="bg-gray-800/50 flex items-center p-2 sm:p-4 border-b border-cyan-400/20">
           <div className="flex space-x-2">
             <div className="w-3 h-3 rounded-full bg-red-500"></div>
             <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
             <div className="w-3 h-3 rounded-full bg-green-500"></div>
           </div>
-          <p className="flex-grow text-center text-base text-gray-500 font-mono">/home/visakh — zsh</p>
+          <p className="flex-grow text-center text-sm sm:text-base text-gray-500 font-mono">/home/visakh — zsh</p>
         </div>
         <div
           ref={terminalContentRef}
-          className="p-8 font-mono text-base md:text-lg text-gray-200 h-[600px] md:h-[700px] overflow-y-auto"
+          className="p-4 sm:p-6 md:p-8 font-mono text-sm sm:text-base md:text-lg text-gray-200 h-[500px] sm:h-[550px] md:h-[600px] lg:h-[650px] overflow-y-auto overflow-x-hidden terminal-content"
         >
           <div className="flex items-center">
-            <ChevronsRight className="w-5 h-5 text-cyan-400" />
-            <p className="ml-2 text-green-400 text-base md:text-lg">whoami</p>
+            <ChevronsRight className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400 flex-shrink-0" />
+            <p className="ml-2 text-green-400 text-sm sm:text-base md:text-lg">whoami</p>
           </div>
-          <pre className="whitespace-pre-wrap mt-2 text-gray-300 text-base md:text-lg leading-relaxed">{typedText}</pre>
+          <div className="mt-2 text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed whitespace-pre-line terminal-text">{typedText}</div>
 
           {/* Command history */}
           {commandHistory.map((item, index) => (
             <div key={index} className="mt-4">
               <div className="flex items-center">
-                <ChevronsRight className="w-5 h-5 text-cyan-400" />
-                <span className="ml-2 text-green-400 text-base md:text-lg">{item.command}</span>
+                <ChevronsRight className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400 flex-shrink-0" />
+                <span className="ml-2 text-green-400 text-sm sm:text-base md:text-lg">{item.command}</span>
               </div>
-              <pre className="whitespace-pre-wrap mt-2 text-gray-300 text-base md:text-lg leading-relaxed">{item.response}</pre>
+              <div className="mt-2 text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed whitespace-pre-line terminal-text">{item.response}</div>
             </div>
           ))}
 
           {/* Current input prompt */}
           {showPrompt && (
             <div className="flex items-center mt-4">
-              <ChevronsRight className="w-5 h-5 text-cyan-400" />
+              <ChevronsRight className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400 flex-shrink-0" />
               <input
                 ref={terminalInputRef}
                 type="text"
                 value={currentCommand}
                 onChange={(e) => setCurrentCommand(e.target.value)}
                 onKeyDown={handleKeyPress}
-                className="ml-2 bg-transparent outline-none border-none text-green-400 placeholder-green-400/50 w-full font-mono text-base md:text-lg"
+                className="ml-2 bg-transparent outline-none border-none text-green-400 placeholder-green-400/50 w-full font-mono text-sm sm:text-base md:text-lg min-w-0"
                 placeholder="Type 'help' for available commands..."
                 style={{
                   caretColor: '#4ade80',
