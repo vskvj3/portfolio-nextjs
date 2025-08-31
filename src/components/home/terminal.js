@@ -131,7 +131,7 @@ Think of this portfolio as my corner of the Wired, come say hi.
   }, [whoamiText]);
 
   return (
-    <section id="terminal" className="min-h-screen flex items-center justify-center py-4 sm:py-8 md:py-12 lg:py-20 pt-16 sm:pt-20 md:pt-24 lg:pt-20 px-3 sm:px-4 md:px-8">
+    <section id="terminal" className="min-h-screen flex items-center justify-center py-4 sm:py-6 md:py-12 lg:py-20 pt-8 sm:pt-12 md:pt-22 lg:pt-20 px-3 sm:px-4 md:px-8">
       <div
         ref={terminalRef}
         onClick={handleTerminalClick}
