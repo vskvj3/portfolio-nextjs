@@ -44,8 +44,10 @@ export default function Navbar() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-md">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <Link href="/" className="text-xl font-bold text-cyan-300 tracking-widest font-mono hover:text-cyan-200 transition-colors">
-              [Visakh]
+            <Link href="/" className="text-xl font-bold tracking-widest font-mono hover:opacity-80 transition-opacity">
+              <span className="neon-flicker" data-text="[Visakh]">
+                [<span className="flicker-fast">V</span><span className="flicker-medium">i</span><span className="flicker-slow">s</span><span className="flicker-fast">a</span><span className="flicker-medium">k</span><span className="flicker-slow">h</span>]
+              </span>
             </Link>
             <nav className="hidden md:flex items-center space-x-8">
               <a onClick={() => handleNavigation('terminal')} className="text-gray-300 hover:text-cyan-300 transition-colors duration-300 cursor-pointer">/home</a>
