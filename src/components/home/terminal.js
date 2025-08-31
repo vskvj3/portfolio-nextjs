@@ -11,10 +11,10 @@ export default function Terminal(params) {
   const terminalRef = useRef(null);
   const terminalContentRef = useRef(null);
 
-  const whoamiText = `Hey there!
-I'm Visakh, a computer science graduate from RIT Kottayam. I have a lifelong passion for computers and technology.
-I mostly love building things and occasionally breaking them. 😉
-I'm currently working as a software engineer at UST.
+  const whoamiText = `Hi There!
+I’m a software engineer with experience in big data and data engineering technologies. I’ve been fascinated by technology since I was a kid, and that curiosity still drives me to create, learn, and experiment. 
+Currently, I work as a developer at UST, but more than titles, I enjoy the craft of building things that matter. 
+Think of this portfolio as my corner of the Wired, come say hi.
 `
 
   // Handle command execution
