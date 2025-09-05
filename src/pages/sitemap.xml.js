@@ -6,25 +6,25 @@ function generateSiteMap(posts, projects) {
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      <!-- Static pages -->
      <url>
-       <loc>https://your-domain.com</loc>
+       <loc>https://visakhvijay.fyi</loc>
        <lastmod>${new Date().toISOString()}</lastmod>
        <changefreq>weekly</changefreq>
        <priority>1.0</priority>
      </url>
      <url>
-       <loc>https://your-domain.com/projects</loc>
+       <loc>https://visakhvijay.fyi/projects</loc>
        <lastmod>${new Date().toISOString()}</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.8</priority>
      </url>
      <url>
-       <loc>https://your-domain.com/posts</loc>
+       <loc>https://visakhvijay.fyi/posts</loc>
        <lastmod>${new Date().toISOString()}</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.8</priority>
      </url>
      <url>
-       <loc>https://your-domain.com/about</loc>
+       <loc>https://visakhvijay.fyi/about</loc>
        <lastmod>${new Date().toISOString()}</lastmod>
        <changefreq>monthly</changefreq>
        <priority>0.7</priority>
@@ -34,7 +34,7 @@ function generateSiteMap(posts, projects) {
        .map((project) => {
          return `
        <url>
-           <loc>https://your-domain.com/projects/${project.id}</loc>
+           <loc>https://visakhvijay.fyi/projects/${project.id}</loc>
            <lastmod>${new Date(project.date).toISOString()}</lastmod>
            <changefreq>monthly</changefreq>
            <priority>0.6</priority>
@@ -47,7 +47,7 @@ function generateSiteMap(posts, projects) {
        .map((post) => {
          return `
        <url>
-           <loc>https://your-domain.com/posts/${post.id}</loc>
+           <loc>https://visakhvijay.fyi/posts/${post.id}</loc>
            <lastmod>${new Date(post.date).toISOString()}</lastmod>
            <changefreq>monthly</changefreq>
            <priority>0.6</priority>
