@@ -190,7 +190,7 @@ function About() {
                     </GlitchText>
                   </h1>
                   <h2 className="text-2xl md:text-4xl font-semibold mb-6 text-gray-300">
-                    I'm <span className="text-cyan-300 font-mono">Visakh Vijay O</span>
+                    I&apos;m <span className="text-cyan-300 font-mono">Visakh Vijay O</span>
                   </h2>
                   <p className="text-lg md:text-xl text-gray-400 mb-8 leading-relaxed">
                     A software engineer specializing in <span className="text-cyan-300">data engineering</span> and 
@@ -358,7 +358,7 @@ function About() {
             <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 backdrop-blur-lg p-12 rounded-lg border border-cyan-400/20">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                  Let's Build Something Amazing Together
+                  Let&apos;s Build Something Amazing Together
                 </h2>
                 <p className="text-gray-300 text-lg mb-8">
                   I&apos;m always interested in new opportunities.
