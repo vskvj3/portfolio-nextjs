@@ -1,6 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    domains: [
+      'github.com',
+      'raw.githubusercontent.com',
+      'user-images.githubusercontent.com',
+      'camo.githubusercontent.com'
+    ],
+  },
   webpack: (config) => {
     config.resolve.fallback = { fs: false };
 
