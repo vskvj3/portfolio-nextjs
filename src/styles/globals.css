@@ -19,10 +19,10 @@
   display: none; /* WebKit */
 }
 
-/* Base font family */
+/* Base font family - ensure it loads properly in production */
 html,
 body {
-  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
+  font-family: var(--font-inter), 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
   font-feature-settings: 'liga' 1, 'calt' 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
