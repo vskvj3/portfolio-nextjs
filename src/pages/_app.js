@@ -1,6 +1,7 @@
 import Layout from "@/components/layout";
 import "@/styles/globals.css";
 import { JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = JetBrains_Mono({
   subsets: ["latin"],
@@ -13,6 +14,7 @@ export default function MyApp({ Component, pageProps }) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
+      <Analytics />
     </main>
   );
 }

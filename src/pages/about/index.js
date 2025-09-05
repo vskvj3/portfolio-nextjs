@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaCalendarAlt, FaBriefcase } from "react-icons/fa";
 import { SiPython, SiReact, SiNextdotjs, SiAzuredevops, SiMongodb, SiFlutter } from "react-icons/si";
 import { DiSpark } from "react-icons/di";
@@ -192,7 +193,7 @@ function About() {
                     I'm <span className="text-cyan-300 font-mono">Visakh Vijay O</span>
                   </h2>
                   <p className="text-lg md:text-xl text-gray-400 mb-8 leading-relaxed">
-                    A passionate software engineer specializing in <span className="text-cyan-300">data engineering</span> and 
+                    A software engineer specializing in <span className="text-cyan-300">data engineering</span> and 
                     <span className="text-cyan-300"> big data technologies</span>.
                   </p>
                 </div>
@@ -254,7 +255,7 @@ function About() {
               <div className="prose prose-lg prose-invert max-w-none">
                 <p className="text-gray-300 leading-relaxed mb-6">
                   My journey in software engineering began during my undergraduate studies and has evolved into a specialized focus on 
-                  data engineering and big data technologies. I've worked on projects ranging from mobile applications to enterprise-level 
+                  data engineering and big data technologies. I&apos;ve worked on projects ranging from mobile applications to enterprise-level 
                   data pipelines that process large-scale information systems.
                 </p>
                 
@@ -360,16 +361,16 @@ function About() {
                   Let's Build Something Amazing Together
                 </h2>
                 <p className="text-gray-300 text-lg mb-8">
-                  I'm always interested in new opportunities.
+                  I&apos;m always interested in new opportunities.
                   Feel free to reach out!
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12">
-                  <a 
+                  <Link 
                     href="/projects"
                     className="border border-cyan-400 text-cyan-300 hover:bg-cyan-400 hover:text-black font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:transform hover:scale-105"
                   >
                     View My Works
-                  </a>
+                  </Link>
                 </div>
               </div>
 
