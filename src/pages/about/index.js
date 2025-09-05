@@ -253,20 +253,20 @@ function About() {
             <div className="bg-black/50 backdrop-blur-lg p-8 md:p-12 rounded-lg border border-cyan-400/20 hover:border-cyan-400/40 transition-all duration-500">
               <div className="prose prose-lg prose-invert max-w-none">
                 <p className="text-gray-300 leading-relaxed mb-6">
-                  I've been fascinated by technology since I was a kid, and that curiosity still drives me to create, learn, and experiment. 
-                  My journey in software engineering has taken me from building mobile applications to designing complex data pipelines that 
-                  process massive amounts of information.
+                  My journey in software engineering began during my undergraduate studies and has evolved into a specialized focus on 
+                  data engineering and big data technologies. I've worked on projects ranging from mobile applications to enterprise-level 
+                  data pipelines that process large-scale information systems.
                 </p>
                 
                 <p className="text-gray-300 leading-relaxed mb-6">
-                  Currently working as a developer at UST, I specialize in data engineering solutions using technologies like PySpark, 
-                  Azure Data Factory, and various big data tools. I enjoy the challenge of transforming raw data into meaningful insights 
-                  and building scalable systems that can handle enterprise-level workloads.
+                  At UST, I work with technologies like PySpark, Azure Data Factory, and various distributed computing frameworks. 
+                  My role involves designing and implementing data solutions that transform raw information into actionable insights 
+                  for business stakeholders.
                 </p>
                 
                 <p className="text-gray-300 leading-relaxed">
-                  When I'm not coding, you can find me exploring new technologies, contributing to open source projects, or thinking about 
-                  the next big idea. I believe in the power of technology to solve real-world problems and make a positive impact on people's lives.
+                  I stay current with emerging technologies and contribute to projects that solve practical problems. 
+                  My focus is on building efficient, scalable systems that deliver real value.
                 </p>
               </div>
             </div>
