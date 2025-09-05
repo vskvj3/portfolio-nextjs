@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://visakhvijay.fyi/sitemap.xml
+
+# Crawl-delay (optional)
+Crawl-delay: 10

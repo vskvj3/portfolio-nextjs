@@ -25,12 +25,9 @@ export default function Layout({ children, home }) {
       <div className="relative z-10">
         <Head>
           <link rel="icon" href="/favicon.ico" />
-          <meta
-            name="description"
-            content="Learn how to build a personal website using Next.js"
-          />
-          <meta name="og:title" content={siteTitle} />
-          <title>{siteTitle}</title>
+          {/* Default meta tags - pages can override these */}
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta charSet="utf-8" />
         </Head>
         <header>{!shouldHideNavbar && <Navbar />}</header>
         <main>{children}</main>
