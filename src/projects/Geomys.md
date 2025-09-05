@@ -1,6 +1,7 @@
 ---
 title: 'Geomys: Distributed In-memory Key-Value Store'
 date: '2024-09-01'
+priority: 1
 github: 'https://github.com/vskvj3/geomys'
 tags: ['Golang', 'gRPC', 'Docker']
 description: 'Geomys is a distributed in-memory key-value store that supports leader-follower replication, persistence, and multi-node clustering. It ensures high availability and eventual consistency across nodes using gRPC-based data replications.'

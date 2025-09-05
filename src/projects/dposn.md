@@ -1,6 +1,7 @@
 ---
 title: 'Decentralized Online Social Network'
 date: '2020-01-02'
+priority: 3
 github: 'https://github.com/vskvj3/DPOSN'
 url: 'https://dposn.vercel.app'
 tags: ['Blockchain', 'IPFS', 'Solidity', 'Etherum' ,'NodeJS', 'test']

@@ -1,6 +1,7 @@
 ---
 title: 'Swiggy Restaurant Data Pipeline'
 date: '2024-08-01'
+priority: 1
 github: 'https://github.com/vskvj3/End-to-End-Pipeline-for-Swiggy-Restaurant-Data'
 tags: ['PySpark', 'Azure Data Factory', 'Databricks', 'Python', 'SQL']
 description: 'This project develops a data engineering pipeline to analyze restaurant data from various cities on the Swiggy platform. Using PySpark, Spark SQL, and Azure Data Factory, the data is processed and transformed to generate insights on ratings, cuisines, and trends, presented through databricks dashboard.'

@@ -13,7 +13,6 @@ export function getSortedProjectsData(count = 1000) {
       }
       return true;
     })
-    .slice(0, count)
     .map((fileName) => {
       const id = fileName.replace(/\.md$/, "");
 
@@ -28,13 +27,28 @@ export function getSortedProjectsData(count = 1000) {
       };
     });
 
-  return allProjectsData.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1;
-    } else {
-      return -1;
-    }
-  });
+  // Sort by priority first (ascending - lower number = higher priority), then by date (descending)
+  return allProjectsData
+    .sort((a, b) => {
+      // If both have priority, sort by priority (lower number first)
+      if (a.priority !== undefined && b.priority !== undefined) {
+        return a.priority - b.priority;
+      }
+      // If only one has priority, prioritize it
+      if (a.priority !== undefined && b.priority === undefined) {
+        return -1;
+      }
+      if (a.priority === undefined && b.priority !== undefined) {
+        return 1;
+      }
+      // If neither has priority, sort by date (newest first)
+      if (a.date < b.date) {
+        return 1;
+      } else {
+        return -1;
+      }
+    })
+    .slice(0, count);
 }
 
 export function getAllProjectIds() {

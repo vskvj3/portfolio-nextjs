@@ -11,7 +11,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData(3);
-  const allProjectsData = getSortedProjectsData(3);
+  const allProjectsData = getSortedProjectsData(4);
   return {
     props: {
       allPostsData,
