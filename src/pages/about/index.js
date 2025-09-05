@@ -75,7 +75,7 @@ function About() {
       title: "Higher Secondary",
       company: "GHMSS Perinthalmanna",
       type: "education",
-      description: "Specialized in Computer Science with strong foundation in mathematics and programming fundamentals."
+      description: "Specialized in Computer Science with strong foundation in mathematics."
     }
   ];
 
@@ -193,7 +193,7 @@ function About() {
                   </h2>
                   <p className="text-lg md:text-xl text-gray-400 mb-8 leading-relaxed">
                     A passionate software engineer specializing in <span className="text-cyan-300">data engineering</span> and 
-                    <span className="text-cyan-300"> big data technologies</span>. I love building scalable solutions that make a difference.
+                    <span className="text-cyan-300"> big data technologies</span>.
                   </p>
                 </div>
 
@@ -201,7 +201,7 @@ function About() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                   <div className="flex items-center justify-center lg:justify-start text-gray-300">
                     <FaBriefcase className="text-cyan-400 mr-3" />
-                    <span>Software Engineer at UST</span>
+                    <span>Developer at UST</span>
                   </div>
                   <div className="flex items-center justify-center lg:justify-start text-gray-300">
                     <FaMapMarkerAlt className="text-cyan-400 mr-3" />
@@ -210,10 +210,6 @@ function About() {
                   <div className="flex items-center justify-center lg:justify-start text-gray-300">
                     <FaCalendarAlt className="text-cyan-400 mr-3" />
                     <span>B.Tech CSE, RIT Kottayam</span>
-                  </div>
-                  <div className="flex items-center justify-center lg:justify-start text-gray-300">
-                    <FaEnvelope className="text-cyan-400 mr-3" />
-                    <span>Open to opportunities</span>
                   </div>
                 </div>
 
@@ -355,155 +351,97 @@ function About() {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 px-4 md:px-8">
-          <div className="container mx-auto max-w-4xl text-center">
-            <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 backdrop-blur-lg p-12 rounded-lg border border-cyan-400/20">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Let's Build Something Amazing Together
-              </h2>
-              <p className="text-gray-300 text-lg mb-8">
-                I'm always interested in new opportunities and exciting projects. 
-                Feel free to reach out if you'd like to collaborate!
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <a 
-                  href="mailto:imvisakhvijay@gmail.com"
-                  className="bg-cyan-500 hover:bg-cyan-600 text-black font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:transform hover:scale-105"
-                >
-                  Get In Touch
-                </a>
-                <a 
-                  href="/projects"
-                  className="border border-cyan-400 text-cyan-300 hover:bg-cyan-400 hover:text-black font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:transform hover:scale-105"
-                >
-                  View My Work
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Contact Form Section */}
+        {/* CTA Section with Contact Form */}
         <section className="py-20 px-4 md:px-8">
           <div className="container mx-auto max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-cyan-300 mb-12 font-mono tracking-wider">
-              [ GET IN TOUCH ]
-            </h2>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Contact Info */}
-              <div className="bg-black/50 backdrop-blur-lg p-8 rounded-lg border border-cyan-400/20">
-                <h3 className="text-2xl font-bold text-white mb-6">Let's Connect</h3>
-                <p className="text-gray-300 mb-8 leading-relaxed">
-                  Have a project in mind or just want to chat about technology? 
-                  I'm always open to discussing new opportunities and ideas.
+            <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 backdrop-blur-lg p-12 rounded-lg border border-cyan-400/20">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                  Let's Build Something Amazing Together
+                </h2>
+                <p className="text-gray-300 text-lg mb-8">
+                  I'm always interested in new opportunities.
+                  Feel free to reach out!
                 </p>
-                
-                <div className="space-y-4">
-                  <div className="flex items-center">
-                    <FaEnvelope className="text-cyan-400 mr-4 text-lg" />
-                    <span className="text-gray-300">imvisakhvijay@gmail.com</span>
-                  </div>
-                  <div className="flex items-center">
-                    <FaMapMarkerAlt className="text-cyan-400 mr-4 text-lg" />
-                    <span className="text-gray-300">Kerala, India</span>
-                  </div>
-                  <div className="flex items-center">
-                    <FaBriefcase className="text-cyan-400 mr-4 text-lg" />
-                    <span className="text-gray-300">Available for freelance</span>
-                  </div>
-                </div>
-
-                <div className="mt-8">
-                  <p className="text-gray-400 text-sm mb-4">Follow me on social media:</p>
-                  <div className="flex space-x-4">
-                    <a 
-                      href="https://github.com/vskvj3" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-cyan-300 transition-colors duration-300"
-                    >
-                      <FaGithub size={24} />
-                    </a>
-                    <a 
-                      href="https://linkedin.com/in/visakhvj3" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-cyan-300 transition-colors duration-300"
-                    >
-                      <FaLinkedin size={24} />
-                    </a>
-                  </div>
+                <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12">
+                  <a 
+                    href="/projects"
+                    className="border border-cyan-400 text-cyan-300 hover:bg-cyan-400 hover:text-black font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:transform hover:scale-105"
+                  >
+                    View My Works
+                  </a>
                 </div>
               </div>
 
               {/* Contact Form */}
-              <div className="bg-black/50 backdrop-blur-lg p-8 rounded-lg border border-cyan-400/20">
-                <h3 className="text-2xl font-bold text-white mb-6">Send Message</h3>
-                
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label htmlFor="about-name" className="block text-gray-400 mb-2 font-medium">
-                      Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="about-name"
-                      name="name"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      className="w-full p-3 bg-gray-900/50 border border-cyan-400/30 rounded-md text-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300"
-                      placeholder="Your full name"
-                      required
-                    />
-                  </div>
+              <div className="">
+                {/* Contact Form */}
+                <div className="bg-black/30 backdrop-blur-lg p-6 rounded-lg border border-cyan-400/20">
+                  <h3 className="text-xl font-bold text-white mb-6">Send Message</h3>
                   
-                  <div>
-                    <label htmlFor="about-email" className="block text-gray-400 mb-2 font-medium">
-                      Email *
-                    </label>
-                    <input
-                      type="email"
-                      id="about-email"
-                      name="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="w-full p-3 bg-gray-900/50 border border-cyan-400/30 rounded-md text-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300"
-                      placeholder="your.email@example.com"
-                      required
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="about-message" className="block text-gray-400 mb-2 font-medium">
-                      Message *
-                    </label>
-                    <textarea
-                      id="about-message"
-                      name="message"
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                      className="w-full p-3 bg-gray-900/50 border border-cyan-400/30 rounded-md text-gray-200 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300"
-                      placeholder="Tell me about your project or just say hello..."
-                      required
-                    ></textarea>
-                  </div>
-                  
-                  {status.message && (
-                    <p className={`text-sm ${status.error ? "text-red-400" : "text-green-400"}`}>
-                      {status.message}
-                    </p>
-                  )}
-                  
-                  <button
-                    type="submit"
-                    disabled={sending}
-                    className="w-full py-3 px-6 bg-cyan-500 hover:bg-cyan-600 disabled:bg-cyan-500/50 text-black font-semibold rounded-md transition-all duration-300 hover:transform hover:scale-105 disabled:hover:scale-100 disabled:cursor-not-allowed"
-                  >
-                    {sending ? 'Sending...' : 'Send Message'}
-                  </button>
-                </form>
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div>
+                      <label htmlFor="about-name" className="block text-gray-400 mb-2 font-medium">
+                        Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="about-name"
+                        name="name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        className="w-full p-3 bg-gray-900/50 border border-cyan-400/30 rounded-md text-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300"
+                        placeholder="Your full name"
+                        required
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="about-email" className="block text-gray-400 mb-2 font-medium">
+                        Email *
+                      </label>
+                      <input
+                        type="email"
+                        id="about-email"
+                        name="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="w-full p-3 bg-gray-900/50 border border-cyan-400/30 rounded-md text-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300"
+                        placeholder="your.email@example.com"
+                        required
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="about-message" className="block text-gray-400 mb-2 font-medium">
+                        Message *
+                      </label>
+                      <textarea
+                        id="about-message"
+                        name="message"
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                        className="w-full p-3 bg-gray-900/50 border border-cyan-400/30 rounded-md text-gray-200 h-28 resize-none focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300"
+                        placeholder="Say Hello..."
+                        required
+                      ></textarea>
+                    </div>
+                    
+                    {status.message && (
+                      <p className={`text-sm ${status.error ? "text-red-400" : "text-green-400"}`}>
+                        {status.message}
+                      </p>
+                    )}
+                    
+                    <button
+                      type="submit"
+                      disabled={sending}
+                      className="w-full py-3 px-6 bg-cyan-500 hover:bg-cyan-600 disabled:bg-cyan-500/50 text-black font-semibold rounded-md transition-all duration-300 hover:transform hover:scale-105 disabled:hover:scale-100 disabled:cursor-not-allowed"
+                    >
+                      {sending ? 'Sending...' : 'Send Message'}
+                    </button>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
