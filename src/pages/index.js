@@ -40,13 +40,13 @@ export default function Home({ allPostsData, allProjectsData }) {
         <title>Visakh Vijay O - Software Engineer | Data Engineering & Full-Stack Development</title>
         <meta 
           name="description" 
-          content="Hi There! I'm Visakh, a software engineer with experience in big data and data engineering technologies. I've been fascinated by technology since I was a kid, and that curiosity still drives me to create, learn, and experiment. Currently, I work as a developer at UST, but more than titles, I enjoy the craft of building things that matter."
+          content="Hi There! I'm Visakh, a software engineer with experience in backend development and data engineering technologies. I've been fascinated by technology since I was a kid, and that curiosity still drives me to create, learn, and experiment. Currently, I work as a developer at UST, but more than titles, I enjoy the craft of building things that matter."
         />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://visakhvijay.fyi/" />
-        <meta property="og:title" content="Visakh Vijay O - Software Engineer | Data Engineering & Backend Development" />
+        <meta property="og:title" content="Visakh Vijay O - Software Engineer | Backend Development & Data Engineering" />
         <meta property="og:description" content="Hi There! I'm Visakh Vijay O, a software engineer with experience in big data and data engineering technologies. I've been fascinated by technology since I was a kid, and that curiosity still drives me to create, learn, and experiment." />
         <meta property="og:image" content="https://visakhvijay.fyi/images/profile.jpg" />
         <meta property="og:site_name" content="Visakh Vijay O Portfolio" />
@@ -54,8 +54,8 @@ export default function Home({ allPostsData, allProjectsData }) {
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://visakhvijay.fyi/" />
-        <meta property="twitter:title" content="Visakh Vijay O - Software Engineer | Data Engineering & Full-Stack Development" />
-        <meta property="twitter:description" content="Hi There! I'm Visakh Vijay O, a software engineer with experience in big data and data engineering technologies. I've been fascinated by technology since I was a kid, and that curiosity still drives me to create, learn, and experiment." />
+        <meta property="twitter:title" content="Visakh Vijay O - Software Engineer | Backend Development & Data Engineering" />
+        <meta property="twitter:description" content="Hi There! I'm Visakh Vijay O, a software engineer with experience in backend developent and data engineering technologies. I've been fascinated by technology since I was a kid, and that curiosity still drives me to create, learn, and experiment." />
         <meta property="twitter:image" content="https://visakhvijay.fyi/images/profile.jpg" />
 
         {/* Additional SEO Meta Tags */}
@@ -77,7 +77,7 @@ export default function Home({ allPostsData, allProjectsData }) {
               "@type": "Person",
               "name": "Visakh Vijay O",
               "jobTitle": "Software Engineer",
-              "description": "Software engineer with experience in big data and data engineering technologies. Currently working as a developer at UST, passionate about creating, learning, and experimenting with technology.",
+              "description": "Software engineer with experience in backend development and data engineering technologies. Currently working as a developer at UST, passionate about creating, learning, and experimenting with technology.",
               "url": "https://visakhvijay.fyi/",
               "image": "https://visakhvijay.fyi/images/profile.jpg",
               "sameAs": [
