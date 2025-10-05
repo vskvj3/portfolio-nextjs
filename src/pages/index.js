@@ -37,7 +37,7 @@ export default function Home({ allPostsData, allProjectsData }) {
   return (
     <>
       <Head>
-        <title>Visakh Vijay O - Software Engineer | Data Engineering & Full-Stack Development</title>
+        <title>Visakh Vijay O - Software Engineer | Backend Development & Data Engineering</title>
         <meta 
           name="description" 
           content="Hi There! I'm Visakh, a software engineer with experience in backend development and data engineering technologies. I've been fascinated by technology since I was a kid, and that curiosity still drives me to create, learn, and experiment. Currently, I work as a developer at UST, but more than titles, I enjoy the craft of building things that matter."
