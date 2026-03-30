@@ -2,11 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: [
-      'github.com',
-      'raw.githubusercontent.com',
-      'user-images.githubusercontent.com',
-      'camo.githubusercontent.com'
+    remotePatterns: [
+      { protocol: 'https', hostname: 'github.com' },
+      { protocol: 'https', hostname: 'raw.githubusercontent.com' },
+      { protocol: 'https', hostname: 'user-images.githubusercontent.com' },
+      { protocol: 'https', hostname: 'camo.githubusercontent.com' }
     ],
   },
   webpack: (config) => {
@@ -14,6 +14,7 @@ const nextConfig = {
 
     return config;
   },
+  turbopack: {},
 };
 
 import withBundleAnalyzer from "@next/bundle-analyzer";

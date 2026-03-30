@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { getSortedProjectsData } from "@/lib/projects";
 import Link from "next/link";
-import { ChevronsRight, Mail, Linkedin, Github, ExternalLink } from 'lucide-react';
+import { ChevronsRight, Mail, ExternalLink } from 'lucide-react';
+import { FaGithub as Github } from "react-icons/fa";
 
 
 export async function getStaticProps() {

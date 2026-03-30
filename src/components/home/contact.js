@@ -1,7 +1,8 @@
 import axios from "axios";
 import { set } from "date-fns";
 import { useState } from "react";
-import { Github, Linkedin, Mail, MessageSquare } from "lucide-react";
+import { Mail, MessageSquare } from "lucide-react";
+import { FaGithub as Github, FaLinkedin as Linkedin } from "react-icons/fa";
 
 export default function Contact(params) {
   const [name, setName] = useState("");

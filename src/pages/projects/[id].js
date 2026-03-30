@@ -4,7 +4,8 @@ import Date from "@/components/date";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Image from "next/image";
-import { Github, ExternalLink, Calendar, Tag, ArrowLeft } from "lucide-react";
+import { ExternalLink, Calendar, Tag, ArrowLeft } from "lucide-react";
+import { FaGithub as Github } from "react-icons/fa";
 import Link from "next/link";
 
 export async function getStaticProps({ params }) {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ChevronsRight, Mail, Linkedin, Github } from 'lucide-react';
+import { ChevronsRight, Mail } from 'lucide-react';
+import { FaGithub as Github, FaLinkedin as Linkedin } from "react-icons/fa";
 
 export default function Terminal(params) {
   const [typedText, setTypedText] = useState('');
