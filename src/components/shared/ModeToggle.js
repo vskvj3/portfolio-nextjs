@@ -22,7 +22,7 @@ export default function ModeToggle() {
       {mode === "default" ? (
         <FiTerminal
           size={18}
-          className="text-gray-400 group-hover:text-blue-600 transition-colors duration-300"
+          className="text-gray-400 group-hover:!text-[#0ff] transition-colors duration-300 retro-glitch"
         />
       ) : (
         <FiSun
