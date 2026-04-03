@@ -7,9 +7,13 @@ export const siteTitle = "Visakh Vijay O";
 export default function Layout({ children }) {
   const { mode } = useTheme();
 
-  if (mode === "cyberpunk") {
-    return <CyberpunkLayout>{children}</CyberpunkLayout>;
-  }
-
-  return <DefaultLayout>{children}</DefaultLayout>;
+  return (
+    <div key={mode} className="theme-transition-wrapper min-h-screen">
+      {mode === "cyberpunk" ? (
+        <CyberpunkLayout>{children}</CyberpunkLayout>
+      ) : (
+        <DefaultLayout>{children}</DefaultLayout>
+      )}
+    </div>
+  );
 }

@@ -41,4 +41,51 @@
   html {
     scroll-behavior: smooth;
   }
+
+}
+
+/* Theme Switch Transitions */
+[data-mode="cyberpunk"] .theme-transition-wrapper {
+  animation: glitch-spill 0.7s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+}
+
+[data-mode="default"] .theme-transition-wrapper {
+  animation: sun-burst 0.7s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+}
+
+@keyframes glitch-spill {
+  0% {
+    clip-path: circle(0% at var(--toggle-x, 50vw) var(--toggle-y, 50vh));
+    filter: invert(1) hue-rotate(90deg) contrast(3) brightness(2);
+    transform: scale(0.95) skewX(10deg);
+  }
+  30% {
+    filter: invert(0) hue-rotate(180deg) brightness(1.5);
+    transform: scale(1.02) skewX(-10deg);
+  }
+  60% {
+    filter: hue-rotate(45deg);
+    transform: skewX(5deg);
+  }
+  100% {
+    clip-path: circle(150% at var(--toggle-x, 50vw) var(--toggle-y, 50vh));
+    filter: none;
+    transform: none;
+  }
+}
+
+@keyframes sun-burst {
+  0% {
+    clip-path: circle(0% at var(--toggle-x, 50vw) var(--toggle-y, 50vh));
+    filter: saturate(5) brightness(10) contrast(2);
+    transform: scale(1.05);
+  }
+  40% {
+    filter: saturate(2) brightness(3);
+  }
+  100% {
+    clip-path: circle(150% at var(--toggle-x, 50vw) var(--toggle-y, 50vh));
+    filter: none;
+    transform: none;
+  }
 }

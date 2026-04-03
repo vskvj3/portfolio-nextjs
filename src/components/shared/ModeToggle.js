@@ -4,9 +4,17 @@ import { FiTerminal, FiSun } from "react-icons/fi";
 export default function ModeToggle() {
   const { mode, toggleMode } = useTheme();
 
+  const handleToggle = (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
+    document.documentElement.style.setProperty('--toggle-x', `${x}px`);
+    document.documentElement.style.setProperty('--toggle-y', `${y}px`);
+    toggleMode();
+  };
+
   return (
     <button
-      onClick={toggleMode}
+      onClick={handleToggle}
       className="relative p-2 rounded-lg transition-all duration-300 group"
       aria-label={mode === "default" ? "Switch to cyberpunk mode" : "Switch to default mode"}
       title={mode === "default" ? "Enter the matrix" : "Return to light"}

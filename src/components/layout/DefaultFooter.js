@@ -10,7 +10,7 @@ export default function DefaultFooter() {
         color: "var(--text-tertiary)",
       }}
     >
-      <div className="container mx-auto px-6 text-center">
+      <div className="container mx-auto px-6 max-w-6xl text-center">
         <p className="text-sm">
           © {new Date().getFullYear()} {personalInfo.name}. Built with Next.js.
         </p>

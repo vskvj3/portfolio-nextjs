@@ -36,11 +36,11 @@ export default function CyberpunkNavbar() {
           borderBottom: "1px solid var(--border)",
         }}
       >
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-6 py-4 max-w-6xl">
           <div className="flex items-center justify-between">
             <Link
               href="/"
-              className="text-xl font-bold tracking-widest font-mono hover:opacity-80 transition-opacity"
+              className="text-lg font-bold tracking-widest font-mono hover:opacity-80 transition-opacity"
             >
               <span className="neon-flicker" data-text="[Visakh]">
                 [<span className="flicker-fast">V</span>

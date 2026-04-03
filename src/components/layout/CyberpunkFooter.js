@@ -10,7 +10,7 @@ export default function CyberpunkFooter() {
         color: "var(--text-secondary)",
       }}
     >
-      <div className="container mx-auto px-6 text-center">
+      <div className="container mx-auto px-6 max-w-6xl text-center">
         <span className="flex justify-center items-center text-sm font-mono">
           [ made with fun using <RiNextjsLine className="mx-1" /> ]
         </span>
