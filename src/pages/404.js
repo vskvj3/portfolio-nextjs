@@ -1,14 +1,15 @@
 import Link from "next/link";
-import Head from "next/head";
+import SEO from "@/components/shared/SEO";
 import { personalInfo } from "@/data/portfolioData";
 
 export default function NotFound() {
   return (
     <>
-      <Head>
-        <title>{`404 - Page Not Found | ${personalInfo.name}`}</title>
-        <meta name="robots" content="noindex" />
-      </Head>
+      <SEO
+        title={`404 - Page Not Found | ${personalInfo.name}`}
+        description="The page you're looking for doesn't exist."
+        robots="noindex"
+      />
 
       <div className="min-h-screen flex flex-col items-center justify-center px-6 text-center">
         <h1

@@ -1,4 +1,4 @@
-import Head from "next/head";
+import SEO from "@/components/shared/SEO";
 import { useTheme } from "@/context/ThemeContext";
 import { getSortedPostsData } from "@/lib/posts";
 import { getSortedProjectsData } from "@/lib/projects";
@@ -41,47 +41,24 @@ export default function Home({ allPostsData, allProjectsData, featuredProjects }
   const { mode } = useTheme();
 
   const headContent = (
-    <Head>
-      <title>{`${personalInfo.name} - ${personalInfo.role} | ${personalInfo.specialization}`}</title>
-      <meta
-        name="description"
-        content={`${personalInfo.bio}`}
-      />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://visakhvijay.fyi/" />
-      <meta
-        property="og:title"
-        content={`${personalInfo.name} - ${personalInfo.role}`}
-      />
-      <meta property="og:description" content={personalInfo.bio} />
-      <meta property="og:image" content="https://visakhvijay.fyi/images/profile.jpg" />
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta
-        property="twitter:title"
-        content={`${personalInfo.name} - ${personalInfo.role}`}
-      />
-      <meta property="twitter:description" content={personalInfo.bio} />
+    <SEO
+      title={`${personalInfo.name} - ${personalInfo.role} | ${personalInfo.specialization}`}
+      description={personalInfo.bio}
+      schemaData={{
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: personalInfo.name,
+        jobTitle: personalInfo.role,
+        description: personalInfo.bio,
+        url: "https://visakhvijay.fyi/",
+        image: "https://visakhvijay.fyi/images/profile.jpg",
+        sameAs: [personalInfo.github, personalInfo.linkedin],
+        worksFor: { "@type": "Organization", name: "UST" },
+      }}
+    >
       <meta name="keywords" content="Visakh Vijay O, Software Engineer, Data Engineering, PySpark, Azure, Portfolio" />
       <meta name="author" content={personalInfo.name} />
-      <meta name="robots" content="index, follow" />
-      <link rel="canonical" href="https://visakhvijay.fyi/" />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            name: personalInfo.name,
-            jobTitle: personalInfo.role,
-            description: personalInfo.bio,
-            url: "https://visakhvijay.fyi/",
-            image: "https://visakhvijay.fyi/images/profile.jpg",
-            sameAs: [personalInfo.github, personalInfo.linkedin],
-            worksFor: { "@type": "Organization", name: "UST" },
-          }),
-        }}
-      />
-    </Head>
+    </SEO>
   );
 
   if (mode === "cyberpunk") {

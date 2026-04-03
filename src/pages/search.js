@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { searchTags } from "../lib/search";
 import Link from "next/link";
-import Head from "next/head";
+import SEO from "@/components/shared/SEO";
 import { personalInfo } from "@/data/portfolioData";
 import { Search } from "lucide-react";
 
@@ -29,10 +29,11 @@ const SearchPage = ({ initialResults }) => {
 
   return (
     <>
-      <Head>
-        <title>{`Search Results - ${personalInfo.name}`}</title>
-        <meta name="robots" content="noindex" />
-      </Head>
+      <SEO
+        title={`Search Results - ${personalInfo.name}`}
+        description={`Search results for ${tags || "projects and posts"} by ${personalInfo.name}.`}
+        robots="noindex"
+      />
 
       <div className="min-h-screen pt-24 md:pt-28 pb-16">
         <div className="container mx-auto px-6 max-w-3xl">

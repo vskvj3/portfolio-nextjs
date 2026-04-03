@@ -1,7 +1,7 @@
 import { getSortedPostsData } from "@/lib/posts";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
-import Head from "next/head";
+import SEO from "@/components/shared/SEO";
 import { personalInfo } from "@/data/portfolioData";
 
 export async function getStaticProps() {
@@ -16,14 +16,10 @@ export async function getStaticProps() {
 export default function Posts({ allPostsData }) {
   return (
     <>
-      <Head>
-        <title>{`Blog - ${personalInfo.name}`}</title>
-        <meta
-          name="description"
-          content={`Blog posts by ${personalInfo.name} on software engineering, data engineering, and technology.`}
-        />
-        <link rel="canonical" href="https://visakhvijay.fyi/posts" />
-      </Head>
+      <SEO
+        title={`Blog - ${personalInfo.name}`}
+        description={`Blog posts by ${personalInfo.name} on software engineering, data engineering, and technology.`}
+      />
 
       <div className="min-h-screen">
         <section id="blogs" className="py-20 pt-24 md:pt-28">
