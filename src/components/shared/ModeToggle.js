@@ -1,5 +1,5 @@
 import { useTheme } from "@/context/ThemeContext";
-import { FiTerminal, FiSun } from "react-icons/fi";
+import { FiSun } from "react-icons/fi";
 
 export default function ModeToggle() {
   const { mode, toggleMode } = useTheme();
@@ -20,13 +20,15 @@ export default function ModeToggle() {
       title={mode === "default" ? "Enter the matrix" : "Return to light"}
     >
       {mode === "default" ? (
-        <FiTerminal
-          size={18}
-          className="text-gray-400 group-hover:text-blue-600 transition-colors duration-300"
+        <img
+          src="/images/cat_night.gif"
+          alt="running"
+          style={{ width: "22px", height: "22px", objectFit: "contain" }}
+          className="opacity-60 group-hover:opacity-100 transition-opacity duration-300 retro-glitch"
         />
       ) : (
         <FiSun
-          size={18}
+          size={22}
           className="text-cyan-400/60 group-hover:text-cyan-300 transition-colors duration-300"
         />
       )}

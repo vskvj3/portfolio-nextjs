@@ -1,5 +1,5 @@
 import { getAllPostIds, getPostData } from "@/lib/posts";
-import Head from "next/head";
+import SEO from "@/components/shared/SEO";
 import Date from "@/components/date";
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
@@ -28,10 +28,22 @@ export async function getStaticPaths() {
 export default function Post({ postData }) {
   return (
     <>
-      <Head>
-        <title>{`${postData.title} - ${personalInfo.name}`}</title>
-        <meta name="description" content={postData.description || postData.title} />
-      </Head>
+      <SEO
+        title={`${postData.title} - ${personalInfo.name}`}
+        description={postData.description || postData.title}
+        type="article"
+        schemaData={{
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          headline: postData.title,
+          description: postData.description || postData.title,
+          datePublished: postData.date,
+          author: {
+            "@type": "Person",
+            name: personalInfo.name,
+          },
+        }}
+      />
 
       <div className="min-h-screen">
         <div className="pt-24 md:pt-28 pb-16">

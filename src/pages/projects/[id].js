@@ -1,5 +1,5 @@
 import { getAllProjectIds, getProjectData } from "@/lib/projects";
-import Head from "next/head";
+import SEO from "@/components/shared/SEO";
 import Date from "@/components/date";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -29,10 +29,21 @@ export async function getStaticPaths() {
 export default function Project({ projectData }) {
   return (
     <>
-      <Head>
-        <title>{`${projectData.title} - ${personalInfo.name}`}</title>
-        <meta name="description" content={projectData.description} />
-      </Head>
+      <SEO
+        title={`${projectData.title} - ${personalInfo.name}`}
+        description={projectData.description}
+        schemaData={{
+          "@context": "https://schema.org",
+          "@type": "SoftwareSourceCode",
+          name: projectData.title,
+          description: projectData.description,
+          author: {
+            "@type": "Person",
+            name: personalInfo.name,
+          },
+          dateCreated: projectData.date,
+        }}
+      />
 
       <div className="min-h-screen">
         <div className="pt-24 md:pt-28 pb-16">

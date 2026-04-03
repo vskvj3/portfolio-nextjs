@@ -1,10 +1,16 @@
 import Link from "next/link";
 import { personalInfo } from "@/data/portfolioData";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { ChevronDown } from "lucide-react";
 
 export default function DefaultHero() {
+  const scrollToNext = (e) => {
+    e.preventDefault();
+    window.scrollBy({ top: window.innerHeight - 80, behavior: "smooth" });
+  };
+
   return (
-    <section className="py-20 md:py-32">
+    <section id="home" className="relative min-h-[calc(100vh-80px)] flex items-center py-20">
       <div className="container mx-auto px-6 max-w-4xl">
         <div className="space-y-6">
           {/* Greeting */}
@@ -75,6 +81,21 @@ export default function DefaultHero() {
             </a>
           </div>
         </div>
+      </div>
+
+      {/* Scroll Down Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer">
+        <a 
+          href="#next" 
+          onClick={scrollToNext}
+          className="transition-colors duration-200"
+          style={{ color: "var(--text-tertiary)" }}
+          onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent)")}
+          onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-tertiary)")}
+          aria-label="Scroll down"
+        >
+          <ChevronDown size={32} />
+        </a>
       </div>
     </section>
   );

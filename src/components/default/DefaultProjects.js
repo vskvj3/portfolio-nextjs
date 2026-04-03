@@ -5,7 +5,7 @@ export default function DefaultProjects({ projects }) {
   if (!projects || projects.length === 0) return null;
 
   return (
-    <section className="py-16 md:py-20">
+    <section id="projects" className="py-16 md:py-20">
       <div className="container mx-auto px-6 max-w-4xl">
         <div className="flex items-center justify-between mb-10">
           <h2 className="text-2xl md:text-3xl font-bold theme-heading">

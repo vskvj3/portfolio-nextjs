@@ -2,7 +2,7 @@ import { getSortedProjectsData } from "@/lib/projects";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { FaGithub as Github } from "react-icons/fa";
-import Head from "next/head";
+import SEO from "@/components/shared/SEO";
 import { personalInfo } from "@/data/portfolioData";
 
 export async function getStaticProps() {
@@ -17,14 +17,10 @@ export async function getStaticProps() {
 export default function Projects({ allProjectsData }) {
   return (
     <>
-      <Head>
-        <title>{`Projects - ${personalInfo.name}`}</title>
-        <meta
-          name="description"
-          content={`Projects by ${personalInfo.name}. Explore software engineering, data engineering, and distributed systems projects.`}
-        />
-        <link rel="canonical" href="https://visakhvijay.fyi/projects" />
-      </Head>
+      <SEO
+        title={`Projects - ${personalInfo.name}`}
+        description={`Projects by ${personalInfo.name}. Explore software engineering, data engineering, and distributed systems projects.`}
+      />
 
       <div className="min-h-screen">
         <section id="projects" className="py-20 pt-24 md:pt-28">
