@@ -1,110 +1,122 @@
-import Image from "next/image";
 import { getSortedProjectsData } from "@/lib/projects";
 import Link from "next/link";
-import { ChevronsRight, Mail, ExternalLink } from 'lucide-react';
+import { ExternalLink } from "lucide-react";
 import { FaGithub as Github } from "react-icons/fa";
-
+import Head from "next/head";
+import { personalInfo } from "@/data/portfolioData";
 
 export async function getStaticProps() {
   const allProjectsData = getSortedProjectsData();
-  const page = true;
   return {
     props: {
       allProjectsData,
-      page
     },
   };
 }
 
-export default function Projects({ allProjectsData, page }) {
-  if (page) {
-    // Full page version
-    return (
+export default function Projects({ allProjectsData }) {
+  return (
+    <>
+      <Head>
+        <title>{`Projects - ${personalInfo.name}`}</title>
+        <meta
+          name="description"
+          content={`Projects by ${personalInfo.name}. Explore software engineering, data engineering, and distributed systems projects.`}
+        />
+        <link rel="canonical" href="https://visakhvijay.fyi/projects" />
+      </Head>
+
       <div className="min-h-screen">
-        <section id="projects" className="py-20">
-          <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center text-cyan-300 mb-12 font-mono tracking-wider">[ PROJECTS ]</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {allProjectsData.map(({ id, date, tags, title, description, github, url }) => (
-                <div key={title} className="bg-black/50 backdrop-blur-lg p-6 rounded-lg border border-cyan-400/20 flex flex-col hover:border-cyan-400/70 hover:-translate-y-1 transition-all duration-300">
-                  <div className="flex-grow">
-                    <Link href={`/projects/${encodeURIComponent(id)}`}>
-                      <h3 className="text-xl font-bold text-cyan-300 mb-2 hover:text-cyan-200 cursor-pointer transition-colors">
-                        {title}
-                      </h3>
-                    </Link>
-                    <p className="text-gray-400 mb-4">{description}</p>
-                  </div>
-                  <div className="flex justify-between items-end">
-                    <div className="flex flex-wrap gap-2">
-                      {tags.map(t => <span key={t} className="text-xs bg-cyan-900/50 text-cyan-300 px-2 py-1 rounded">{t}</span>)}
+        <section id="projects" className="py-20 pt-24 md:pt-28">
+          <div className="container mx-auto px-6 max-w-5xl">
+            <h1
+              className="text-3xl md:text-4xl font-bold text-center mb-12 tracking-wider theme-heading"
+            >
+              Projects
+            </h1>
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+              {allProjectsData.map(
+                ({ id, date, tags, title, description, github, url }) => (
+                  <div
+                    key={id}
+                    className="theme-card p-6 flex flex-col"
+                  >
+                    <div className="flex-grow">
+                      <Link href={`/projects/${encodeURIComponent(id)}`}>
+                        <h2
+                          className="text-xl font-bold mb-2 cursor-pointer transition-colors duration-200"
+                          style={{ color: "var(--text-primary)" }}
+                          onMouseEnter={(e) =>
+                            (e.target.style.color = "var(--accent)")
+                          }
+                          onMouseLeave={(e) =>
+                            (e.target.style.color = "var(--text-primary)")
+                          }
+                        >
+                          {title}
+                        </h2>
+                      </Link>
+                      <p
+                        className="mb-4 text-sm leading-relaxed"
+                        style={{ color: "var(--text-secondary)" }}
+                      >
+                        {description}
+                      </p>
                     </div>
-                    <div className="flex items-center space-x-4">
-                      {github && (
-                        <a href={github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyan-300 transition-colors">
-                          <Github size={20} />
-                        </a>
-                      )}
-                      {url && (
-                        <a href={url} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyan-300 transition-colors">
-                          <ExternalLink size={20} />
-                        </a>
-                      )}
+                    <div className="flex justify-between items-end">
+                      <div className="flex flex-wrap gap-2">
+                        {tags?.map((t) => (
+                          <span key={t} className="theme-tag">
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="flex items-center space-x-4 ml-4">
+                        {github && (
+                          <a
+                            href={github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="transition-colors duration-200"
+                            style={{ color: "var(--text-tertiary)" }}
+                            onMouseEnter={(e) =>
+                              (e.currentTarget.style.color = "var(--accent)")
+                            }
+                            onMouseLeave={(e) =>
+                              (e.currentTarget.style.color =
+                                "var(--text-tertiary)")
+                            }
+                          >
+                            <Github size={20} />
+                          </a>
+                        )}
+                        {url && (
+                          <a
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="transition-colors duration-200"
+                            style={{ color: "var(--text-tertiary)" }}
+                            onMouseEnter={(e) =>
+                              (e.currentTarget.style.color = "var(--accent)")
+                            }
+                            onMouseLeave={(e) =>
+                              (e.currentTarget.style.color =
+                                "var(--text-tertiary)")
+                            }
+                          >
+                            <ExternalLink size={20} />
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                )
+              )}
             </div>
           </div>
         </section>
       </div>
-    );
-  }
-
-  // Section version for home page (no backgrounds)
-  return (
-    <section id="projects" className="py-20">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center text-cyan-300 mb-12 font-mono tracking-wider">[ PROJECTS ]</h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          {allProjectsData.map(({ id, date, tags, title, description, github, url }) => (
-            <div key={title} className="bg-black/50 backdrop-blur-lg p-6 rounded-lg border border-cyan-400/20 flex flex-col hover:border-cyan-400/70 hover:-translate-y-1 transition-all duration-300">
-              <div className="flex-grow">
-                <Link href={`/projects/${encodeURIComponent(id)}`}>
-                  <h3 className="text-xl font-bold text-cyan-300 mb-2 hover:text-cyan-200 cursor-pointer transition-colors">
-                    {title}
-                  </h3>
-                </Link>
-                <p className="text-gray-400 mb-4">{description}</p>
-              </div>
-              <div className="flex justify-between items-end">
-                <div className="flex flex-wrap gap-2">
-                  {tags.map(t => <span key={t} className="text-xs bg-cyan-900/50 text-cyan-300 px-2 py-1 rounded">{t}</span>)}
-                </div>
-                <div className="flex items-center space-x-4">
-                  {github && (
-                    <a href={github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyan-300 transition-colors">
-                      <Github size={20} />
-                    </a>
-                  )}
-                  {url && (
-                    <a href={url} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyan-300 transition-colors">
-                      <ExternalLink size={20} />
-                    </a>
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-        {!page && (
-          <div className="text-center mt-8">
-            <Link href="/projects" className="text-cyan-300 hover:text-cyan-200 transition-colors">
-              [View More ➤]
-            </Link>
-          </div>
-        )}
-      </div>
-    </section>
+    </>
   );
 }

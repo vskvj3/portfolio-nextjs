@@ -1,21 +1,33 @@
-import Layout from "@/components/layout";
 import "@/styles/globals.css";
-import { JetBrains_Mono } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
+import "@/styles/default-theme.css";
+import "@/styles/cyberpunk-theme.css";
+import { Inter, JetBrains_Mono } from "next/font/google";
+import { ThemeProvider } from "@/context/ThemeContext";
+import Layout from "@/components/layout";
+import { Analytics } from "@vercel/analytics/react";
 
-const inter = JetBrains_Mono({
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
 });
 
-export default function MyApp({ Component, pageProps }) {
-  // Use the layout defined at the page level, if available
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains",
+  display: "swap",
+});
+
+export default function App({ Component, pageProps }) {
+  // Support per-page layouts if defined
   const getLayout = Component.getLayout || ((page) => <Layout>{page}</Layout>);
 
   return (
-    <main className={`${inter.variable} font-sans`}>
-      {getLayout(<Component {...pageProps} />)}
-      <Analytics />
-    </main>
+    <ThemeProvider>
+      <div className={`${inter.variable} ${jetbrainsMono.variable}`}>
+        {getLayout(<Component {...pageProps} />)}
+        <Analytics />
+      </div>
+    </ThemeProvider>
   );
 }
