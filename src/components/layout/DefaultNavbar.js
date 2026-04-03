@@ -11,7 +11,6 @@ export default function DefaultNavbar() {
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
     { href: "/projects", label: "Projects" },
     { href: "/posts", label: "Blog" },
   ];
@@ -37,7 +36,7 @@ export default function DefaultNavbar() {
             className="text-lg font-bold tracking-tight"
             style={{ color: "var(--text-primary)" }}
           >
-            {personalInfo.name}
+            [Visakh]
           </Link>
 
           {/* Desktop Nav */}

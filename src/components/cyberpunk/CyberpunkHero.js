@@ -32,19 +32,12 @@ export default function CyberpunkHero() {
       case "contact":
         response = terminalResponses.contact;
         break;
-      case "skills":
-        response = terminalResponses.skills;
-        break;
       case "projects":
         response = terminalResponses.projects;
         setTimeout(() => {
           const el = document.getElementById("projects");
           if (el) el.scrollIntoView({ behavior: "smooth" });
         }, 500);
-        break;
-      case "about":
-        response = terminalResponses.about;
-        setTimeout(() => router.push("/about"), 500);
         break;
       default:
         response = `bash: ${trimmedCommand}: command not found`;

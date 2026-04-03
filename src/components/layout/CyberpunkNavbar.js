@@ -22,9 +22,8 @@ export default function CyberpunkNavbar() {
 
   const navItems = [
     { id: "terminal", label: "/home" },
-    { id: "skills", label: "/skills" },
-    { id: "projects", label: "/projects" },
     { id: "blogs", label: "/blogs" },
+    { id: "projects", label: "/projects" },
     { id: "contact", label: "/contact" },
   ];
 

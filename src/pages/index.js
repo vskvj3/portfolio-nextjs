@@ -89,9 +89,8 @@ export default function Home({ allPostsData, allProjectsData, featuredProjects }
       <>
         {headContent}
         <CyberpunkHero />
-        <CyberpunkSkills />
-        <CyberpunkProjects projects={allProjectsData} />
         <CyberpunkBlogPreview posts={allPostsData} />
+        <CyberpunkProjects projects={allProjectsData} />
         <CyberpunkContact />
       </>
     );

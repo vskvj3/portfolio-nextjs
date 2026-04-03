@@ -92,18 +92,10 @@ Think of this portfolio as my corner of the Wired, come say hi.`,
   whoami    - Display user information
   clear     - Clear the terminal
   contact   - Show contact information
-  projects  - View my projects
-  skills    - List technical skills
-  about     - Learn more about me`,
+  projects  - View my projects`,
   contact: `Contact Information:
   Email:    imvisakhvijay@gmail.com
   LinkedIn: linkedin.com/in/visakhvj3
   GitHub:   github.com/vskvj3`,
-  skills: `Technical Skills:
-  ┌─ Distributed Systems ──── gRPC, Leader Election, Replication
-  ├─ Data Engineering ─────── PySpark, Databricks, Kafka, ADF
-  ├─ Backend Development ──── Go, Python, Java, Node.js
-  └─ Frontend & Tools ─────── React, Next.js, Docker, Git`,
-  about: `Redirecting to about page...`,
   projects: `Redirecting to projects page...`,
 };
