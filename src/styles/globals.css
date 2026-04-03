@@ -46,46 +46,42 @@
 
 /* Theme Switch Transitions */
 [data-mode="cyberpunk"] .theme-transition-wrapper {
-  animation: glitch-spill 0.7s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+  animation: phosphor-bleed 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 [data-mode="default"] .theme-transition-wrapper {
-  animation: sun-burst 0.7s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+  animation: light-bleed 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
-@keyframes glitch-spill {
+@keyframes phosphor-bleed {
   0% {
     clip-path: circle(0% at var(--toggle-x, 50vw) var(--toggle-y, 50vh));
-    filter: invert(1) hue-rotate(90deg) contrast(3) brightness(2);
-    transform: scale(0.95) skewX(10deg);
+    filter: blur(40px) brightness(5) sepia(1) hue-rotate(110deg) saturate(3);
+    opacity: 0;
   }
-  30% {
-    filter: invert(0) hue-rotate(180deg) brightness(1.5);
-    transform: scale(1.02) skewX(-10deg);
+  10% {
+    opacity: 1;
   }
   60% {
-    filter: hue-rotate(45deg);
-    transform: skewX(5deg);
+    filter: blur(15px) brightness(1.5) sepia(0.5) hue-rotate(90deg) saturate(1.5);
   }
   100% {
     clip-path: circle(150% at var(--toggle-x, 50vw) var(--toggle-y, 50vh));
-    filter: none;
-    transform: none;
+    filter: blur(0px) brightness(1) sepia(0) hue-rotate(0deg) saturate(1);
   }
 }
 
-@keyframes sun-burst {
+@keyframes light-bleed {
   0% {
     clip-path: circle(0% at var(--toggle-x, 50vw) var(--toggle-y, 50vh));
-    filter: saturate(5) brightness(10) contrast(2);
-    transform: scale(1.05);
+    filter: blur(30px) brightness(4);
+    opacity: 0;
   }
-  40% {
-    filter: saturate(2) brightness(3);
+  10% {
+    opacity: 1;
   }
   100% {
     clip-path: circle(150% at var(--toggle-x, 50vw) var(--toggle-y, 50vh));
-    filter: none;
-    transform: none;
+    filter: blur(0px) brightness(1);
   }
 }
