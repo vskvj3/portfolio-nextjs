@@ -3,8 +3,8 @@
 @source "../";
 
 @theme {
-  --font-sans: "JetBrains Mono", monospace;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   --color-dracula-background1: #082f49;
   --color-dracula-background2: #020617;
@@ -29,154 +29,16 @@
 }
 
 @layer base {
-  /* Hide scrollbars across all browsers */
   * {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
   *::-webkit-scrollbar {
-    display: none; /* WebKit */
+    display: none;
   }
 
-  /* Base font family - ensure it loads properly in production */
-  html,
-  body {
-    font-family: var(--font-inter), 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
-    font-feature-settings: 'liga' 1, 'calt' 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: #0f172a; /* Dark slate background */
-    color: #e2e8f0; /* Light text color */
-    min-height: 100vh;
-  }
-
-  /* Ensure consistent background for all elements */
-  #__next {
-    background-color: #0f172a;
-    min-height: 100vh;
-  }
-}
-
-@layer base {
-  @keyframes gradient-animation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-
-  .animated-gradient {
-    background: linear-gradient(-45deg, #000000, #0a192f, #001f3f, #02030c);
-    background-size: 400% 400%;
-    animation: gradient-animation 15s ease infinite;
-  }
-
-  /* Terminal text handling */
-  .terminal-text {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
-    line-break: auto;
-  }
-
-  .terminal-content {
-    word-spacing: normal;
-    letter-spacing: normal;
-  }
-
-  /* Retro flickering neon sign animation */
-  @keyframes neon-flicker {
-    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-      text-shadow: 
-        0 0 5px #00ffff,
-        0 0 10px #00ffff,
-        0 0 15px #00ffff,
-        0 0 20px #00ffff;
-      opacity: 1;
-    }
-    20%, 24%, 55% {
-      text-shadow: none;
-      opacity: 0.8;
-    }
-    22% {
-      text-shadow: 
-        0 0 2px #00ffff,
-        0 0 5px #00ffff;
-      opacity: 0.9;
-    }
-  }
-
-  @keyframes glitch-text {
-    0% {
-      transform: translate(0);
-    }
-    20% {
-      transform: translate(-1px, 1px);
-    }
-    40% {
-      transform: translate(-1px, -1px);
-    }
-    60% {
-      transform: translate(1px, 1px);
-    }
-    80% {
-      transform: translate(1px, -1px);
-    }
-    100% {
-      transform: translate(0);
-    }
-  }
-
-  .neon-flicker {
-    animation: 
-      neon-flicker 2s infinite linear,
-      glitch-text 0.3s infinite linear;
-    color: #00ffff;
-    text-shadow: 
-      0 0 5px #00ffff,
-      0 0 10px #00ffff,
-      0 0 15px #00ffff,
-      0 0 20px #00ffff;
-    position: relative;
-  }
-
-  .neon-flicker::before {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    color: #ff0080;
-    text-shadow: 
-      -1px 0 #ff0080,
-      0 1px #ff0080,
-      1px 0 #ff0080,
-      0 -1px #ff0080;
-    animation: glitch-text 0.5s infinite linear reverse;
-    opacity: 0.1;
-  }
-
-  /* Individual letter flicker variations */
-  .flicker-fast {
-    animation: neon-flicker 1.5s infinite linear;
-  }
-
-  .flicker-slow {
-    animation: neon-flicker 3s infinite linear;
-  }
-
-  .flicker-medium {
-    animation: neon-flicker 2.2s infinite linear;
-  }
-
-  /* Hover effect to intensify the glow */
-  .neon-flicker:hover {
-    text-shadow: 
-      0 0 8px #00ffff,
-      0 0 15px #00ffff,
-      0 0 25px #00ffff,
-      0 0 35px #00ffff;
+  html {
+    scroll-behavior: smooth;
   }
 }

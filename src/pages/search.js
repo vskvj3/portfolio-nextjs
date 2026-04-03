@@ -1,13 +1,15 @@
-// pages/search.js
 import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { searchTags } from "../lib/search";
 import Link from "next/link";
+import Head from "next/head";
+import { personalInfo } from "@/data/portfolioData";
+import { Search } from "lucide-react";
 
 export async function getServerSideProps(context) {
   const { tags } = context.query;
 
-  let initialResults = [];
+  let initialResults = { projects: [], posts: [] };
   if (tags) {
     const tagArray = tags.split(" ");
     initialResults = searchTags(tagArray);
@@ -23,111 +25,126 @@ export async function getServerSideProps(context) {
 const SearchPage = ({ initialResults }) => {
   const router = useRouter();
   const { tags } = router.query;
-  const [results, setResults] = useState(initialResults);
-
-  //   useEffect(() => {
-  //     if (tags) {
-  //       const tagArray = tags.split(" ");
-  //       const filteredResults = searchTags(tagArray);
-  //       setResults(filteredResults);
-  //     }
-  //   }, [tags]);
+  const [results] = useState(initialResults);
 
   return (
-    <section className="bg-dracula-foreground/35 backdrop-blur-md w-1/2 min-w-[370px] max-w-[700px] h-auto mx-auto mb-2 lg:mb-5 p-[10px] lg:p-[20px] rounded-md text-left text-dracula-t-white">
-      <div>
-        {/* advanced filtering section with selection of tags and type(post or project) and search button */}
-        {/* <div className="">
-          <div className="w-full lg:w-1/2">
-            <input
-              type="text"
-              placeholder="Search for tags"
-              className="bg-dracula-cards/10 text-[#f8f8f2] h-auto p-2 lg:p-5 rounded-md mb-5 w-full"
-            />
-          </div>
-          <div className="w-full lg:w-1/2">
-            <select
-              name="type"
-              id="type"
-              className="bg-dracula-cards/10 text-[#f8f8f2] h-auto p-2 lg:p-5 rounded-md mb-5 w-full"
+    <>
+      <Head>
+        <title>{`Search Results - ${personalInfo.name}`}</title>
+        <meta name="robots" content="noindex" />
+      </Head>
+
+      <div className="min-h-screen pt-24 md:pt-28 pb-16">
+        <div className="container mx-auto px-6 max-w-3xl">
+          <div className="text-center mb-10">
+            <div
+              className="inline-flex items-center justify-center w-12 h-12 rounded-full mb-4"
+              style={{ backgroundColor: "var(--accent-light)" }}
             >
-              <option value="posts">Posts</option>
-              <option value="projects">Projects</option>
-            </select>
+              <Search size={20} style={{ color: "var(--accent)" }} />
+            </div>
+            <h1 className="text-2xl md:text-3xl font-bold theme-heading">
+              Search Results
+            </h1>
+            {tags && (
+              <p
+                className="mt-2 text-sm"
+                style={{ color: "var(--text-tertiary)" }}
+              >
+                Showing results for:{" "}
+                <span style={{ color: "var(--accent)" }}>{tags}</span>
+              </p>
+            )}
           </div>
-          <div className="w-full">
-            <button className="bg-dracula-cards/10 text-[#f8f8f2] h-auto p-2 lg:p-5 rounded-md mb-5 w-full">
-              Search
-            </button>
+
+          {/* Projects */}
+          <div className="mb-8">
+            <h2
+              className="text-lg font-semibold mb-4"
+              style={{ color: "var(--text-primary)" }}
+            >
+              Projects
+            </h2>
+            {results.projects.length > 0 ? (
+              <div className="space-y-3">
+                {results.projects.map(({ id, tags, title }) => (
+                  <Link
+                    key={id}
+                    href={`/projects/${encodeURIComponent(id)}`}
+                  >
+                    <div className="theme-card p-4 cursor-pointer">
+                      <h3
+                        className="font-semibold mb-2 transition-colors duration-200"
+                        style={{ color: "var(--text-primary)" }}
+                      >
+                        {title}
+                      </h3>
+                      <div className="flex flex-wrap gap-1.5">
+                        {tags.map((tag) => (
+                          <span key={tag} className="theme-tag text-xs">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            ) : (
+              <div
+                className="theme-card p-4 text-center text-sm"
+                style={{ color: "var(--text-tertiary)" }}
+              >
+                No projects found.
+              </div>
+            )}
           </div>
-        </div> */}
-      </div>
-      <div>
-      <p className=" text-center pb-3 lg:text-lg">[Search Results]</p>
-        <div>
-          {results.projects.length > 0 ? (
-            <ul>
-              <p className=" text-center pb-3 lg:text-md">[Projects]</p>
-              {results.projects.map(({ id, date, tags, title }) => (
-                <Link key={id} href={`/projects/${encodeURIComponent(id)}`}>
-                  <li className="bg-dracula-cards/10 hover:bg-dracula-cards/20 text-[#f8f8f2] h-auto p-2 lg:p-5 rounded-md mb-5">
-                    <span className=" text-blue-500 text-md lg:text-lg">
-                      {title}
-                    </span>
-                    <br />
-                    <div className="flex flex-wrap">
-                      {tags.map((tag) => (
-                        <div
-                          key={tag}
-                          className="lg:text-sm text-xs p-1 mr-1 mt-1 bg-[#353a57] rounded-md"
-                        >
-                          {tag}
-                        </div>
-                      ))}
+
+          {/* Posts */}
+          <div>
+            <h2
+              className="text-lg font-semibold mb-4"
+              style={{ color: "var(--text-primary)" }}
+            >
+              Posts
+            </h2>
+            {results.posts.length > 0 ? (
+              <div className="space-y-3">
+                {results.posts.map(({ id, tags, title }) => (
+                  <Link
+                    key={id}
+                    href={`/posts/${encodeURIComponent(id)}`}
+                  >
+                    <div className="theme-card p-4 cursor-pointer">
+                      <h3
+                        className="font-semibold mb-2 transition-colors duration-200"
+                        style={{ color: "var(--text-primary)" }}
+                      >
+                        {title}
+                      </h3>
+                      <div className="flex flex-wrap gap-1.5">
+                        {tags.map((tag) => (
+                          <span key={tag} className="theme-tag text-xs">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                  </li>
-                </Link>
-              ))}
-            </ul>
-          ) : (
-            <p className="bg-dracula-cards/10 text-center text-[#f8f8f2] h-auto p-2 lg:p-5 rounded-md mb-5">
-              No Projects found.
-            </p>
-          )}
-        </div>
-        <div>
-          {results.posts.length > 0 ? (
-            <ul>
-              <p className=" text-center pb-3 lg:text-md">[Posts]</p>
-              {results.posts.map(({ id, date, tags, title }) => (
-                <Link key={id} href={`/posts/${encodeURIComponent(id)}`}>
-                  <li className="bg-dracula-cards/10 hover:bg-dracula-cards/20 text-[#f8f8f2] h-auto p-2 lg:p-5 rounded-md mb-5">
-                    <span className=" text-blue-500 text-md lg:text-lg">
-                      {title}
-                    </span>
-                    <br />
-                    <div className="flex flex-wrap">
-                      {tags.map((tag) => (
-                        <div
-                          key={tag}
-                          className="lg:text-sm text-xs p-1 mr-1 mt-1 bg-[#353a57] rounded-md"
-                        >
-                          {tag}
-                        </div>
-                      ))}
-                    </div>
-                  </li>
-                </Link>
-              ))}
-            </ul>
-          ) : (
-            <p className="bg-dracula-cards/10 text-center text-[#f8f8f2] h-auto p-2 lg:p-5 rounded-md mb-5">
-              No Posts found.
-            </p>
-          )}
+                  </Link>
+                ))}
+              </div>
+            ) : (
+              <div
+                className="theme-card p-4 text-center text-sm"
+                style={{ color: "var(--text-tertiary)" }}
+              >
+                No posts found.
+              </div>
+            )}
+          </div>
         </div>
       </div>
-    </section>
+    </>
   );
 };
 

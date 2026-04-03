@@ -1,0 +1,320 @@
+/* ============================================================
+   Cyberpunk Theme (Serial Experiments Lain / GitS + Web 1.0)
+   Retro-tech / tech-noir / gritty CRT terminal + Geocities grunge.
+   Deep void backgrounds, phosphor green text, brutalist borders, chromatic aberration.
+   ============================================================ */
+
+/* Base styles for cyberpunk mode */
+[data-mode="cyberpunk"] {
+  --bg-primary: #020403;
+  --bg-secondary: #050a07;
+  --bg-tertiary: #08100b;
+  
+  --bg-card: #050806;
+  --bg-card-hover: #0a100c;
+  --bg-nav: rgba(2, 4, 3, 0.95);
+  
+  --text-primary: #8bc3a3; /* Faded phosphor */
+  --text-secondary: #5a836a;
+  --text-tertiary: #314d3b;
+  
+  --accent: #1ee37e; /* Harsh GitS green */
+  --accent-hover: #2bff90;
+  --accent-light: rgba(30, 227, 126, 0.1);
+  --accent-muted: rgba(30, 227, 126, 0.25);
+  
+  --accent-pink: #ca3a3a; /* Critical alert / Blood red */
+  --accent-green: #1ee37e;
+  
+  --border: #1a3826;
+  --border-hover: #1ee37e;
+  
+  /* Brutalist hard geometry */
+  --shadow: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --radius: 0px; 
+}
+
+[data-mode="cyberpunk"] body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-mono, "Courier New", Courier, monospace);
+  -webkit-font-smoothing: none; /* Retro pixelated text */
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
+/* 
+  Physical CRT Monitor Glass Overlay 
+  (Curved shadow & heavy vignette)
+*/
+[data-mode="cyberpunk"] body::after {
+  content: "";
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  width: 100vw; 
+  height: 100vh;
+  box-shadow: inset 0 0 100px rgba(0,0,0,0.9), inset 0 0 30px rgba(0,0,0,0.8);
+  pointer-events: none;
+  z-index: 9998;
+}
+
+/* Base text phosphor bleed effect */
+[data-mode="cyberpunk"] p, 
+[data-mode="cyberpunk"] h1, 
+[data-mode="cyberpunk"] h2, 
+[data-mode="cyberpunk"] h3, 
+[data-mode="cyberpunk"] span,
+[data-mode="cyberpunk"] li {
+  text-shadow: 0 0 2px rgba(30, 227, 126, 0.5);
+}
+
+/* Web 1.0 Link Styling (Scoped) */
+[data-mode="cyberpunk"] .prose a,
+[data-mode="cyberpunk"] .theme-inline-link {
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-underline-offset: 3px;
+  text-shadow: 0 0 2px rgba(30, 227, 126, 0.5);
+  transition: none;
+  color: var(--accent);
+}
+
+[data-mode="cyberpunk"] .prose a:hover,
+[data-mode="cyberpunk"] .theme-inline-link:hover {
+  background-color: var(--accent);
+  color: var(--bg-primary) !important;
+  text-shadow: none;
+  text-decoration-style: solid;
+}
+
+/* Base anchor defaults for interactive regions */
+[data-mode="cyberpunk"] a {
+  transition: none;
+  text-decoration: none;
+}
+
+/* Section headings with Chromatic Aberration */
+[data-mode="cyberpunk"] .theme-heading {
+  color: var(--text-primary);
+  font-family: var(--font-mono, "Courier New", Courier, monospace);
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border-bottom: 2px dashed var(--border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  /* Chromatic Aberration + Phosphor Glow */
+  text-shadow: 
+    2px 0 0 rgba(255, 0, 0, 0.6), 
+    -2px 0 0 rgba(0, 0, 255, 0.6),
+    0 0 5px rgba(30, 227, 126, 0.5);
+  display: inline-block;
+  width: 100%;
+}
+
+/* Card component - brutalist Web 1.0 frames */
+[data-mode="cyberpunk"] .theme-card {
+  background: var(--bg-card);
+  border: 1px dotted var(--border);
+  border-left: 4px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: none;
+  transition: none; 
+}
+
+[data-mode="cyberpunk"] .theme-card:hover {
+  border-left-color: var(--accent);
+  background: var(--bg-card-hover);
+}
+
+/* Accent button */
+[data-mode="cyberpunk"] .theme-btn-primary {
+  background: var(--bg-card);
+  color: var(--accent);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  font-weight: bold;
+  font-family: var(--font-mono, Courier, monospace);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: none; /* Instant, materialistic hardware feel */
+}
+
+[data-mode="cyberpunk"] .theme-btn-primary:hover {
+  background: var(--accent);
+  color: var(--bg-primary);
+  border-color: var(--accent);
+  text-shadow: none;
+}
+
+/* Outline button */
+[data-mode="cyberpunk"] .theme-btn-outline {
+  border: 1px dashed var(--text-secondary);
+  background: transparent;
+  color: var(--text-primary);
+  border-radius: var(--radius);
+  font-weight: bold;
+  font-family: var(--font-mono, Courier, monospace);
+  text-decoration: none;
+  transition: none;
+}
+
+[data-mode="cyberpunk"] .theme-btn-outline:hover {
+  border: 1px solid var(--accent);
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+/* Skill tag */
+[data-mode="cyberpunk"] .theme-tag {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  border: 1px dotted var(--border);
+  border-radius: 0;
+  font-size: 0.75rem;
+  font-weight: bold;
+  font-family: var(--font-mono, Courier, monospace);
+  padding: 0.25rem 0.625rem;
+  text-transform: uppercase;
+  transition: none;
+}
+
+[data-mode="cyberpunk"] .theme-card:hover .theme-tag {
+  border-style: solid;
+  border-color: var(--border-hover);
+  color: var(--accent);
+}
+
+/* Nav link updates */
+[data-mode="cyberpunk"] .theme-nav-link {
+  color: var(--text-secondary);
+  font-family: var(--font-mono, Courier, monospace);
+  text-transform: lowercase;
+  text-decoration: none;
+  transition: none;
+}
+
+[data-mode="cyberpunk"] .theme-nav-link::before {
+  content: "[ ";
+  color: var(--border);
+}
+[data-mode="cyberpunk"] .theme-nav-link::after {
+  content: " ]";
+  color: var(--border);
+}
+
+[data-mode="cyberpunk"] .theme-nav-link:hover {
+  color: var(--bg-primary);
+  background: var(--accent);
+  text-shadow: none;
+  text-decoration: none;
+}
+[data-mode="cyberpunk"] .theme-nav-link:hover::before,
+[data-mode="cyberpunk"] .theme-nav-link:hover::after {
+  color: var(--bg-primary);
+}
+
+/* Input fields */
+[data-mode="cyberpunk"] .theme-input {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-family: var(--font-mono, Courier, monospace);
+  transition: none;
+}
+
+[data-mode="cyberpunk"] .theme-input:focus {
+  border-color: var(--accent);
+  border-left-color: var(--accent);
+  outline: none;
+  background: var(--bg-card);
+}
+
+/* Hardware glitch & Flicker */
+@keyframes strict-glitch {
+  0% { transform: scaleX(1); opacity: 1; }
+  1% { transform: scaleX(1.03); opacity: 0.8; }
+  2% { transform: scaleX(0.97); opacity: 0.9; }
+  3% { transform: scaleX(1); opacity: 1; }
+  100% { transform: scaleX(1); opacity: 1; }
+}
+
+[data-mode="cyberpunk"] .neon-flicker {
+  color: var(--text-primary);
+  text-shadow: 0 0 4px var(--accent);
+  animation: strict-glitch 4s infinite;
+  display: inline-block;
+  font-weight: bold;
+}
+
+/* Terminal cursor block */
+@keyframes block-blink {
+  0%, 49% { background-color: var(--accent); color: var(--bg-primary); }
+  50%, 100% { background-color: transparent; color: transparent; }
+}
+
+[data-mode="cyberpunk"] .terminal-cursor {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.2em;
+  vertical-align: middle;
+  background-color: var(--accent);
+  animation: block-blink 1s step-end infinite;
+  margin-left: 2px;
+}
+
+/* 
+  Heavy CRT Scanlines + Vignette 
+  (Interlaced 1px lines masking the entire site)
+*/
+[data-mode="cyberpunk"] .scanlines::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.3) 0px,
+    rgba(0, 0, 0, 0.3) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* TV screen flicker overlay */
+[data-mode="cyberpunk"] .scanlines::after {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.02);
+  z-index: 10000;
+  pointer-events: none;
+  animation: screen-flicker 0.15s infinite;
+}
+
+@keyframes screen-flicker {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+/* Selection */
+[data-mode="cyberpunk"] ::selection {
+  background: var(--accent);
+  color: var(--bg-primary);
+  text-shadow: none;
+}
