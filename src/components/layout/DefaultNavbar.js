@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ModeToggle from "@/components/shared/ModeToggle";
 import { personalInfo } from "@/data/portfolioData";
 import { FiMenu, FiX } from "react-icons/fi";
@@ -8,6 +8,45 @@ import { FiMenu, FiX } from "react-icons/fi";
 export default function DefaultNavbar() {
   const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activePath, setActivePath] = useState("/");
+
+  // Scroll spy logic
+  useEffect(() => {
+    if (router.pathname !== "/") {
+      setActivePath(router.pathname);
+      return;
+    }
+
+    const handleScroll = () => {
+      // Order correctly from bottom to top evaluating the bounding rects.
+      // E.g. check bottom sections first to see if they're in view.
+      const sections = ["posts", "projects", "home"];
+      let found = false;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          // If the top of the section is at or past the middle of the viewport
+          if (rect.top <= window.innerHeight / 2.5) {
+            setActivePath(section === "home" ? "/" : `/${section}`);
+            found = true;
+            break;
+          }
+        }
+      }
+      
+      // Fallback
+      if (!found) {
+         setActivePath("/");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Init Check
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [router.pathname]);
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -16,6 +55,9 @@ export default function DefaultNavbar() {
   ];
 
   const isActive = (href) => {
+    if (router.pathname === "/") {
+      return activePath === href;
+    }
     if (href === "/") return router.pathname === "/";
     return router.pathname.startsWith(href);
   };
@@ -33,7 +75,7 @@ export default function DefaultNavbar() {
         <div className="flex items-center justify-between">
           <Link
             href="/"
-            className="text-lg font-bold tracking-tight"
+            className="text-xl font-bold tracking-tight"
             style={{ color: "var(--text-primary)" }}
           >
             [Visakh]
@@ -45,7 +87,7 @@ export default function DefaultNavbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium transition-colors duration-200"
+                className="text-base font-semibold transition-colors duration-200"
                 style={{
                   color: isActive(link.href)
                     ? "var(--accent)"
@@ -75,7 +117,7 @@ export default function DefaultNavbar() {
               style={{ color: "var(--text-secondary)" }}
               aria-label="Toggle navigation menu"
             >
-              {mobileOpen ? <FiX size={20} /> : <FiMenu size={20} />}
+              {mobileOpen ? <FiX size={24} /> : <FiMenu size={24} />}
             </button>
           </div>
         </div>

@@ -10,7 +10,7 @@ export default function DefaultHero() {
   };
 
   return (
-    <section className="relative min-h-[calc(100vh-80px)] flex items-center py-20">
+    <section id="home" className="relative min-h-[calc(100vh-80px)] flex items-center py-20">
       <div className="container mx-auto px-6 max-w-4xl">
         <div className="space-y-6">
           {/* Greeting */}
