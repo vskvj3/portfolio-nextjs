@@ -45,7 +45,7 @@ export default function CyberpunkContact() {
                   Feel free to reach out!
                 </h3>
                 <p className="mb-8 text-lg" style={{ color: "var(--text-secondary)" }}>
-                  Let&apos;s connect and build something amazing together!
+                  Let&apos;s connect!
                 </p>
                 <div className="space-y-4">
                   <a
