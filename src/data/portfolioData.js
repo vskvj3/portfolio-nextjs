@@ -1,92 +1,136 @@
-// ============================================================
-// Portfolio Data Layer
-// All portfolio content lives here. Both Default (Recruiter)
-// and Cyberpunk modes render from this same data source.
-// ============================================================
-
 export const personalInfo = {
   name: "Visakh Vijay O",
-  role: "Software Engineer",
-  specialization: "Backend Development & Data Engineering",
-  tagline: "Building scalable data systems and backend infrastructure.",
-  bio: "A software engineer with experience in big data and data engineering technologies. Fascinated by technology since childhood, that curiosity still drives me to create, learn, and experiment. Currently working as a developer at UST.",
+  role: "Software Development Engineer",
+  specialization: "Backend Systems & Data Engineering",
+  tagline: "Building distributed systems and high-throughput data pipelines.",
+  bio: "Software Development Engineer with experience building distributed backend systems and scalable data pipelines. Skilled in Python, Go, SQL, and the Azure ecosystem, with strong fundamentals in system design, fault tolerance, and performance optimization. Passionate about solving real-world data and infrastructure challenges.",
   location: "Kerala, India",
   email: "imvisakhvijay@gmail.com",
   github: "https://github.com/vskvj3",
   linkedin: "https://linkedin.com/in/visakhvj3",
   profileImage: "/images/profile.jpeg",
-  resumeUrl: "#", // TODO: Add resume link
+  resumeUrl: "#", // update with actual link
 };
 
 export const experience = [
   {
-    title: "Software Engineer",
+    title: "Software Development Engineer",
     company: "UST",
-    period: "2024 – Present",
+    period: "Aug 2024 – Present",
     type: "work",
     description:
-      "Working on data engineering solutions and building scalable applications with big data technologies.",
+      "Building distributed data pipelines and backend systems for enterprise-scale applications with a focus on performance, reliability, and scalability.",
     bullets: [
-      "Designed and implemented data engineering pipelines using PySpark and Azure Data Factory",
-      "Built scalable backend services processing enterprise-scale data workloads",
-      "Worked with distributed computing frameworks and cloud-native architectures on Azure",
-      "Collaborated with cross-functional teams to deliver data-driven insights to stakeholders",
+      "Contributed to a large-scale replenishment integration system for a U.S. retail chain (2000+ stores), ensuring reliable data synchronization across ERP systems",
+      "Refactored batch pipelines into Kafka-based real-time streaming workflows, improving data freshness and system maintainability",
+      "Improved Spark job performance by 35% through optimized joins, caching, and partitioning strategies",
+      "Built a multi-threaded Python data migration client reducing execution time by 33%",
+      "Implemented fault-tolerant retry and alerting mechanisms, eliminating recurring job failures and reducing manual intervention",
+      "Developed event-driven architectures and backend services for high-throughput data processing",
     ],
-    technologies: ["PySpark", "Azure Data Factory", "Databricks", "Python", "SQL"],
+    technologies: [
+      "Python",
+      "PySpark",
+      "Apache Spark",
+      "Kafka",
+      "Azure Databricks",
+      "Azure Data Factory",
+      "SQL",
+      "Docker",
+    ],
   },
 ];
 
 export const education = [
   {
-    title: "B.Tech Computer Science",
-    institution: "RIT Kottayam",
+    title: "B.Tech Computer Science and Engineering",
+    institution: "Government Engineering College, Kottayam (RIT Kottayam)",
     period: "2020 – 2024",
     description:
-      "Graduated with expertise in software engineering, data structures, algorithms, and modern development frameworks.",
+      "CGPA: 8.13. Strong foundation in data structures, algorithms, distributed systems, and database management.",
   },
   {
     title: "Higher Secondary (Computer Science)",
     institution: "GHMSS Perinthalmanna",
     period: "2018 – 2020",
-    description: "Specialized in Computer Science with a strong foundation in mathematics.",
+    description: "Focused on mathematics and computer science fundamentals.",
   },
 ];
 
 export const skillCategories = [
   {
     name: "Distributed Systems",
-    skills: ["gRPC", "Leader Election", "Data Replication", "Eventual Consistency", "Docker"],
+    skills: [
+      "gRPC",
+      "Leader-Follower Replication",
+      "Eventual Consistency",
+      "Fault Tolerance",
+      "Distributed Caching",
+      "Docker",
+    ],
   },
   {
     name: "Data Engineering",
-    skills: ["PySpark", "Databricks", "Kafka", "Azure Data Factory", "BigQuery", "Spark SQL", "Hadoop"],
+    skills: [
+      "PySpark",
+      "Spark SQL",
+      "Kafka",
+      "Delta Lake",
+      "Azure Data Factory",
+      "Databricks",
+      "ETL/ELT",
+      "SCD Type 2",
+    ],
   },
   {
     name: "Backend Development",
-    skills: ["Go", "Python", "Java", "Node.js", "Express.js", "MongoDB", "MySQL", "Azure SQL"],
+    skills: [
+      "Go",
+      "Python",
+      "Java",
+      "Node.js",
+      "Express.js",
+      "REST APIs",
+      "SQL",
+    ],
+  },
+  {
+    name: "Cloud & Platforms",
+    skills: [
+      "Azure",
+      "Cosmos DB",
+      "Blob Storage",
+      "BigQuery",
+      "MySQL",
+      "MongoDB",
+    ],
   },
   {
     name: "Frontend & Tools",
-    skills: ["React", "Next.js", "Flutter", "Tailwind CSS", "Git", "Linux", "Bash"],
+    skills: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Git",
+      "Linux",
+      "Bash",
+    ],
   },
 ];
 
 // Featured project IDs — these appear on the homepage
 export const featuredProjectIds = ["Geomys", "SwiggyDataPipeline", "dposn"];
 
-// About page narrative
 export const aboutStory = [
-  "My journey in software engineering began during my undergraduate studies and has evolved into a specialized focus on data engineering and big data technologies. I've worked on projects ranging from mobile applications to enterprise-level data pipelines that process large-scale information systems.",
-  "At UST, I work with technologies like PySpark, Azure Data Factory, and various distributed computing frameworks. My role involves designing and implementing data solutions that transform raw information into actionable insights for business stakeholders.",
-  "I stay current with emerging technologies and contribute to projects that solve practical problems. My focus is on building efficient, scalable systems that deliver real value.",
+  "I specialize in building distributed systems and data-intensive applications. My work focuses on designing scalable backend architectures and reliable data pipelines that handle real-world production workloads.",
+  "At UST, I work on high-throughput data systems involving Spark, Kafka, and Azure, where I optimize performance, improve reliability, and design event-driven workflows.",
+  "I enjoy working at the intersection of backend engineering and data engineering — solving problems related to scalability, consistency, and system design.",
 ];
 
-// Terminal commands for cyberpunk mode
 export const terminalResponses = {
-  whoami: `Hi There!
-I'm a software engineer with experience in big data and data engineering technologies. I've been fascinated by technology since I was a kid, and that curiosity still drives me to create, learn, and experiment.
-Currently, I work as a developer at UST, but more than titles, I enjoy the craft of building things that matter.
-Think of this portfolio as my corner of the Wired, come say hi.`,
+  whoami: `Software Development Engineer focused on distributed systems and data pipelines.
+Experienced in building scalable backend infrastructure, optimizing Spark workloads, and designing real-time streaming systems.
+Currently working at UST. Always exploring system design, performance, and architecture.`,
   help: `Available commands:
   help      - Show this help message
   whoami    - Display user information

@@ -17,11 +17,11 @@ export default function ModeToggle() {
       onClick={handleToggle}
       className="relative p-2 rounded-lg transition-all duration-300 group"
       aria-label={mode === "default" ? "Switch to cyberpunk mode" : "Switch to default mode"}
-      title={mode === "default" ? "Enter the matrix" : "Return to light"}
+      title={mode === "default" ? "enter_wired()" : "exit_wired()"}
     >
       {mode === "default" ? (
         <img
-          src="/images/cat_night.gif"
+          src="/images/running.gif"
           alt="running"
           style={{ width: "22px", height: "22px", objectFit: "contain" }}
           className="opacity-60 group-hover:opacity-100 transition-opacity duration-300 retro-glitch"
