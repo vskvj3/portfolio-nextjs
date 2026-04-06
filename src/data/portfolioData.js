@@ -9,7 +9,7 @@ export const personalInfo = {
   github: "https://github.com/vskvj3",
   linkedin: "https://linkedin.com/in/visakhvj3",
   profileImage: "/images/profile.jpeg",
-  resumeUrl: "#", // update with actual link
+  resumeUrl: "/resume_sde",
 };
 
 export const experience = [
