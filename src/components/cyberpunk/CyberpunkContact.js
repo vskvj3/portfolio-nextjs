@@ -43,7 +43,7 @@ export default function CyberpunkContact() {
           open transmission channel
         </p>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           {/* Desktop Layout */}
           <div className="hidden md:grid md:grid-cols-2 gap-6">
             {/* Contact Info Panel */}

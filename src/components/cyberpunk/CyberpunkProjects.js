@@ -23,7 +23,7 @@ export default function CyberpunkProjects({ projects }) {
         </p>
 
         {/* Directory listing */}
-        <div className="space-y-3 max-w-4xl mx-auto">
+        <div className="space-y-3 max-w-5xl mx-auto">
           {projects.map(({ id, title, description, tags, github, url }, index) => (
             <div key={id} className="cyber-dir-entry">
               {/* Top row: prefix + title + links */}

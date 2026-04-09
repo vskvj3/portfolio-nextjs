@@ -30,7 +30,7 @@ export default function CyberpunkBlogPreview({ posts }) {
           transmission log — /var/log/thoughts
         </p>
 
-        <div className="space-y-2 max-w-4xl mx-auto">
+        <div className="space-y-2 max-w-5xl mx-auto">
           {posts.map(({ id, date, tags, title, description, link }, index) => (
             <div key={id} className="cyber-log-entry">
               {/* Header row: entry ID + date */}

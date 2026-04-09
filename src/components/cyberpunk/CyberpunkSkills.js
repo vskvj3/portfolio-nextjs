@@ -54,7 +54,7 @@ export default function CyberpunkSkills() {
           pkg list --installed --all
         </p>
 
-        <div className="space-y-6 max-w-4xl mx-auto">
+        <div className="space-y-6 max-w-5xl mx-auto">
           {skillCategories.map((category, categoryIndex) => (
             <div key={categoryIndex} className="cyber-frame p-4 md:p-5">
               {/* Category header */}

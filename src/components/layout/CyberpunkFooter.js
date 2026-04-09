@@ -41,7 +41,7 @@ export default function CyberpunkFooter() {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 max-w-4xl py-6 mt-2">
+      <div className="container mx-auto px-6 max-w-5xl py-6 mt-2">
         {/* ASCII divider */}
         <div className="cyber-divider mb-4">
           ═══════════════════════════════════════════════
@@ -63,10 +63,6 @@ export default function CyberpunkFooter() {
         </div>
 
 
-        {/* Generated badge row */}
-        <div className="cyber-blinkie-row mb-3">
-          <img src="/images/net_infinite_badge.png" alt="the net is vast and infinite" style={{ height: "28px", imageRendering: "pixelated" }} className="cyber-blinkie" />
-        </div>
 
         {/* Best viewed */}
         <div className="cyber-retro-notice mt-3">

@@ -77,18 +77,23 @@ export default function CyberpunkHero() {
     setTypedText("");
 
     const startDelay = setTimeout(() => {
+      let currentText = "";
       typingInterval = setInterval(() => {
         if (currentIndex < whoamiText.length) {
-          setTypedText(whoamiText.substring(0, currentIndex + 1));
-          currentIndex++;
+          // Retro terminal chunks (simulating 9600 baud serial dump)
+          const chunkSize = Math.floor(Math.random() * 5) + 2; // 2 to 6 chars
+          currentText = whoamiText.substring(0, currentIndex + chunkSize);
+          setTypedText(currentText);
+          currentIndex += chunkSize;
         } else {
           clearInterval(typingInterval);
+          setTypedText(whoamiText);
           setShowPrompt(true);
           if (terminalInputRef.current && window.innerWidth >= 768) {
             terminalInputRef.current.focus();
           }
         }
-      }, 30);
+      }, 15);
     }, 500);
 
     return () => {
@@ -104,7 +109,7 @@ export default function CyberpunkHero() {
     >
       {/* ASCII art welcome */}
       <pre
-        className="text-center mb-4 hidden sm:block"
+        className="text-center mb-4 hidden sm:block animate-pulse"
         style={{
           color: "var(--text-tertiary)",
           fontSize: "0.55rem",
@@ -113,18 +118,18 @@ export default function CyberpunkHero() {
           fontFamily: "var(--font-mono, Courier, monospace)",
         }}
       >
-{`
-┌────────────────────────────────────────────────┐
-│  ░▒▓  PERSONAL TERMINAL — LAYER 07  ▓▒░        │
-│  connecting to the wired...                    │
-└────────────────────────────────────────────────┘
+        {`
+┌──────────────────────────────────────────────────┐
+│      ░▒▓  PERSONAL TERMINAL : LAYER 07  ▓▒░      │
+│            connecting to the wired...            │
+└──────────────────────────────────────────────────┘
 `}
       </pre>
 
       {/* Terminal — wrapped in retro double-border frame */}
       <div
         onClick={handleTerminalClick}
-        className="w-full max-w-4xl flex-grow mx-auto cursor-text cyber-frame flex flex-col"
+        className="w-full max-w-5xl flex-grow mx-auto cursor-text cyber-frame flex flex-col"
         style={{
           boxShadow: "0 0 20px rgba(30, 227, 126, 0.05)",
           maxHeight: "75vh",
@@ -160,6 +165,7 @@ export default function CyberpunkHero() {
           </div>
           <div className="mt-2 text-sm sm:text-base md:text-lg leading-relaxed whitespace-pre-line" style={{ color: "var(--text-secondary)" }}>
             {typedText}
+            {!showPrompt && <span className="animate-pulse inline-block align-middle ml-1" style={{ backgroundColor: "var(--accent)", width: "0.5em", height: "1.1em" }}></span>}
           </div>
 
           {commandHistory.map((item, index) => (

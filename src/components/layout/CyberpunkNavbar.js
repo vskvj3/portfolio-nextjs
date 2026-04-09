@@ -35,7 +35,7 @@ export default function CyberpunkNavbar() {
         borderBottom: "1px dashed var(--border)",
       }}
     >
-      <div className="container mx-auto px-6 py-3 max-w-4xl">
+      <div className="container mx-auto px-6 py-3 max-w-5xl">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link
