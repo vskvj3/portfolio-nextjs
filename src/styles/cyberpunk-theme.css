@@ -1,77 +1,88 @@
 /* ============================================================
-   Cyberpunk Theme (Serial Experiments Lain / GitS + Web 1.0)
-   Retro-tech / tech-noir / gritty CRT terminal + Geocities grunge.
-   Deep void backgrounds, phosphor green text, brutalist borders, chromatic aberration.
+   Cyberpunk Theme — Retro-Futuristic Web 1.0
+   Serial Experiments Lain × Ghost in the Shell × Geocities
+   Dark personal homepage aesthetic with phosphor glow,
+   brutalist frames, and 90s-internet decorative elements.
    ============================================================ */
 
-/* Base styles for cyberpunk mode */
+/* ─── Base Variables ─── */
 [data-mode="cyberpunk"] {
   --bg-primary: #020403;
   --bg-secondary: #050a07;
   --bg-tertiary: #08100b;
-  
+
   --bg-card: #050806;
   --bg-card-hover: #0a100c;
   --bg-nav: rgba(2, 4, 3, 0.95);
-  
-  --text-primary: #8bc3a3; /* Faded phosphor */
+
+  --text-primary: #8bc3a3;
   --text-secondary: #5a836a;
   --text-tertiary: #314d3b;
-  
-  --accent: #1ee37e; /* Harsh GitS green */
+
+  --accent: #1ee37e;
   --accent-hover: #2bff90;
   --accent-light: rgba(30, 227, 126, 0.1);
   --accent-muted: rgba(30, 227, 126, 0.25);
-  
-  --accent-pink: #ca3a3a; /* Critical alert / Blood red */
+
+  --accent-amber: #ffb347;
+  --accent-pink: #ca3a3a;
   --accent-green: #1ee37e;
-  
+  --accent-lavender: #9b8ec4;
+
   --border: #1a3826;
   --border-hover: #1ee37e;
-  
-  /* Brutalist hard geometry */
+
   --shadow: none;
   --shadow-md: none;
   --shadow-lg: none;
-  --radius: 0px; 
+  --radius: 0px;
 }
 
+/* ─── Body & Base ─── */
 [data-mode="cyberpunk"] body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-mono, "Courier New", Courier, monospace);
-  -webkit-font-smoothing: none; /* Retro pixelated text */
+  -webkit-font-smoothing: none;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
+  /* Subtle noise texture via CSS */
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(30, 227, 126, 0.02) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(155, 142, 196, 0.015) 0%, transparent 50%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(30, 227, 126, 0.008) 2px,
+      rgba(30, 227, 126, 0.008) 4px
+    );
 }
 
-/* 
-  Physical CRT Monitor Glass Overlay 
-  (Curved shadow & heavy vignette)
-*/
+/* CRT Glass Vignette — moderate */
 [data-mode="cyberpunk"] body::after {
   content: "";
   position: fixed;
-  top: 0; 
-  left: 0; 
-  width: 100vw; 
+  top: 0;
+  left: 0;
+  width: 100vw;
   height: 100vh;
-  box-shadow: inset 0 0 100px rgba(0,0,0,0.9), inset 0 0 30px rgba(0,0,0,0.8);
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(0, 0, 0, 0.5);
   pointer-events: none;
   z-index: 9998;
 }
 
-/* Base text phosphor bleed effect */
-[data-mode="cyberpunk"] p, 
-[data-mode="cyberpunk"] h1, 
-[data-mode="cyberpunk"] h2, 
-[data-mode="cyberpunk"] h3, 
+/* ─── Text Phosphor Glow (subtle) ─── */
+[data-mode="cyberpunk"] p,
+[data-mode="cyberpunk"] h1,
+[data-mode="cyberpunk"] h2,
+[data-mode="cyberpunk"] h3,
 [data-mode="cyberpunk"] span,
 [data-mode="cyberpunk"] li {
-  text-shadow: 0 0 2px rgba(30, 227, 126, 0.5);
+  text-shadow: 0 0 2px rgba(30, 227, 126, 0.4);
 }
 
-/* Web 1.0 Link Styling (Scoped) */
+/* ─── Web 1.0 Links (Scoped) ─── */
 [data-mode="cyberpunk"] .prose a,
 [data-mode="cyberpunk"] .theme-inline-link {
   text-decoration: underline;
@@ -90,13 +101,12 @@
   text-decoration-style: solid;
 }
 
-/* Base anchor defaults for interactive regions */
 [data-mode="cyberpunk"] a {
   transition: none;
   text-decoration: none;
 }
 
-/* Section headings with Chromatic Aberration */
+/* ─── Section Headings — Chromatic Aberration ─── */
 [data-mode="cyberpunk"] .theme-heading {
   color: var(--text-primary);
   font-family: var(--font-mono, "Courier New", Courier, monospace);
@@ -106,23 +116,22 @@
   border-bottom: 2px dashed var(--border);
   padding-bottom: 0.5rem;
   margin-bottom: 1.5rem;
-  /* Chromatic Aberration + Phosphor Glow */
-  text-shadow: 
-    2px 0 0 rgba(255, 0, 0, 0.6), 
-    -2px 0 0 rgba(0, 0, 255, 0.6),
-    0 0 5px rgba(30, 227, 126, 0.5);
+  text-shadow:
+    2px 0 0 rgba(255, 0, 0, 0.5),
+    -2px 0 0 rgba(0, 0, 255, 0.5),
+    0 0 5px rgba(30, 227, 126, 0.4);
   display: inline-block;
   width: 100%;
 }
 
-/* Card component - brutalist Web 1.0 frames */
+/* ─── Cards — Brutalist Web 1.0 Frames ─── */
 [data-mode="cyberpunk"] .theme-card {
   background: var(--bg-card);
   border: 1px dotted var(--border);
   border-left: 4px solid var(--border);
   border-radius: var(--radius);
   box-shadow: none;
-  transition: none; 
+  transition: none;
 }
 
 [data-mode="cyberpunk"] .theme-card:hover {
@@ -130,7 +139,27 @@
   background: var(--bg-card-hover);
 }
 
-/* Accent button */
+/* ─── Retro Frame — Double-border Geocities panels ─── */
+[data-mode="cyberpunk"] .cyber-frame {
+  border: 2px solid var(--border);
+  outline: 1px dashed var(--border);
+  outline-offset: 3px;
+  background: var(--bg-card);
+  position: relative;
+}
+
+[data-mode="cyberpunk"] .cyber-frame::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  border: 1px dotted rgba(30, 227, 126, 0.15);
+  pointer-events: none;
+}
+
+/* ─── Buttons ─── */
 [data-mode="cyberpunk"] .theme-btn-primary {
   background: var(--bg-card);
   color: var(--accent);
@@ -140,7 +169,8 @@
   font-family: var(--font-mono, Courier, monospace);
   text-transform: uppercase;
   text-decoration: none;
-  transition: none; /* Instant, materialistic hardware feel */
+  transition: none;
+  letter-spacing: 0.1em;
 }
 
 [data-mode="cyberpunk"] .theme-btn-primary:hover {
@@ -150,7 +180,6 @@
   text-shadow: none;
 }
 
-/* Outline button */
 [data-mode="cyberpunk"] .theme-btn-outline {
   border: 1px dashed var(--text-secondary);
   background: transparent;
@@ -168,7 +197,7 @@
   color: var(--accent);
 }
 
-/* Skill tag */
+/* ─── Skill Tags ─── */
 [data-mode="cyberpunk"] .theme-tag {
   background: var(--bg-tertiary);
   color: var(--text-secondary);
@@ -188,7 +217,7 @@
   color: var(--accent);
 }
 
-/* Nav link updates */
+/* ─── Nav Links ─── */
 [data-mode="cyberpunk"] .theme-nav-link {
   color: var(--text-secondary);
   font-family: var(--font-mono, Courier, monospace);
@@ -217,7 +246,7 @@
   color: var(--bg-primary);
 }
 
-/* Input fields */
+/* ─── Input Fields ─── */
 [data-mode="cyberpunk"] .theme-input {
   background: var(--bg-primary);
   border: 1px solid var(--border);
@@ -235,7 +264,240 @@
   background: var(--bg-card);
 }
 
-/* Hardware glitch & Flicker */
+/* ─── Marquee Banner ─── */
+@keyframes cyber-marquee-scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+[data-mode="cyberpunk"] .cyber-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  background: var(--bg-secondary);
+  border-bottom: 1px dashed var(--border);
+  border-top: 1px dashed var(--border);
+  padding: 4px 0;
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-family: var(--font-mono, Courier, monospace);
+}
+
+[data-mode="cyberpunk"] .cyber-marquee-inner {
+  display: inline-block;
+  animation: cyber-marquee-scroll 60s linear infinite;
+  padding-left: 100%;
+}
+
+/* ─── Blinkie / Badge Styles ─── */
+@keyframes cyber-blink-slow {
+  0%, 70% { opacity: 1; }
+  71%, 100% { opacity: 0.4; }
+}
+
+@keyframes cyber-blink-fast {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0.3; }
+}
+
+[data-mode="cyberpunk"] .cyber-blinkie {
+  display: inline-block;
+  image-rendering: pixelated;
+}
+
+[data-mode="cyberpunk"] .cyber-blinkie-slow {
+  animation: cyber-blink-slow 2s step-end infinite;
+}
+
+[data-mode="cyberpunk"] .cyber-blinkie-fast {
+  animation: cyber-blink-fast 1s step-end infinite;
+}
+
+/* ─── ASCII Divider ─── */
+[data-mode="cyberpunk"] .cyber-divider {
+  text-align: center;
+  color: var(--text-tertiary);
+  font-family: var(--font-mono, Courier, monospace);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  padding: 0.75rem 0;
+  user-select: none;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* ─── Visitor Counter ─── */
+[data-mode="cyberpunk"] .cyber-visitor-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono, Courier, monospace);
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+  border: 1px dotted var(--border);
+  padding: 2px 8px;
+  background: var(--bg-primary);
+  letter-spacing: 0.15em;
+}
+
+[data-mode="cyberpunk"] .cyber-visitor-counter .counter-digits {
+  color: var(--accent);
+  font-weight: bold;
+  text-shadow: 0 0 4px rgba(30, 227, 126, 0.6);
+}
+
+/* ─── Webring ─── */
+[data-mode="cyberpunk"] .cyber-webring {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono, Courier, monospace);
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+  letter-spacing: 0.1em;
+}
+
+[data-mode="cyberpunk"] .cyber-webring a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+[data-mode="cyberpunk"] .cyber-webring a:hover {
+  color: var(--accent);
+}
+
+/* ─── Signal Strength Bar ─── */
+[data-mode="cyberpunk"] .cyber-signal-bar {
+  font-family: var(--font-mono, Courier, monospace);
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  letter-spacing: 0.05em;
+}
+
+[data-mode="cyberpunk"] .cyber-signal-bar .filled {
+  color: var(--accent);
+  text-shadow: 0 0 3px rgba(30, 227, 126, 0.5);
+}
+
+[data-mode="cyberpunk"] .cyber-signal-bar .empty {
+  color: var(--border);
+}
+
+/* ─── Package / Module list style ─── */
+[data-mode="cyberpunk"] .cyber-package-item {
+  font-family: var(--font-mono, Courier, monospace);
+  font-size: 0.85rem;
+  padding: 0.3rem 0;
+  color: var(--text-secondary);
+  border-bottom: 1px dotted rgba(26, 56, 38, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+[data-mode="cyberpunk"] .cyber-package-item:last-child {
+  border-bottom: none;
+}
+
+[data-mode="cyberpunk"] .cyber-package-item .pkg-status {
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 0.7rem;
+  flex-shrink: 0;
+}
+
+[data-mode="cyberpunk"] .cyber-package-item .pkg-name {
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+
+[data-mode="cyberpunk"] .cyber-package-item .pkg-dots {
+  flex-grow: 1;
+  overflow: hidden;
+  color: var(--text-tertiary);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+}
+
+[data-mode="cyberpunk"] .cyber-package-item .pkg-version {
+  color: var(--text-tertiary);
+  font-size: 0.7rem;
+  flex-shrink: 0;
+}
+
+/* ─── Log Entry Style (for blog) ─── */
+[data-mode="cyberpunk"] .cyber-log-entry {
+  padding: 0.75rem 1rem;
+  border-left: 3px solid var(--border);
+  background: var(--bg-card);
+  margin-bottom: 0.5rem;
+  transition: none;
+}
+
+[data-mode="cyberpunk"] .cyber-log-entry:hover {
+  border-left-color: var(--accent);
+  background: var(--bg-card-hover);
+}
+
+[data-mode="cyberpunk"] .cyber-log-entry .log-id {
+  font-size: 0.65rem;
+  color: var(--text-tertiary);
+  font-family: var(--font-mono, Courier, monospace);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+[data-mode="cyberpunk"] .cyber-log-entry .log-date {
+  font-size: 0.7rem;
+  color: var(--accent-amber);
+  font-family: var(--font-mono, Courier, monospace);
+}
+
+/* ─── Directory Listing (for projects) ─── */
+[data-mode="cyberpunk"] .cyber-dir-entry {
+  padding: 0.75rem 1rem;
+  border: 1px dotted var(--border);
+  background: var(--bg-card);
+  margin-bottom: 0.5rem;
+  transition: none;
+  font-family: var(--font-mono, Courier, monospace);
+}
+
+[data-mode="cyberpunk"] .cyber-dir-entry:hover {
+  border-color: var(--accent);
+  background: var(--bg-card-hover);
+}
+
+[data-mode="cyberpunk"] .cyber-dir-entry .dir-prefix {
+  font-size: 0.7rem;
+  color: var(--accent-amber);
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+/* ─── Status badge ─── */
+[data-mode="cyberpunk"] .cyber-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.65rem;
+  font-family: var(--font-mono, Courier, monospace);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 2px 8px;
+  border: 1px solid var(--border);
+}
+
+[data-mode="cyberpunk"] .cyber-status-badge .status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 0;
+  background: var(--accent);
+  animation: cyber-blink-slow 2s step-end infinite;
+}
+
+/* ─── Glitch & Flicker ─── */
 @keyframes strict-glitch {
   0% { transform: scaleX(1); opacity: 1; }
   1% { transform: scaleX(1.03); opacity: 0.8; }
@@ -252,7 +514,7 @@
   font-weight: bold;
 }
 
-/* Terminal cursor block */
+/* ─── Terminal Cursor ─── */
 @keyframes block-blink {
   0%, 49% { background-color: var(--accent); color: var(--bg-primary); }
   50%, 100% { background-color: transparent; color: transparent; }
@@ -268,10 +530,7 @@
   margin-left: 2px;
 }
 
-/* 
-  Heavy CRT Scanlines + Vignette 
-  (Interlaced 1px lines masking the entire site)
-*/
+/* ─── CRT Scanlines (moderate) ─── */
 [data-mode="cyberpunk"] .scanlines::before {
   content: " ";
   display: block;
@@ -282,16 +541,16 @@
   right: 0;
   background: repeating-linear-gradient(
     0deg,
-    rgba(0, 0, 0, 0.3) 0px,
-    rgba(0, 0, 0, 0.3) 1px,
+    rgba(0, 0, 0, 0.15) 0px,
+    rgba(0, 0, 0, 0.15) 1px,
     transparent 1px,
-    transparent 2px
+    transparent 3px
   );
   z-index: 9999;
   pointer-events: none;
 }
 
-/* TV screen flicker overlay */
+/* TV screen subtle flicker */
 [data-mode="cyberpunk"] .scanlines::after {
   content: " ";
   display: block;
@@ -300,21 +559,66 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: rgba(255, 255, 255, 0.02);
+  background-color: rgba(255, 255, 255, 0.01);
   z-index: 10000;
   pointer-events: none;
   animation: screen-flicker 0.15s infinite;
 }
 
 @keyframes screen-flicker {
-  0% { opacity: 0.5; }
+  0% { opacity: 0.6; }
   50% { opacity: 1; }
-  100% { opacity: 0.5; }
+  100% { opacity: 0.6; }
 }
 
-/* Selection */
+/* ─── Selection ─── */
 [data-mode="cyberpunk"] ::selection {
   background: var(--accent);
   color: var(--bg-primary);
   text-shadow: none;
+}
+
+/* ─── Scrollbar (retro green) ─── */
+[data-mode="cyberpunk"] ::-webkit-scrollbar {
+  display: block !important;
+  width: 8px;
+  height: 8px;
+}
+
+[data-mode="cyberpunk"] ::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+  border-left: 1px solid var(--border);
+}
+
+[data-mode="cyberpunk"] ::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border: 1px solid var(--bg-primary);
+}
+
+[data-mode="cyberpunk"] ::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* ─── Blinkie row ─── */
+[data-mode="cyberpunk"] .cyber-blinkie-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+[data-mode="cyberpunk"] .cyber-blinkie-row img {
+  height: 20px;
+  image-rendering: pixelated;
+}
+
+/* ─── Retro "best viewed" text ─── */
+[data-mode="cyberpunk"] .cyber-retro-notice {
+  font-size: 0.6rem;
+  color: var(--text-tertiary);
+  font-family: var(--font-mono, Courier, monospace);
+  letter-spacing: 0.1em;
+  text-align: center;
+  opacity: 0.6;
 }

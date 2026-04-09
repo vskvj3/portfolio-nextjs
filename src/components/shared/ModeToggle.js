@@ -27,10 +27,12 @@ export default function ModeToggle() {
           className="opacity-60 group-hover:opacity-100 transition-opacity duration-300 retro-glitch"
         />
       ) : (
-        <FiSun
-          size={22}
-          className="text-cyan-400/60 group-hover:text-cyan-300 transition-colors duration-300"
-        />
+        <span 
+          className="font-mono text-xs uppercase transition-colors sm:text-sm hover:opacity-80" 
+          style={{ color: "var(--accent-pink)", letterSpacing: "0.1em", fontWeight: "bold" }}
+        >
+          [ DISCONNECT ]
+        </span>
       )}
     </button>
   );

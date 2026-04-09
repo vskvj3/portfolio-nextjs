@@ -14,28 +14,33 @@ export default function CyberpunkLayout({ children }) {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
+
   return (
-    <div className="min-h-screen relative text-white">
+    <div className="min-h-screen relative scanlines">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
       </Head>
 
-      {/* Animated gradient background */}
-      <div className="fixed top-0 left-0 w-full h-full cyber-bg" />
-      
-      {/* Texture overlay */}
+      {/* Dark noise background */}
       <div
-        className="fixed top-0 left-0 w-full h-full cyber-texture"
-        style={{ zIndex: 1 }}
+        className="fixed top-0 left-0 w-full h-full"
+        style={{
+          backgroundColor: "var(--bg-primary)",
+          backgroundImage: `
+            radial-gradient(ellipse at 15% 50%, rgba(30, 227, 126, 0.03) 0%, transparent 50%),
+            radial-gradient(ellipse at 85% 30%, rgba(155, 142, 196, 0.02) 0%, transparent 40%)
+          `,
+          zIndex: 0,
+        }}
       />
 
-      {/* Mouse follower spotlight */}
+      {/* Phosphor green mouse follower (subtle) */}
       <div
         className="pointer-events-none fixed inset-0 z-30 transition duration-300"
         style={{
-          background: `radial-gradient(300px at ${mousePosition.x}px ${mousePosition.y}px, rgba(29, 78, 216, 0.15), transparent 80%)`,
+          background: `radial-gradient(250px at ${mousePosition.x}px ${mousePosition.y}px, rgba(30, 227, 126, 0.06), transparent 80%)`,
         }}
       />
 
