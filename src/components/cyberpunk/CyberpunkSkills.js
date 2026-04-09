@@ -1,106 +1,110 @@
-import {
-  FaPython, FaJava, FaCode, FaNodeJs, FaReact, FaGit,
-  FaLinux, FaDocker, FaTerminal,
-} from "react-icons/fa";
-import {
-  SiGo, SiDatabricks, SiApachekafka, SiApachehadoop,
-  SiExpress, SiMongodb, SiFlutter,
-} from "react-icons/si";
-import { RiNextjsLine, RiTailwindCssFill } from "react-icons/ri";
-import { TbBrandGoogleBigQuery } from "react-icons/tb";
-import { VscAzure } from "react-icons/vsc";
-import { GrMysql } from "react-icons/gr";
-import { DiSpark, DiDatabase } from "react-icons/di";
+import { personalInfo } from "@/data/portfolioData";
+import { skillCategories } from "@/data/portfolioData";
 
-const skillsData = [
-  {
-    category: "Programming & Development",
-    skills: [
-      { name: "Python", icon: <FaPython className="text-blue-500" /> },
-      { name: "Java", icon: <FaJava className="text-red-500" /> },
-      { name: "Go", icon: <SiGo className="text-cyan-500" /> },
-      { name: "JavaScript", icon: <FaCode className="text-yellow-500" /> },
-      { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
-      { name: "Express.js", icon: <SiExpress className="text-white" /> },
-      { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
-      { name: "MySQL", icon: <GrMysql className="text-blue-500" /> },
-      { name: "React", icon: <FaReact className="text-blue-400" /> },
-      { name: "Next.js", icon: <RiNextjsLine className="text-white" /> },
-      { name: "Tailwind CSS", icon: <RiTailwindCssFill className="text-cyan-400" /> },
-      { name: "Flutter", icon: <SiFlutter className="text-blue-400" /> },
-    ],
-  },
-  {
-    category: "Data Engineering & Cloud",
-    skills: [
-      { name: "PySpark", icon: <DiSpark className="text-orange-500" /> },
-      { name: "Databricks", icon: <SiDatabricks className="text-red-500" /> },
-      { name: "Kafka", icon: <SiApachekafka className="text-white" /> },
-      { name: "BigQuery", icon: <TbBrandGoogleBigQuery className="text-blue-500" /> },
-      { name: "Azure SQL", icon: <VscAzure className="text-blue-500" /> },
-      { name: "Hadoop", icon: <SiApachehadoop className="text-yellow-500" /> },
-      { name: "MapReduce", icon: <DiDatabase className="text-yellow-600" /> },
-      { name: "Azure Data Factory", icon: <VscAzure className="text-blue-500" /> },
-      { name: "Spark SQL", icon: <DiDatabase className="text-gray-400" /> },
-    ],
-  },
-  {
-    category: "Tools & Platforms",
-    skills: [
-      { name: "Git", icon: <FaGit className="text-orange-500" /> },
-      { name: "Linux", icon: <FaLinux className="text-yellow-500" /> },
-      { name: "Docker", icon: <FaDocker className="text-blue-500" /> },
-      { name: "Bash", icon: <FaTerminal className="text-gray-400" /> },
-    ],
-  },
-];
+// Map skill names to pretend version strings for the retro feel
+const skillVersions = {
+  "gRPC": "1.60",
+  "Leader-Follower Replication": "n/a",
+  "Eventual Consistency": "n/a",
+  "Fault Tolerance": "n/a",
+  "Distributed Caching": "n/a",
+  "Docker": "24.x",
+  "PySpark": "3.5",
+  "Spark SQL": "3.5",
+  "Kafka": "3.7",
+  "Delta Lake": "3.1",
+  "Azure Data Factory": "v2",
+  "Databricks": "14.x",
+  "ETL/ELT": "n/a",
+  "SCD Type 2": "n/a",
+  "Go": "1.22",
+  "Python": "3.12",
+  "Java": "21",
+  "Node.js": "20.x",
+  "Express.js": "4.x",
+  "REST APIs": "n/a",
+  "SQL": "std",
+  "Azure": "cloud",
+  "Cosmos DB": "v4",
+  "Blob Storage": "v12",
+  "BigQuery": "v2",
+  "MySQL": "8.x",
+  "MongoDB": "7.x",
+  "React": "19.x",
+  "Next.js": "15.x",
+  "Tailwind CSS": "4.x",
+  "Git": "2.x",
+  "Linux": "6.x",
+  "Bash": "5.x",
+};
 
 export default function CyberpunkSkills() {
   return (
-    <section id="skills" className="py-20">
+    <section id="skills" className="py-16 md:py-20">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-12 font-mono tracking-wider theme-heading">
-          [ SKILLS ]
+        <div className="cyber-divider mb-2">
+          ┌──────────────────────────────────────────────┐
+        </div>
+
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-2 font-mono tracking-wider theme-heading">
+          [ INSTALLED MODULES ]
         </h2>
 
-        <div className="space-y-8 md:space-y-12">
-          {skillsData.map((category, categoryIndex) => (
-            <div
-              key={categoryIndex}
-              className="theme-card p-4 md:p-6"
-            >
-              <h3 className="text-lg md:text-xl font-bold mb-4 md:mb-6 text-center font-mono tracking-wider theme-heading">
-                [ {category.category.toUpperCase()} ]
-              </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <div
-                    key={skillIndex}
-                    className="p-2 md:p-3 rounded-lg text-center transition-all duration-300 group cursor-pointer overflow-hidden"
-                    style={{
-                      backgroundColor: "rgba(30, 41, 59, 0.4)",
-                      border: "1px solid var(--border)",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = "var(--border-hover)";
-                      e.currentTarget.style.backgroundColor = "rgba(30, 41, 59, 0.6)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = "var(--border)";
-                      e.currentTarget.style.backgroundColor = "rgba(30, 41, 59, 0.4)";
-                    }}
-                  >
-                    <div className="flex items-center justify-center h-6 md:h-8 mb-2 text-base md:text-lg lg:text-xl group-hover:scale-110 transition-transform duration-300">
-                      {skill.icon}
+        <p className="text-center mb-8 font-mono text-xs" style={{ color: "var(--text-tertiary)", letterSpacing: "0.2em" }}>
+          pkg list --installed --all
+        </p>
+
+        <div className="space-y-6 max-w-4xl mx-auto">
+          {skillCategories.map((category, categoryIndex) => (
+            <div key={categoryIndex} className="cyber-frame p-4 md:p-5">
+              {/* Category header */}
+              <div
+                className="text-xs md:text-sm font-bold mb-3 font-mono tracking-wider text-center"
+                style={{
+                  color: "var(--accent-amber)",
+                  borderBottom: "1px dashed var(--border)",
+                  paddingBottom: "0.5rem",
+                }}
+              >
+                === PACKAGE GROUP: {category.name.toUpperCase()} ===
+              </div>
+
+              {/* Package list */}
+              <div className="px-1 md:px-2">
+                {category.skills.map((skill, skillIndex) => {
+                  const version = skillVersions[skill] || "n/a";
+                  return (
+                    <div key={skillIndex} className="cyber-package-item">
+                      <span className="pkg-status">[LOADED]</span>
+                      <span className="pkg-name">{skill}</span>
+                      <span className="pkg-dots">
+                        {"·".repeat(40)}
+                      </span>
+                      <span className="pkg-version">v{version}</span>
                     </div>
-                    <p className="font-semibold text-xs sm:text-sm md:text-base group-hover:scale-105 transition-transform duration-300" style={{ color: "var(--text-primary)" }}>
-                      {skill.name}
-                    </p>
-                  </div>
-                ))}
+                  );
+                })}
+              </div>
+
+              {/* Package count */}
+              <div
+                className="text-right mt-2 font-mono text-xs"
+                style={{ color: "var(--text-tertiary)" }}
+              >
+                {category.skills.length} packages loaded
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Total */}
+        <div className="text-center mt-6 font-mono text-xs" style={{ color: "var(--text-tertiary)" }}>
+          total: {skillCategories.reduce((acc, c) => acc + c.skills.length, 0)} modules installed ·
+          system status: operational
+        </div>
+
+        <div className="cyber-divider mt-2">
+          └──────────────────────────────────────────────┘
         </div>
       </div>
     </section>

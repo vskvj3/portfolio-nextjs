@@ -50,6 +50,9 @@ export default function DefaultHero() {
             <Link href="/projects" className="theme-btn-primary px-6 py-3">
               View Projects
             </Link>
+            <Link href={personalInfo.resumeUrl} className="theme-btn-outline px-6 py-3">
+              Resume
+            </Link>
             <Link href="#contact" className="theme-btn-outline px-6 py-3">
               Contact Me
             </Link>

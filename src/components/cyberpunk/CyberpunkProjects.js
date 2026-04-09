@@ -6,48 +6,58 @@ export default function CyberpunkProjects({ projects }) {
   if (!projects || projects.length === 0) return null;
 
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="py-16 md:py-20">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-12 font-mono tracking-wider theme-heading">
+        {/* ASCII divider */}
+        <div className="cyber-divider mb-2">
+          ┌──────────────────────────────────────────────┐
+        </div>
+
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-2 font-mono tracking-wider theme-heading">
           [ PROJECTS ]
         </h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          {projects.map(({ id, title, description, tags, github, url }) => (
-            <div key={id} className="theme-card p-6 flex flex-col">
-              <div className="flex-grow">
-                <Link href={`/projects/${encodeURIComponent(id)}`}>
-                  <h3
-                    className="text-xl font-bold mb-2 cursor-pointer transition-colors duration-300"
-                    style={{ color: "var(--accent)" }}
-                  >
-                    {title}
-                  </h3>
-                </Link>
-                <p className="mb-4" style={{ color: "var(--text-secondary)" }}>
-                  {description}
-                </p>
-              </div>
 
-              <div className="flex justify-between items-end">
-                <div className="flex flex-wrap gap-2">
-                  {tags?.map((t) => (
-                    <span key={t} className="theme-tag">
-                      {t}
-                    </span>
-                  ))}
+        {/* Subtitle */}
+        <p className="text-center mb-8 font-mono text-xs" style={{ color: "var(--text-tertiary)", letterSpacing: "0.2em" }}>
+          directory listing — /home/visakh/projects/
+        </p>
+
+        {/* Directory listing */}
+        <div className="space-y-3 max-w-4xl mx-auto">
+          {projects.map(({ id, title, description, tags, github, url }, index) => (
+            <div key={id} className="cyber-dir-entry">
+              {/* Top row: prefix + title + links */}
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
+                <div className="flex items-center gap-2 flex-shrink-0">
+                  <span className="dir-prefix font-mono">
+                    drwxr-xr-x
+                  </span>
+                  <span style={{ color: "var(--text-tertiary)", fontSize: "0.7rem" }}>
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
                 </div>
-                <div className="flex items-center space-x-4">
+
+                <Link href={`/projects/${encodeURIComponent(id)}`}>
+                  <span
+                    className="font-bold font-mono cursor-pointer"
+                    style={{ color: "var(--accent)", fontSize: "0.95rem" }}
+                  >
+                    {title}/
+                  </span>
+                </Link>
+
+                {/* Inline links */}
+                <div className="flex items-center gap-2 sm:ml-auto flex-shrink-0">
                   {github && (
                     <a
                       href={github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="transition-colors duration-300"
                       style={{ color: "var(--text-tertiary)" }}
                       onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent)")}
                       onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-tertiary)")}
                     >
-                      <FaGithub size={20} />
+                      <FaGithub size={16} />
                     </a>
                   )}
                   {url && (
@@ -55,24 +65,43 @@ export default function CyberpunkProjects({ projects }) {
                       href={url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="transition-colors duration-300"
                       style={{ color: "var(--text-tertiary)" }}
                       onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent)")}
                       onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-tertiary)")}
                     >
-                      <ExternalLink size={20} />
+                      <ExternalLink size={16} />
                     </a>
                   )}
                 </div>
               </div>
+
+              {/* Description */}
+              <p className="text-sm mb-2 pl-0 sm:pl-4" style={{ color: "var(--text-secondary)", fontSize: "0.85rem" }}>
+                {description}
+              </p>
+
+              {/* Tags */}
+              {tags && tags.length > 0 && (
+                <div className="flex flex-wrap gap-1.5 pl-0 sm:pl-4">
+                  {tags.map((t) => (
+                    <span key={t} className="theme-tag" style={{ fontSize: "0.65rem", padding: "1px 6px" }}>
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-8">
-          <Link href="/projects" className="theme-inline-link font-mono">
-            [View More ➤]
+        <div className="text-center mt-6">
+          <Link href="/projects" className="theme-inline-link font-mono text-sm">
+            [ls -la ~/projects/ ➤]
           </Link>
+        </div>
+
+        <div className="cyber-divider mt-2">
+          └──────────────────────────────────────────────┘
         </div>
       </div>
     </section>

@@ -100,40 +100,58 @@ export default function CyberpunkHero() {
   return (
     <section
       id="terminal"
-      className="min-h-screen flex items-center justify-center py-4 sm:py-6 md:py-12 lg:py-20 pt-20 md:pt-24 px-3 sm:px-4 md:px-8"
+      className="h-[calc(100vh-64px)] flex flex-col items-center justify-center pt-8 px-3 sm:px-4 md:px-8 pb-4"
     >
+      {/* ASCII art welcome */}
+      <pre
+        className="text-center mb-4 hidden sm:block"
+        style={{
+          color: "var(--text-tertiary)",
+          fontSize: "0.55rem",
+          lineHeight: "1.2",
+          letterSpacing: "0.05em",
+          fontFamily: "var(--font-mono, Courier, monospace)",
+        }}
+      >
+{`
+┌────────────────────────────────────────────────┐
+│  ░▒▓  PERSONAL TERMINAL — LAYER 07  ▓▒░        │
+│  connecting to the wired...                    │
+└────────────────────────────────────────────────┘
+`}
+      </pre>
+
+      {/* Terminal — wrapped in retro double-border frame */}
       <div
         onClick={handleTerminalClick}
-        className="w-full max-w-6xl mx-auto rounded-lg shadow-2xl overflow-hidden cursor-text"
+        className="w-full max-w-4xl flex-grow mx-auto cursor-text cyber-frame flex flex-col"
         style={{
-          backgroundColor: "var(--bg-card)",
-          border: "1px solid var(--border)",
-          backdropFilter: "blur(12px)",
-          boxShadow: "var(--shadow-lg)",
+          boxShadow: "0 0 20px rgba(30, 227, 126, 0.05)",
+          maxHeight: "75vh",
         }}
       >
         {/* Title bar */}
         <div
-          className="flex items-center p-2 sm:p-4"
+          className="flex items-center p-2 sm:p-3"
           style={{
             backgroundColor: "var(--bg-secondary)",
-            borderBottom: "1px solid var(--border)",
+            borderBottom: "1px dashed var(--border)",
           }}
         >
           <div className="flex space-x-2">
-            <div className="w-3 h-3 bg-[#ca3a3a] border border-[#152e20]" />
-            <div className="w-3 h-3 bg-[#eab308] border border-[#152e20]" />
-            <div className="w-3 h-3 bg-[#1ee37e] border border-[#152e20]" />
+            <div className="w-3 h-3 border border-[#152e20]" style={{ background: "#ca3a3a" }} />
+            <div className="w-3 h-3 border border-[#152e20]" style={{ background: "#eab308" }} />
+            <div className="w-3 h-3 border border-[#152e20]" style={{ background: "#1ee37e" }} />
           </div>
-          <p className="flex-grow text-center text-sm text-gray-500 font-mono">
-            /home/visakh — zsh
+          <p className="flex-grow text-center text-xs font-mono" style={{ color: "var(--text-tertiary)" }}>
+            /home/visakh — zsh — layer:07
           </p>
         </div>
 
         {/* Terminal content */}
         <div
           ref={terminalContentRef}
-          className="p-4 sm:p-6 md:p-8 font-mono text-sm sm:text-base md:text-lg h-[500px] sm:h-[550px] md:h-[600px] lg:h-[650px] overflow-y-auto overflow-x-hidden"
+          className="p-4 sm:p-6 md:p-8 font-mono text-sm sm:text-base md:text-lg flex-grow overflow-y-auto overflow-x-hidden"
           style={{ color: "var(--text-primary)" }}
         >
           <div className="flex items-center">
@@ -167,15 +185,23 @@ export default function CyberpunkHero() {
                 onKeyDown={handleKeyPress}
                 className="ml-2 bg-transparent outline-none border-none w-full font-mono text-sm sm:text-base md:text-lg min-w-0"
                 placeholder="Type 'help' for available commands..."
-                style={{ 
-                  color: "var(--accent)", 
-                  caretColor: "var(--accent)", 
-                  fontSize: "inherit", 
+                style={{
+                  color: "var(--accent)",
+                  caretColor: "var(--accent)",
+                  fontSize: "inherit",
                   fontFamily: "inherit",
                 }}
               />
             </div>
           )}
+        </div>
+      </div>
+
+      {/* Status badge below terminal */}
+      <div className="mt-4 flex items-center justify-center">
+        <div className="cyber-status-badge">
+          <div className="status-dot" />
+          <span style={{ color: "var(--accent)" }}>SYSTEM STATUS: ONLINE</span>
         </div>
       </div>
     </section>
