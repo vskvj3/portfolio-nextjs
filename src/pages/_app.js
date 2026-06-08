@@ -5,6 +5,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@/context/ThemeContext";
 import Layout from "@/components/layout";
 import { Analytics } from "@vercel/analytics/react";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -18,6 +19,11 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+function AnalyticsTracker() {
+  useAnalytics();
+  return null;
+}
+
 export default function App({ Component, pageProps }) {
   // Support per-page layouts if defined
   const getLayout = Component.getLayout || ((page) => <Layout>{page}</Layout>);
@@ -27,6 +33,7 @@ export default function App({ Component, pageProps }) {
       <div className={`${inter.variable} ${jetbrainsMono.variable}`}>
         {getLayout(<Component {...pageProps} />)}
         <Analytics />
+        <AnalyticsTracker />
       </div>
     </ThemeProvider>
   );
