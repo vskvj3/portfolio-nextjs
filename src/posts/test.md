@@ -1,5 +1,5 @@
 ---
-title: 'Test post functionality'
+title: 'Test Blog'
 date: '2020-01-02'
 github: 'https://github.com/vskvj3/alertMe_v2'
 tags: ['Flutter', 'NodeJS', 'MongoDB', 'test']

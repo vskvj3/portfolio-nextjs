@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { personalInfo } from "@/data/portfolioData";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import axios from "axios";
@@ -9,6 +9,32 @@ export default function CyberpunkContact() {
   const [message, setMessage] = useState("");
   const [sending, setSending] = useState(false);
   const [status, setStatus] = useState({ message: "", error: false });
+  const [signalStrength, setSignalStrength] = useState(80);
+
+  useEffect(() => {
+    let timeoutId;
+    const animateSignal = () => {
+      setSignalStrength((prev) => {
+        const fluctuation = Math.floor(Math.random() * 30) - 15; // -15 to +15
+        let next = prev + fluctuation;
+        if (next > 100) next = 100;
+        if (next < 30) next = 30; // signal drops, but not to 0
+        return Math.round(next / 10) * 10;
+      });
+      // Random delay between 500ms and 2500ms for non-repetitive feel
+      const nextDelay = 500 + Math.random() * 2000;
+      timeoutId = setTimeout(animateSignal, nextDelay);
+    };
+
+    timeoutId = setTimeout(animateSignal, 1500);
+    return () => clearTimeout(timeoutId);
+  }, []);
+
+  const signalBlocksTotal = 10;
+  const activeBlocks = Math.round(signalStrength / 10);
+  const inactiveBlocks = signalBlocksTotal - activeBlocks;
+  const filledBars = "█".repeat(activeBlocks);
+  const emptyBars = "░".repeat(inactiveBlocks);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,7 +58,7 @@ export default function CyberpunkContact() {
     <section id="contact" className="py-12 md:py-20">
       <div className="container mx-auto px-6">
         <div className="cyber-divider mb-2">
-          ┌──────────────────────────────────────────────┐
+          <span>┌</span><div className="cyber-divider-line"></div><span>┐</span>
         </div>
 
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-2 font-mono tracking-wider theme-heading">
@@ -50,11 +76,11 @@ export default function CyberpunkContact() {
             <div className="cyber-frame p-6">
               <div className="h-full flex flex-col justify-center">
                 {/* Signal strength bar */}
-                <div className="cyber-signal-bar mb-6">
+                <div className="cyber-signal-bar mb-6 transition-all duration-300">
                   <span style={{ color: "var(--text-tertiary)", fontSize: "0.7rem" }}>SIGNAL STRENGTH: </span>
-                  <span className="filled">████████</span>
-                  <span className="empty">░░</span>
-                  <span style={{ color: "var(--accent)", fontSize: "0.7rem", marginLeft: "0.5rem" }}>80%</span>
+                  <span className="filled" style={{ transition: "all 0.3s" }}>{filledBars}</span>
+                  <span className="empty" style={{ transition: "all 0.3s" }}>{emptyBars}</span>
+                  <span style={{ color: "var(--accent)", fontSize: "0.7rem", marginLeft: "0.5rem" }}>{signalStrength}%</span>
                 </div>
 
                 <h3 className="text-lg font-bold mb-3 font-mono" style={{ color: "var(--accent)" }}>
@@ -150,11 +176,11 @@ export default function CyberpunkContact() {
           {/* Mobile Layout */}
           <div className="block md:hidden space-y-6">
             <div className="cyber-frame p-5 text-center">
-              <div className="cyber-signal-bar mb-4">
+              <div className="cyber-signal-bar mb-4 transition-all duration-300">
                 <span style={{ color: "var(--text-tertiary)", fontSize: "0.65rem" }}>SIGNAL: </span>
-                <span className="filled">████████</span>
-                <span className="empty">░░</span>
-                <span style={{ color: "var(--accent)", fontSize: "0.65rem", marginLeft: "0.3rem" }}>80%</span>
+                <span className="filled" style={{ transition: "all 0.3s" }}>{filledBars}</span>
+                <span className="empty" style={{ transition: "all 0.3s" }}>{emptyBars}</span>
+                <span style={{ color: "var(--accent)", fontSize: "0.65rem", marginLeft: "0.3rem" }}>{signalStrength}%</span>
               </div>
               <h3 className="text-lg font-bold mb-3 font-mono" style={{ color: "var(--accent)" }}>
                 Open channel
@@ -196,7 +222,7 @@ export default function CyberpunkContact() {
         </div>
 
         <div className="cyber-divider mt-4">
-          └──────────────────────────────────────────────┘
+          <span>└</span><div className="cyber-divider-line"></div><span>┘</span>
         </div>
       </div>
     </section>

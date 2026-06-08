@@ -44,7 +44,7 @@ export default function CyberpunkFooter() {
       <div className="container mx-auto px-6 max-w-5xl py-6 mt-2">
         {/* ASCII divider */}
         <div className="cyber-divider mb-4">
-          ═══════════════════════════════════════════════
+          <span>├</span><div className="cyber-divider-line-double"></div><span>┤</span>
         </div>
 
         {/* Visitor counter + webring row */}

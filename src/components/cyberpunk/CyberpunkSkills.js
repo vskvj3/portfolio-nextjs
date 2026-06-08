@@ -43,7 +43,7 @@ export default function CyberpunkSkills() {
     <section id="skills" className="py-16 md:py-20">
       <div className="container mx-auto px-6">
         <div className="cyber-divider mb-2">
-          ┌──────────────────────────────────────────────┐
+          <span>┌</span><div className="cyber-divider-line"></div><span>┐</span>
         </div>
 
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-2 font-mono tracking-wider theme-heading">
@@ -104,7 +104,7 @@ export default function CyberpunkSkills() {
         </div>
 
         <div className="cyber-divider mt-2">
-          └──────────────────────────────────────────────┘
+          <span>└</span><div className="cyber-divider-line"></div><span>┘</span>
         </div>
       </div>
     </section>
