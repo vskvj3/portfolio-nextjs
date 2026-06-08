@@ -1,5 +1,11 @@
-import { adminDb } from "@/lib/firebaseAdmin";
-import { FieldValue } from "firebase-admin/firestore";
+import { db } from "@/lib/firebase";
+import {
+  collection,
+  addDoc,
+  doc,
+  updateDoc,
+  serverTimestamp,
+} from "firebase/firestore";
 
 // In-memory cache for IP geolocation to avoid redundant lookups
 const geoCache = new Map();
@@ -111,7 +117,7 @@ export default async function handler(req, res) {
       const rawUA = req.headers["user-agent"] || "";
       const { browser, os, device } = parseUserAgent(rawUA);
 
-      const doc = {
+      const pageviewDoc = {
         sessionId: data.sessionId || "",
         path: data.path || "/",
         ip,
@@ -126,10 +132,10 @@ export default async function handler(req, res) {
         screenHeight: data.screenHeight || null,
         theme: data.theme || "default",
         duration: 0, // Updated later via "duration" event
-        timestamp: FieldValue.serverTimestamp(),
+        timestamp: serverTimestamp(),
       };
 
-      const docRef = await adminDb.collection("pageviews").add(doc);
+      const docRef = await addDoc(collection(db, "pageviews"), pageviewDoc);
       return res.status(200).json({ id: docRef.id });
     }
 
@@ -138,12 +144,9 @@ export default async function handler(req, res) {
         return res.status(400).json({ error: "Missing docId or duration" });
       }
 
-      await adminDb
-        .collection("pageviews")
-        .doc(data.docId)
-        .update({
-          duration: Math.min(data.duration, 3600), // Cap at 1 hour
-        });
+      await updateDoc(doc(db, "pageviews", data.docId), {
+        duration: Math.min(data.duration, 3600), // Cap at 1 hour
+      });
 
       return res.status(200).json({ success: true });
     }
