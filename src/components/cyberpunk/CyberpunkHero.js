@@ -121,7 +121,7 @@ export default function CyberpunkHero() {
         {`
 ┌──────────────────────────────────────────────────┐
 │      ░▒▓  PERSONAL TERMINAL : LAYER 07  ▓▒░      │
-│            connecting to the wired...            │
+│                  connecting...                   │
 └──────────────────────────────────────────────────┘
 `}
       </pre>
